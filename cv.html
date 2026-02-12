@@ -29,7 +29,7 @@
       align-items: center;
       min-height: 100vh;
       padding: 30px 20px;
-      min-width:210mm;
+      min-width: 210mm;
     }
 
     /* PERFECT HEIGHT MATCH – FLEX CONTAINER */
@@ -51,7 +51,7 @@
       padding: 40px 28px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between; /* ensures full height usage */
+      justify-content: space-between;
     }
 
     /* RIGHT COLUMN – FLEX COLUMN, EQUAL STRETCH */
@@ -64,14 +64,14 @@
       justify-content: space-between;
     }
 
-    /* CONTENT WRAPPERS – allow natural spacing */
+    /* CONTENT WRAPPERS */
     .left-content, .right-content {
       display: flex;
       flex-direction: column;
       flex: 1;
     }
 
-    /* PHOTO – refined square */
+    /* PHOTO – HIGH QUALITY */
     .photo {
       width: 160px;
       height: 160px;
@@ -79,6 +79,7 @@
       border: 3px solid #6e9fb1;
       margin: 0 auto 25px auto;
       display: block;
+      border-radius: 8px;
     }
 
     /* LEFT TYPOGRAPHY */
@@ -150,7 +151,7 @@
       width: 20px;
     }
 
-    /* SKILL TAGS – NO ICONS INSIDE, CLEAN */
+    /* SKILL TAGS */
     .skill-tag {
       background: #1f3d48;
       padding: 0.3rem 1rem;
@@ -248,7 +249,7 @@
       color: #578692;
     }
 
-    /* EDUCATION CARD – RIGHT COLUMN */
+    /* EDUCATION CARD */
     .edu-card {
       background: #f5fafc;
       padding: 1.1rem 1.3rem;
@@ -311,9 +312,38 @@
       margin: 0.8rem 0 0.5rem 0;
     }
 
+    /* PRINT STYLES – HIGH QUALITY */
     @media print {
-      body { background: white; padding: 0; }
-      .resume-container { box-shadow: none; }
+      body { 
+        background: white; 
+        padding: 0; 
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .resume-container { 
+        box-shadow: none; 
+      }
+      .left-column {
+        background: #0f1e26 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .right-section-title .material-icons,
+      .section-title .material-icons,
+      .contact-item .material-icons {
+        color: #95c8d6 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .skill-tag, .lang-tag {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .photo {
+        border: 3px solid #6e9fb1 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
     }
   </style>
 </head>
@@ -321,11 +351,11 @@
 
 <div class="resume-container">
 
-  <!-- LEFT COLUMN – NO NAME, ONLY PHOTO, CONTACT, SKILLS, LANGUAGES -->
+  <!-- LEFT COLUMN – PHOTO, CONTACT, SKILLS, LANGUAGES -->
   <div class="left-column">
     <div class="left-content">
 
-      <!-- PROFILE PHOTO -->
+      <!-- PROFILE PHOTO – HIGH QUALITY -->
       <img 
         src="dike.png" 
         alt="Emmanuel Okwuchukwu"
@@ -334,7 +364,7 @@
 
       <div class="left-subhead">AI · CREATIVE · DESIGN</div>
 
-      <!-- CONTACT SECTION WITH GOOGLE ICONS -->
+      <!-- CONTACT SECTION -->
       <div class="section-title">
         <span class="material-icons">contact_page</span> CONTACT
       </div>
@@ -412,7 +442,7 @@
       <!-- FULL NAME -->
       <h1>OKWUCHUKWU,<br>EMMANUEL CH.</h1>
       
-      <!-- PERSONAL DETAILS – NO ICONS, PLAIN -->
+      <!-- PERSONAL DETAILS -->
       <div class="subhead">
         <span>28 NOVEMBER 2001</span>
         <span>NIGERIAN</span>
@@ -427,7 +457,7 @@
         <p>Creative Graphic Designer and AI Content Specialist with over 5 years of experience in visual design, digital marketing, and emerging AI technologies. Skilled in Adobe Creative Suite, UX design, and AI prompt engineering. Passionate about leveraging AI tools to enhance content creation, streamline workflows, and deliver data-driven creative solutions.</p>
       </div>
 
-      <!-- WORK EXPERIENCE – ONLY AESTHETIC INSTITUTE -->
+      <!-- WORK EXPERIENCE -->
       <div class="right-section-title">
         <span class="material-icons">work</span> WORK EXPERIENCE
       </div>
@@ -445,7 +475,7 @@
         </ul>
       </div>
 
-      <!-- EDUCATION – MOVED TO RIGHT COLUMN (ONLY YOUR REAL EDUCATION) -->
+      <!-- EDUCATION -->
       <div class="right-section-title">
         <span class="material-icons">school</span> EDUCATION
       </div>
@@ -456,7 +486,7 @@
         <span class="edu-detail">Expected graduation: 2025 · CGPA: 3.5/4.0</span>
       </div>
 
-      <!-- REFERENCES – CORRECT NAMES, NO FABRICATED INFO -->
+      <!-- REFERENCES -->
       <div class="right-section-title">
         <span class="material-icons">diversity_3</span> REFERENCES
       </div>
@@ -475,7 +505,7 @@
         <span style="font-size:0.75rem;">+1 346 221 9627</span>
       </div>
 
-      <!-- ADDITIONAL INFO – ONLY WHAT YOU PROVIDED -->
+      <!-- ADDITIONAL INFO -->
       <div class="additional">
         <span style="display: flex; align-items: center; gap: 8px; font-weight: 700; letter-spacing:1px;">
           <span class="material-icons" style="font-size:1rem;">event_available</span> AVAILABILITY
@@ -492,7 +522,7 @@
         </div>
       </div>
 
-      <!-- subtle footer with skills – no new info -->
+      <!-- Footer Skills -->
       <hr>
       <div style="display: flex; justify-content: flex-start; gap: 1.5rem; font-size: 0.65rem; color: #2e6c7a; text-transform: uppercase; letter-spacing: 1px; margin-top: 0.2rem;">
         <span>ADOBE CERTIFIED</span>

@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ========== COMPLETE META PROPERTIES ========== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="description" content="View full project details - Emmanuel Okwuchukwu AI & Creative Portfolio" />
+  <meta name="author" content="Emmanuel Okwuchukwu" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph / Facebook - Dynamic -->
+  <meta property="og:title" id="ogTitle" content="Project - Emmanuel Okwuchukwu" />
+  <meta property="og:description" id="ogDescription" content="View full project details" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" id="ogUrl" content="https://dike-portfolio.netlify.app/view.html" />
+  <meta property="og:image" id="ogImage" content="https://dike-portfolio.netlify.app/assets/dike.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="Emmanuel Okwuchukwu Portfolio" />
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" id="twitterTitle" content="Project - Emmanuel Okwuchukwu" />
+  <meta name="twitter:description" id="twitterDescription" content="View full project details" />
+  <meta name="twitter:image" id="twitterImage" content="https://dike-portfolio.netlify.app/assets/dike.png" />
+  
+  <title id="pageTitle">Project Details · Emmanuel Okwuchukwu</title>
+  
+  <!-- Google Material Icons & Fonts -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f9fcfe;
+      color: #0f1e26;
+      line-height: 1.6;
+      min-width: 215mm;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    /* Header */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #1d6b7a;
+      text-decoration: none;
+      font-weight: 600;
+      margin-bottom: 30px;
+      transition: 0.2s;
+    }
+
+    .back-link:hover {
+      color: #0f1e26;
+      transform: translateX(-5px);
+    }
+
+    /* Project Header */
+    .project-header {
+      margin-bottom: 40px;
+    }
+
+    .project-title {
+      font-size: 3rem;
+      font-weight: 700;
+      letter-spacing: -2px;
+      color: #0f1e26;
+      margin-bottom: 10px;
+    }
+
+    .project-meta {
+      display: flex;
+      gap: 20px;
+      color: #1d6b7a;
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+
+    /* Image Slider */
+    .slider-container {
+      position: relative;
+      width: 100%;
+      height: 500px;
+      overflow: hidden;
+      border-radius: 24px;
+      margin-bottom: 30px;
+    }
+
+    .slider {
+      display: flex;
+      transition: transform 0.5s ease;
+      height: 100%;
+    }
+
+    .slide {
+      min-width: 100%;
+      height: 100%;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .slider-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(15, 30, 38, 0.7);
+      color: white;
+      border: none;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .slider-btn:hover {
+      background: #0f1e26;
+    }
+
+    .slider-btn.prev { left: 20px; }
+    .slider-btn.next { right: 20px; }
+
+    .slider-dots {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #d0e0e5;
+      cursor: pointer;
+    }
+
+    .dot.active {
+      background: #1d7a8c;
+      transform: scale(1.2);
+    }
+
+    /* Content Grid */
+    .content-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 40px;
+      margin-top: 40px;
+    }
+
+    /* Main Content */
+    .main-content {
+      background: white;
+      padding: 40px;
+      border-radius: 28px;
+      box-shadow: 0 10px 30px rgba(0,40,50,0.04);
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #0f1e26;
+    }
+
+    .section-title .material-icons {
+      color: #1d6b7a;
+    }
+
+    .rating {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 20px 0;
+    }
+
+    .stars {
+      display: flex;
+      gap: 4px;
+      color: #ffb800;
+    }
+
+    .project-description {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #2a404a;
+      margin-bottom: 30px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .tag {
+      background: #e1f0f3;
+      padding: 0.4rem 1.2rem;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #1d5a67;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      background: white;
+      padding: 40px;
+      border-radius: 28px;
+      box-shadow: 0 10px 30px rgba(0,40,50,0.04);
+    }
+
+    .info-item {
+      margin-bottom: 25px;
+    }
+
+    .info-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #1d6b7a;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .info-value {
+      color: #0f1e26;
+      font-weight: 500;
+      padding-left: 32px;
+    }
+
+    .deliverables, .results {
+      list-style: none;
+      padding-left: 32px;
+    }
+
+    .deliverables li, .results li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 8px;
+      color: #37616b;
+    }
+
+    .deliverables li:before, .results li:before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #1d7a8c;
+      font-weight: bold;
+    }
+
+    /* Share Links */
+    .share-section {
+      margin-top: 30px;
+      padding-top: 30px;
+      border-top: 1px solid #e0edf0;
+    }
+
+    .share-title {
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .share-buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .share-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      background: #f0f7f9;
+      border-radius: 50px;
+      color: #0f1e26;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: 0.2s;
+    }
+
+    .share-btn:hover {
+      background: #1d7a8c;
+      color: white;
+    }
+
+    .copy-btn {
+      background: #0f1e26;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .copy-btn:hover {
+      background: #1d7a8c;
+    }
+
+    /* Related Projects */
+    .related-section {
+      margin-top: 60px;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .related-card {
+      background: white;
+      padding: 25px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: 0.2s;
+      border: 1px solid #e3f0f2;
+    }
+
+    .related-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+      border-color: #9ac2cc;
+    }
+
+    /* Toast */
+    .toast {
+      position: fixed;
+      bottom: 40px;
+      right: 40px;
+      background: #0f1e26;
+      color: white;
+      padding: 1.2rem 2rem;
+      border-radius: 60px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+      transform: translateY(100px);
+      opacity: 0;
+      transition: 0.3s;
+      z-index: 999999;
+    }
+
+    .toast.active {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    @media (max-width: 900px) {
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+      .project-title {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="index.html" class="back-link">
+      <span class="material-icons">arrow_back</span> Back to Portfolio
+    </a>
+
+    <div id="projectContent">
+      <!-- Dynamic content loaded via JavaScript -->
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="toast">
+    <span class="material-icons">check_circle</span>
+    <span id="toastMessage">Link copied!</span>
+  </div>
+
+  <script src="data.js"></script>
+  <script>
+    // Toast
+    const toast = document.getElementById('toast');
+    const toastMessage = document.getElementById('toastMessage');
+
+    function showToast(message) {
+      toastMessage.textContent = message;
+      toast.classList.add('active');
+      setTimeout(() => {
+        toast.classList.remove('active');
+      }, 3000);
+    }
+
+    // Get project ID from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const projectId = parseInt(urlParams.get('id')) || 1;
+    
+    // Find project
+    const project = portfolioData.projects.find(p => p.id === projectId) || portfolioData.projects[0];
+
+    // Update meta tags dynamically
+    document.getElementById('pageTitle').textContent = `${project.title} · Emmanuel Okwuchukwu`;
+    document.getElementById('ogTitle').content = `${project.title} - Emmanuel Okwuchukwu Portfolio`;
+    document.getElementById('ogDescription').content = project.shortDesc;
+    document.getElementById('twitterTitle').content = `${project.title} - Emmanuel Okwuchukwu`;
+    document.getElementById('twitterDescription').content = project.shortDesc;
+    
+    const projectUrl = `https://dike-portfolio.netlify.app/view.html?id=${project.id}`;
+    const projectImage = project.images[0] || 'https://dike-portfolio.netlify.app/assets/dike.png';
+    
+    document.getElementById('ogUrl').content = projectUrl;
+    document.getElementById('ogImage').content = projectImage;
+    document.getElementById('twitterImage').content = projectImage;
+
+    // Generate stars HTML
+    function getStarsHtml(rating) {
+      let stars = '';
+      for (let i = 0; i < 5; i++) {
+        stars += `<span class="material-icons">${i < Math.round(rating) ? 'star' : 'star_border'}</span>`;
+      }
+      return stars;
+    }
+
+    // Generate image slider
+    function getSliderHtml(images) {
+      let slides = '';
+      let dots = '';
+      
+      images.forEach((img, index) => {
+        slides += `<div class="slide"><img src="${img}" alt="Project image ${index + 1}"></div>`;
+        dots += `<span class="dot ${index === 0 ? 'active' : ''}" onclick="goToSlide(${index})"></span>`;
+      });
+
+      return `
+        <div class="slider-container">
+          <div class="slider" id="projectSlider">
+            ${slides}
+          </div>
+          <button class="slider-btn prev" onclick="changeSlide(-1)">
+            <span class="material-icons">chevron_left</span>
+          </button>
+          <button class="slider-btn next" onclick="changeSlide(1)">
+            <span class="material-icons">chevron_right</span>
+          </button>
+          <div class="slider-dots" id="sliderDots">
+            ${dots}
+          </div>
+        </div>
+      `;
+    }
+
+    // Generate deliverables list
+    function getListHtml(items) {
+      return items.map(item => `<li>${item}</li>`).join('');
+    }
+
+    // Generate related projects
+    function getRelatedHtml(currentId) {
+      const related = portfolioData.projects
+        .filter(p => p.id !== currentId)
+        .slice(0, 3);
+      
+      return related.map(p => `
+        <div class="related-card" onclick="window.location.href='view.html?id=${p.id}'">
+          <div style="font-weight: 700; margin-bottom: 8px;">${p.title}</div>
+          <div style="font-size: 0.85rem; color: #37616b;">${p.shortDesc.substring(0, 60)}...</div>
+          <div style="margin-top: 12px;">
+            <span style="background: #e1f0f3; padding: 4px 12px; border-radius: 50px; font-size: 0.7rem; color: #1d5a67;">
+              ${p.category}
+            </span>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // Main content
+    const projectContent = document.getElementById('projectContent');
+    projectContent.innerHTML = `
+      <div class="project-header">
+        <h1 class="project-title">${project.title}</h1>
+        <div class="project-meta">
+          <span>${project.category}</span>
+          <span>•</span>
+          <span>${project.year}</span>
+        </div>
+      </div>
+
+      ${getSliderHtml(project.images)}
+
+      <div class="content-grid">
+        <div class="main-content">
+          <div class="section-title">
+            <span class="material-icons">description</span> Project Overview
+          </div>
+          
+          <div class="rating">
+            <div class="stars">${getStarsHtml(project.rating)}</div>
+            <span style="color: #37616b;">${project.rating}/5</span>
+          </div>
+
+          <div class="tags">
+            ${project.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+          </div>
+
+          <div class="project-description">
+            ${project.fullDescription || project.description}
+          </div>
+
+          <div class="share-section">
+            <div class="share-title">Share this project</div>
+            <div class="share-buttons">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(projectUrl)}" target="_blank" class="share-btn">
+                <i class="fab fa-facebook-f"></i> Facebook
+              </a>
+              <a href="https://twitter.com/intent/tweet?text=${encodeURIComponent(`Check out ${project.title} by Emmanuel Okwuchukwu`)}&url=${encodeURIComponent(projectUrl)}" target="_blank" class="share-btn">
+                <i class="fab fa-twitter"></i> Twitter
+              </a>
+              <a href="https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(projectUrl)}" target="_blank" class="share-btn">
+                <i class="fab fa-linkedin-in"></i> LinkedIn
+              </a>
+              <button class="share-btn copy-btn" onclick="copyProjectUrl()">
+                <span class="material-icons">link</span> Copy Link
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar">
+          <div class="section-title">
+            <span class="material-icons">info</span> Project Details
+          </div>
+
+          <div class="info-item">
+            <div class="info-label">
+              <span class="material-icons">person</span> Client
+            </div>
+            <div class="info-value">${project.client || 'Confidential'}</div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-label">
+              <span class="material-icons">work</span> Role
+            </div>
+            <div class="info-value">${project.role || 'Lead Designer'}</div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-label">
+              <span class="material-icons">schedule</span> Duration
+            </div>
+            <div class="info-value">${project.duration || '2-3 months'}</div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-label">
+              <span class="material-icons">checklist</span> Deliverables
+            </div>
+            <ul class="deliverables">
+              ${getListHtml(project.deliverables || [
+                'Brand Guidelines',
+                'Design Assets',
+                'Social Templates',
+                'Documentation'
+              ])}
+            </ul>
+          </div>
+
+          <div class="info-item">
+            <div class="info-label">
+              <span class="material-icons">trending_up</span> Results
+            </div>
+            <ul class="results">
+              ${getListHtml(project.results || [
+                '30% faster production',
+                'Client satisfaction',
+                'Successful launch'
+              ])}
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="related-section">
+        <div class="section-title">
+          <span class="material-icons">layers</span> Related Projects
+        </div>
+        <div class="related-grid">
+          ${getRelatedHtml(project.id)}
+        </div>
+      </div>
+    `;
+
+    // Slider functionality
+    let currentSlide = 0;
+    const totalSlides = project.images.length;
+
+    window.changeSlide = function(direction) {
+      const slider = document.getElementById('projectSlider');
+      if (!slider) return;
+      
+      currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+      slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+      
+      const dots = document.querySelectorAll('.dot');
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentSlide);
+      });
+    };
+
+    window.goToSlide = function(index) {
+      const slider = document.getElementById('projectSlider');
+      if (!slider) return;
+      
+      currentSlide = index;
+      slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+      
+      const dots = document.querySelectorAll('.dot');
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentSlide);
+      });
+    };
+
+    // Copy URL
+    window.copyProjectUrl = function() {
+      navigator.clipboard.writeText(projectUrl).then(() => {
+        showToast('🔗 Link copied to clipboard!');
+      });
+    };
+  </script>
+</body>
+</html>
