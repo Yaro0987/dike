@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ========== COMPLETE META PROPERTIES ========== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Emmanuel Okwuchukwu - Professional CV, AI & Creative Design Specialist" />
+  <meta name="author" content="Emmanuel Okwuchukwu" />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Emmanuel Okwuchukwu · CV" />
+  <meta property="og:description" content="AI Content Specialist & Graphic Designer. 5+ years experience." />
+  <meta property="og:image" content="https://chimdike.netlify.app/logo.png" />
+  <meta property="og:url" content="https://chimdike.netlify.app/cv.html" />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="logo.png" />
+  
+  <title>Emmanuel Okwuchukwu · CV</title>
+  
+  <!-- Google Material Icons & Fonts -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f5fafc;
+      color: #0a1a1f;
+      line-height: 1.6;
+    }
+
+    /* Header */
+    header {
+      background: white;
+      box-shadow: 0 4px 30px rgba(0,40,50,0.03);
+      padding: 1.2rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(29,107,122,0.1);
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo-img {
+      height: 50px;
+      width: auto;
+    }
+
+    .logo-text {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #0f1e26;
+    }
+
+    .logo-text span {
+      color: #1d7a8c;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #1f4a58;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+    }
+
+    .nav-links a:hover {
+      color: #1d7a8c;
+    }
+
+    .btn-download {
+      background: #1d7a8c;
+      color: white !important;
+      padding: 0.7rem 2rem !important;
+      border-radius: 50px;
+    }
+
+    /* Main CV Container */
+    .cv-container {
+      max-width: 1200px;
+      margin: 3rem auto;
+      background: white;
+      border-radius: 40px;
+      box-shadow: 0 25px 50px rgba(0,40,50,0.08);
+      overflow: hidden;
+    }
+
+    .cv-header {
+      background: #0f1e26;
+      color: white;
+      padding: 3rem;
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .cv-photo {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 4px solid #4fa6b9;
+      object-fit: cover;
+    }
+
+    .cv-title h1 {
+      font-size: 2.8rem;
+      color: white;
+      margin-bottom: 0.5rem;
+    }
+
+    .cv-title h2 {
+      font-size: 1.4rem;
+      color: #86b9c9;
+      font-weight: 500;
+    }
+
+    .cv-body {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 2rem;
+      padding: 3rem;
+    }
+
+    .cv-left {
+      background: #f5fbfd;
+      padding: 2rem;
+      border-radius: 24px;
+    }
+
+    .cv-section {
+      margin-bottom: 2rem;
+    }
+
+    .cv-section h3 {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.2rem;
+      color: #0f1e26;
+      margin-bottom: 1.2rem;
+      border-bottom: 2px solid #e0edf0;
+      padding-bottom: 0.5rem;
+    }
+
+    .cv-section h3 .material-icons {
+      color: #1d7a8c;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 1rem;
+      color: #37616b;
+    }
+
+    .skill-tag {
+      background: #e1f0f3;
+      padding: 0.5rem 1rem;
+      border-radius: 60px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #1d5a67;
+      display: inline-block;
+      margin: 0.3rem;
+    }
+
+    .cv-right .job {
+      margin-bottom: 2rem;
+    }
+
+    .job h4 {
+      font-size: 1.3rem;
+      color: #0f1e26;
+    }
+
+    .job-company {
+      color: #1d7a8c;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .job-period {
+      background: #ebf5f7;
+      padding: 0.3rem 1rem;
+      border-radius: 60px;
+      display: inline-block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .job ul {
+      list-style: none;
+    }
+
+    .job li {
+      position: relative;
+      padding-left: 25px;
+      margin-bottom: 0.8rem;
+      color: #37616b;
+    }
+
+    .job li:before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: #1d7a8c;
+    }
+
+    /* Gallery Section */
+    .gallery-section {
+      padding: 0 3rem 3rem;
+    }
+
+    .gallery-section h3 {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .gallery-item {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(29,122,140,0.15);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .gallery-item p {
+      padding: 1rem;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    /* Footer */
+    footer {
+      background: #0f1e26;
+      color: white;
+      padding: 4rem 5% 2rem;
+      margin-top: 3rem;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 4rem;
+      margin-bottom: 3rem;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-logo img {
+      height: 50px;
+    }
+
+    .footer-logo span {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: white;
+    }
+
+    .footer-logo span span {
+      color: #86b9c9;
+    }
+
+    .footer-links h4 {
+      color: white;
+      font-size: 1rem;
+      letter-spacing: 3px;
+      margin-bottom: 2rem;
+    }
+
+    .footer-links a {
+      color: #b6d2da;
+      display: block;
+      margin-bottom: 1rem;
+      text-decoration: none;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .footer-social a {
+      color: #b6d2da;
+      font-size: 1.8rem;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #2f5460;
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      color: #98b8c2;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media (max-width: 1024px) {
+      .cv-body { grid-template-columns: 1fr; }
+      .cv-header { flex-direction: column; text-align: center; }
+      .footer-content { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .footer-content { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+
+    @media print {
+      header, footer, .gallery-section, .btn-download { display: none; }
+      .cv-container { box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ========== HEADER ========== -->
+<header>
+  <div class="logo-container">
+    <img src="logo.png" alt="Emmanuel Okwuchukwu" class="logo-img" onerror="this.src='https://via.placeholder.com/50?text=EO'">
+    <span class="logo-text">E.C.<span>OKWUCHUKWU</span></span>
+  </div>
+  <div class="nav-links">
+    <a href="index.html">Portfolio</a>
+    <a href="cv.html" style="color: #1d7a8c; font-weight: 700;">CV</a>
+    <a href="index.html#contact">Contact</a>
+    <a href="#" id="downloadCvBtn" class="btn-download">
+      <span class="material-icons" style="font-size: 1rem;">download</span> Download PDF
+    </a>
+  </div>
+</header>
+
+<!-- ========== CV CONTENT ========== -->
+<div class="cv-container" id="cvContent">
+  <!-- Dynamic content from data.js -->
+</div>
+
+<!-- ========== GALLERY SECTION ========== -->
+<div class="gallery-section" id="gallerySection">
+  <h3><span class="material-icons" style="color: #1d7a8c;">photo_library</span> Project Gallery</h3>
+  <div class="gallery-grid" id="galleryGrid"></div>
+</div>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <div class="footer-content">
+    <div>
+      <div class="footer-logo">
+        <img src="logo.png" alt="logo">
+        <span>E.C.<span>OKWUCHUKWU</span></span>
+      </div>
+      <p style="color: #b6d2da;">AI Content · Graphic Design · Prompt Engineering</p>
+      <div class="footer-social">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+    <div class="footer-links">
+      <h4>NAVIGATE</h4>
+      <a href="index.html">Home</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#skills">Skills</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+    <div class="footer-links">
+      <h4>CONTACT</h4>
+      <a href="mailto:okwuchukwuemmanuel29@gmail.com">okwuchukwuemmanuel29@gmail.com</a>
+      <a href="tel:+2349068366229">+234 906 836 6229</a>
+      <a href="#">Abuja, Nigeria</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Emmanuel Okwuchukwu</span>
+    <span>Designed with AI · Built for excellence</span>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script>
+  // Load CV content from data.js
+  function loadCV() {
+    if (!portfolioData) return;
+    
+    const p = portfolioData.personal || {};
+    const s = portfolioData.skills || {};
+    const exp = portfolioData.experience || [];
+    const edu = portfolioData.education || [];
+    const projects = portfolioData.projects || [];
+    
+    // Skills HTML
+    let aiSkills = '', designSkills = '', softSkills = '';
+    if (s.ai) s.ai.slice(0, 6).forEach(sk => { aiSkills += `<span class="skill-tag">${sk.name}</span>`; });
+    if (s.design) s.design.slice(0, 6).forEach(sk => { designSkills += `<span class="skill-tag">${sk.name}</span>`; });
+    if (s.soft) s.soft.slice(0, 8).forEach(sk => { softSkills += `<span class="skill-tag">${sk}</span>`; });
+    
+    // Experience HTML
+    let expHtml = '';
+    exp.slice(0, 2).forEach(job => {
+      expHtml += `
+        <div class="job">
+          <h4>${job.title}</h4>
+          <div class="job-company">${job.company}</div>
+          <span class="job-period">${job.period}</span>
+          <ul>
+            ${job.description.slice(0, 4).map(d => `<li>${d}</li>`).join('')}
+          </ul>
+        </div>
+      `;
+    });
+    
+    // Education HTML
+    let eduHtml = '';
+    edu.forEach(e => {
+      eduHtml += `<div style="margin-bottom: 1.5rem;">
+        <h4 style="font-size: 1.1rem;">${e.degree}</h4>
+        <p style="color: #1d7a8c;">${e.school} · ${e.year || e.graduation}</p>
+        ${e.cgpa ? `<p style="color: #37616b;">CGPA: ${e.cgpa}</p>` : ''}
+      </div>`;
+    });
+    
+    // Main CV HTML
+    document.getElementById('cvContent').innerHTML = `
+      <div class="cv-header">
+        <img src="logo.png" alt="Emmanuel Okwuchukwu" class="cv-photo" onerror="this.src='https://via.placeholder.com/150?text=EO'">
+        <div class="cv-title">
+          <h1>${p.fullName || 'EMMANUEL OKWUCHUKWU'}</h1>
+          <h2>${p.title || 'AI & Creative Design Specialist'}</h2>
+          <p style="color: #b6d2da; margin-top: 1rem;">${p.experience || '5+ years'} experience · Based in ${p.location || 'Abuja'}</p>
+        </div>
+      </div>
+      <div class="cv-body">
+        <div class="cv-left">
+          <div class="cv-section">
+            <h3><span class="material-icons">contact_page</span> Contact</h3>
+            <div class="contact-item"><span class="material-icons">email</span> ${p.email || 'okwuchukwuemmanuel29@gmail.com'}</div>
+            <div class="contact-item"><span class="material-icons">phone</span> ${p.phone || '+234 906 836 6229'}</div>
+            <div class="contact-item"><span class="material-icons">location_on</span> ${p.location || 'Abuja, Nigeria'}</div>
+            <div class="contact-item"><span class="material-icons">language</span> chimdike.netlify.app</div>
+          </div>
+          <div class="cv-section">
+            <h3><span class="material-icons">smart_toy</span> AI Skills</h3>
+            <div>${aiSkills}</div>
+          </div>
+          <div class="cv-section">
+            <h3><span class="material-icons">palette</span> Design Skills</h3>
+            <div>${designSkills}</div>
+          </div>
+          <div class="cv-section">
+            <h3><span class="material-icons">psychology</span> Soft Skills</h3>
+            <div>${softSkills}</div>
+          </div>
+        </div>
+        <div class="cv-right">
+          <div class="cv-section">
+            <h3><span class="material-icons">badge</span> Profile</h3>
+            <p style="color: #37616b; line-height: 1.8;">${p.profile || 'Creative Graphic Designer and AI Content Specialist with over 5 years of experience.'}</p>
+          </div>
+          <div class="cv-section">
+            <h3><span class="material-icons">work</span> Experience</h3>
+            ${expHtml}
+          </div>
+          <div class="cv-section">
+            <h3><span class="material-icons">school</span> Education</h3>
+            ${eduHtml}
+          </div>
+        </div>
+      </div>
+    `;
+    
+    // Gallery
+    const galleryGrid = document.getElementById('galleryGrid');
+    if (galleryGrid && projects.length) {
+      galleryGrid.innerHTML = projects.slice(0, 6).map(proj => `
+        <div class="gallery-item" onclick="window.location.href='view.html?id=${proj.id}'">
+          <img src="${proj.images?.[0] || 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800'}" alt="${proj.title}">
+          <p>${proj.title}</p>
+        </div>
+      `).join('');
+    }
+  }
+
+  // Download PDF
+  document.getElementById('downloadCvBtn')?.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.print();
+  });
+
+  // Initialize
+  document.addEventListener('DOMContentLoaded', loadCV);
+</script>
+
+</body>
+</html>

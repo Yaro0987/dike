@@ -3,9 +3,9 @@
 <head>
   <!-- ========== COMPLETE META PROPERTIES ========== -->
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
   <meta name="description" content="Emmanuel Okwuchukwu – AI Content Specialist & Graphic Designer. 5+ years experience. B.Sc Computer Science, University of Abuja." />
-  <meta name="keywords" content="AI Content Creation, Prompt Engineering, Graphic Design, UX Design, Figma, Adobe Illustrator, Midjourney, ChatGPT, Nigeria, Abuja" />
+  <meta name="keywords" content="AI Content Creation, Prompt Engineering, Graphic Design, UX Design, Figma, Adobe Illustrator, Midjourney, ChatGPT, Nigeria, Abuja, Portfolio, CV" />
   <meta name="author" content="Emmanuel Okwuchukwu" />
   <meta name="robots" content="index, follow" />
   
@@ -13,24 +13,18 @@
   <meta property="og:title" content="Emmanuel Okwuchukwu · AI Creative & Design Specialist" />
   <meta property="og:description" content="Creative Graphic Designer and AI Content Specialist. 5+ years experience. B.Sc Computer Science. View full CV and portfolio." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://chimdike.netlify.app" />
-  <meta property="og:image" content="https://chimdike.netlify.app/logo.png" />
+  <meta property="og:url" content="https://dike-portfolio.netlify.app" />
+  <meta property="og:image" content="https://dike-portfolio.netlify.app/assets/dike.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:site_name" content="Emmanuel Okwuchukwu Portfolio" />
   
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Emmanuel Okwuchukwu · AI & Creative Specialist" />
   <meta name="twitter:description" content="AI Prompt Engineer + Graphic Designer. 5+ years experience. B.Sc Computer Science." />
-  <meta name="twitter:image" content="https://chimdike.netlify.app/logo.png" />
-  <meta name="twitter:creator" content="@emaxchimdike" />
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="logo.png" />
-  <link rel="apple-touch-icon" href="logo.png" />
-  
-  <title>Emmanuel Okwuchukwu · AI Creative & Design | Portfolio</title>
+  <meta name="twitter:image" content="https://chimdike.netlify.app/dike.png" />
+  <link rel="icon" href="logo.png">
+  <title>Emmanuel Okwuchukwu · AI Creative & Design | Complete Portfolio</title>
   
   <!-- Google Material Icons & Fonts -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
@@ -58,6 +52,7 @@
       color: #0a1a1f;
       line-height: 1.6;
       overflow-x: hidden;
+      width: 100%;
     }
 
     /* ========== ANIMATIONS ========== */
@@ -81,23 +76,25 @@
       100% { opacity: 1; transform: scale(1); }
     }
 
-    @keyframes slideInUp {
-      0% { opacity: 0; transform: translateY(100px); }
-      100% { opacity: 1; transform: translateY(0); }
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0px); }
     }
 
     /* ========== PAGE LOAD ANIMATIONS ========== */
     header { animation: fadeInUp 0.7s ease forwards; animation-delay: 0.1s; opacity: 0; }
     .hero { animation: fadeInLeft 0.9s ease forwards; animation-delay: 0.2s; opacity: 0; }
-    .hero-image { animation: fadeInRight 0.9s ease forwards; animation-delay: 0.3s; opacity: 0; }
+    .hero-image { animation: fadeInRight 0.9s ease forwards, float 6s ease-in-out infinite; animation-delay: 0.3s, 1.2s; opacity: 0; }
     #about { animation: fadeInUp 0.9s ease forwards; animation-delay: 0.4s; opacity: 0; }
     #skills { animation: fadeInUp 0.9s ease forwards; animation-delay: 0.5s; opacity: 0; }
     #experience { animation: fadeInUp 0.9s ease forwards; animation-delay: 0.6s; opacity: 0; }
     #education { animation: fadeInUp 0.9s ease forwards; animation-delay: 0.7s; opacity: 0; }
     #projects { animation: scaleIn 0.9s ease forwards; animation-delay: 0.8s; opacity: 0; }
     #testimony { animation: fadeInUp 0.9s ease forwards; animation-delay: 0.9s; opacity: 0; }
-    #contact { animation: fadeInUp 0.9s ease forwards; animation-delay: 1.0s; opacity: 0; }
-    footer { animation: fadeInUp 0.9s ease forwards; animation-delay: 1.1s; opacity: 0; }
+    #reference { animation: fadeInUp 0.9s ease forwards; animation-delay: 1.0s; opacity: 0; }
+    #contact { animation: fadeInUp 0.9s ease forwards; animation-delay: 1.1s; opacity: 0; }
+    footer { animation: fadeInUp 0.9s ease forwards; animation-delay: 1.2s; opacity: 0; }
 
     /* ========== SKILLS LOAD ANIMATION ========== */
     .skill-tag, .project-tag, .lang-tag, .soft-skill-tag {
@@ -153,6 +150,11 @@
     .scroll-to-up:hover {
       background: #1d7a8c;
       transform: scale(1.1) translateY(-5px);
+      border-color: white;
+    }
+
+    .scroll-to-up .material-icons {
+      font-size: 36px;
     }
 
     /* ========== TYPOGRAPHY ========== */
@@ -258,18 +260,6 @@
       display: none;
     }
 
-    /* REQUEST BUTTON */
-    .request-btn {
-      background: #1d7a8c;
-      color: white !important;
-      padding: 0.7rem 2rem !important;
-      border-radius: 50px;
-    }
-
-    .request-btn:hover {
-      background: #0f1e26;
-    }
-
     /* MOBILE MENU */
     .mobile-menu-toggle {
       display: none;
@@ -351,7 +341,7 @@
       }
     }
 
-    /* ========== CV MODAL - NO IFRAME ========== */
+    /* ========== CV MODAL ========== */
     .cv-modal {
       display: none;
       position: fixed;
@@ -371,128 +361,42 @@
       display: flex;
     }
 
-    .cv-content {
+    .cv-modal-content {
       width: 100%;
       max-width: 1300px;
       height: 90vh;
       background: white;
       border-radius: 32px;
       box-shadow: 0 40px 80px rgba(0,0,0,0.4);
-      overflow-y: auto;
-      padding: 3rem;
-      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
     }
 
-    .cv-header {
+    .cv-modal-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 2rem;
-      padding-bottom: 1.5rem;
-      border-bottom: 2px solid #e0edf0;
-    }
-
-    .cv-header h2 {
-      font-size: 2rem;
-      color: #0f1e26;
-    }
-
-    .cv-header .material-icons {
-      cursor: pointer;
-      font-size: 2.5rem;
-      color: #1d7a8c;
-    }
-
-    .cv-body {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 3rem;
-    }
-
-    .cv-left {
+      padding: 1.5rem 2rem;
       background: #0f1e26;
       color: white;
-      padding: 2rem;
-      border-radius: 24px;
     }
 
-    .cv-right {
-      padding: 1rem 0;
+    .cv-modal-header h3 {
+      font-size: 1.2rem;
+      letter-spacing: 3px;
     }
 
-    .cv-photo {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid #4fa6b9;
-      margin: 0 auto 1.5rem;
-      display: block;
+    .cv-modal-header .material-icons {
+      cursor: pointer;
+      font-size: 2rem;
+      color: #b6d2da;
     }
 
-    .cv-download-btn {
-      background: #1d7a8c;
-      color: white;
+    .cv-iframe {
+      width: 100%;
+      flex: 1;
       border: none;
-      padding: 1rem 2rem;
-      border-radius: 60px;
-      font-size: 1rem;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      cursor: pointer;
-      margin-top: 2rem;
-      width: 100%;
-      justify-content: center;
-    }
-
-    /* ========== REQUEST POPUP MODAL ========== */
-    .request-modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(15, 30, 38, 0.98);
-      backdrop-filter: blur(15px);
-      z-index: 100000;
-      justify-content: center;
-      align-items: center;
-      padding: 2rem;
-    }
-
-    .request-modal.active {
-      display: flex;
-    }
-
-    .request-content {
-      width: 100%;
-      max-width: 700px;
-      background: white;
-      border-radius: 32px;
-      padding: 3rem;
-      position: relative;
-      animation: slideInUp 0.4s ease;
-    }
-
-    .request-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 2rem;
-    }
-
-    .request-header h2 {
-      font-size: 2rem;
-      color: #0f1e26;
-    }
-
-    .request-header .material-icons {
-      cursor: pointer;
-      font-size: 2rem;
-      color: #1d7a8c;
     }
 
     /* ========== HERO SECTION ========== */
@@ -559,7 +463,6 @@
       display: flex;
       gap: 1.5rem;
       margin-top: 2rem;
-      flex-wrap: wrap;
     }
 
     .btn {
@@ -581,11 +484,6 @@
     }
 
     .btn:hover {
-      background: white;
-      color: #0f1e26;
-    }
-
-    .btn-outline {
       background: white;
       color: #0f1e26;
     }
@@ -670,6 +568,10 @@
 
     .skills-category {
       margin-bottom: 3rem;
+    }
+
+    .skills-category:last-child {
+      margin-bottom: 0;
     }
 
     .category-title {
@@ -851,6 +753,7 @@
       font-weight: 600;
       color: #1d5a67;
       margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
     }
 
     /* ========== PROJECTS GRID ========== */
@@ -872,32 +775,40 @@
       overflow: hidden;
     }
 
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 8px;
+      height: 100%;
+      background: linear-gradient(to bottom, #1d7a8c, #4fa6b9);
+      transition: 0.3s;
+    }
+
     .project-card:hover {
       transform: translateY(-15px);
       box-shadow: 0 40px 70px rgba(29,107,122,0.12);
+      border-color: #9ac2cc;
     }
 
-    .project-image {
-      width: 100%;
-      height: 240px;
-      border-radius: 24px;
-      object-fit: cover;
-      margin-bottom: 1.8rem;
+    .project-card:hover::before {
+      width: 12px;
     }
 
     .project-icon {
       background: #ebf5f7;
-      width: 80px;
-      height: 80px;
-      border-radius: 24px;
+      width: 90px;
+      height: 90px;
+      border-radius: 28px;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
     }
 
     .project-icon .material-icons {
-      font-size: 2.8rem;
+      font-size: 3rem;
       color: #1d7a8c;
     }
 
@@ -927,80 +838,125 @@
       color: #1d5a67;
     }
 
-    /* ========== CONTACT SECTION ========== */
-    .contact-container {
+    /* ========== TESTIMONY SECTION ========== */
+    .testimony-grid {
       display: grid;
-      grid-template-columns: 1fr 1.5fr;
-      gap: 3rem;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .testimony-card {
       background: white;
-      border-radius: 40px;
-      padding: 3rem;
-      box-shadow: 0 20px 40px rgba(0,40,50,0.04);
+      border-radius: 30px;
+      padding: 2.5rem;
+      border-left: 8px solid #1d7a8c;
+      box-shadow: 0 15px 35px rgba(0,40,50,0.04);
     }
 
-    .contact-info {
-      background: #0f1e26;
-      padding: 3rem;
-      border-radius: 32px;
-      color: white;
+    .testimony-card .material-icons {
+      font-size: 3rem;
+      color: #d0e0e5;
+      margin-bottom: 1rem;
     }
 
-    .contact-info h3 {
-      color: white;
-      margin-bottom: 2rem;
-      font-size: 1.8rem;
-    }
-
-    .contact-detail {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      margin-bottom: 1.8rem;
-    }
-
-    .contact-detail .material-icons {
-      color: #86b9c9;
-      font-size: 1.8rem;
-    }
-
-    .contact-detail p {
-      color: #e6edf0;
+    .testimony-text {
       font-size: 1.1rem;
-    }
-
-    .contact-social {
-      display: flex;
-      gap: 1.5rem;
-      margin-top: 2.5rem;
-    }
-
-    .contact-social a {
-      color: #b6d2da;
-      font-size: 2rem;
-      transition: 0.2s;
-    }
-
-    .contact-social a:hover {
-      color: white;
-      transform: translateY(-5px);
-    }
-
-    .contact-form {
-      padding: 1rem;
-    }
-
-    .contact-form h3 {
-      font-size: 1.8rem;
-      margin-bottom: 2rem;
-      color: #0f1e26;
-    }
-
-    .form-group {
+      font-style: italic;
+      color: #1f4a58;
       margin-bottom: 1.5rem;
     }
 
-    .form-group input,
-    .form-group textarea {
+    .testimony-author {
+      font-weight: 700;
+      color: #0f1e26;
+    }
+
+    .testimony-title {
+      color: #1d7a8c;
+    }
+
+    /* ========== REFERENCES SECTION ========== */
+    .references-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .ref-card {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 30px;
+      box-shadow: 0 15px 35px rgba(0,40,50,0.04);
+    }
+
+    .ref-name {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #0f1e26;
+      margin-bottom: 0.5rem;
+    }
+
+    .ref-title {
+      color: #1d7a8c;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .ref-contact {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 0.8rem;
+      color: #37616b;
+    }
+
+    .ref-contact .material-icons {
+      color: #1d7a8c;
+    }
+
+    /* ========== FORMS ========== */
+    .forms-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+      gap: 3rem;
+    }
+
+    .form-card {
+      background: white;
+      border-radius: 36px;
+      padding: 3rem;
+      box-shadow: 0 25px 50px rgba(0,40,50,0.04);
+    }
+
+    .form-card h3 {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      font-size: 1.8rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .form-card h3 .material-icons {
+      color: #1d7a8c;
+    }
+
+    .input-group {
+      margin-bottom: 1.8rem;
+    }
+
+    .input-group label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+      color: #1f5e6b;
+      margin-bottom: 0.5rem;
+    }
+
+    input, textarea, select {
       width: 100%;
       padding: 1.2rem 1.6rem;
       border: 2px solid #e0edf0;
@@ -1010,33 +966,32 @@
       transition: 0.2s;
     }
 
-    .form-group input:focus,
-    .form-group textarea:focus {
+    input:focus, textarea:focus, select:focus {
       outline: none;
       border-color: #3f9eb3;
       box-shadow: 0 0 0 4px rgba(63,158,179,0.06);
     }
 
-    .submit-btn {
+    .btn-submit {
       background: #0f1e26;
       color: white;
       border: 2px solid #0f1e26;
-      padding: 1.2rem 2.5rem;
+      padding: 1rem 2.5rem;
       border-radius: 60px;
-      font-weight: 700;
-      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
-      letter-spacing: 2px;
+      font-size: 0.9rem;
       display: inline-flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       cursor: pointer;
       transition: 0.2s;
       width: 100%;
       justify-content: center;
     }
 
-    .submit-btn:hover {
+    .btn-submit:hover {
       background: white;
       color: #0f1e26;
     }
@@ -1098,19 +1053,19 @@
       transform: translateX(5px);
     }
 
-    .footer-social {
+    .social-links {
       display: flex;
       gap: 1.5rem;
-      margin-top: 1.5rem;
+      margin-top: 1rem;
     }
 
-    .footer-social a {
+    .social-links a {
       color: #b6d2da;
       font-size: 1.8rem;
       transition: 0.2s;
     }
 
-    .footer-social a:hover {
+    .social-links a:hover {
       color: white;
       transform: translateY(-5px);
     }
@@ -1153,16 +1108,19 @@
     /* ========== RESPONSIVE ========== */
     @media (max-width: 1024px) {
       .hero { grid-template-columns: 1fr; }
-      .footer-content { grid-template-columns: 1fr 1fr; }
-      .contact-container { grid-template-columns: 1fr; }
-      .cv-body { grid-template-columns: 1fr; }
+      .footer-content { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .projects-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 768px) {
       h1 { font-size: 2.4rem; }
       h2 { font-size: 2rem; }
-      .projects-grid { grid-template-columns: 1fr; }
+      .section { padding: 4rem 5%; }
+      .personal-info-grid { grid-template-columns: 1fr; }
+      .education-grid { grid-template-columns: 1fr; }
+      .forms-container { grid-template-columns: 1fr; }
       .footer-content { grid-template-columns: 1fr; }
+      .project-card { padding: 2rem; }
     }
   </style>
 </head>
@@ -1173,48 +1131,22 @@
   <span class="material-icons">arrow_upward</span>
 </div>
 
-<!-- ========== CV MODAL - NO IFRAME ========== -->
+<!-- ========== CV MODAL ========== -->
 <div id="cvModal" class="cv-modal">
-  <div class="cv-content" id="cvContent"></div>
-</div>
-
-<!-- ========== REQUEST POPUP MODAL ========== -->
-<div id="requestModal" class="request-modal">
-  <div class="request-content">
-    <div class="request-header">
-      <h2>Request a Quote</h2>
-      <span class="material-icons" id="closeRequestBtn">close</span>
+  <div class="cv-modal-content">
+    <div class="cv-modal-header">
+      <h3>EMMANUEL OKWUCHUKWU · COMPLETE CV</h3>
+      <span class="material-icons" id="closeModalBtn">close</span>
     </div>
-    <div class="form-group">
-      <input type="text" id="requestName" placeholder="Your Name / Company">
-    </div>
-    <div class="form-group">
-      <input type="email" id="requestEmail" placeholder="Email Address">
-    </div>
-    <div class="form-group">
-      <select id="requestType" style="width: 100%; padding: 1.2rem 1.6rem; border: 2px solid #e0edf0; border-radius: 20px; font-size: 1rem;">
-        <option>Brand Identity & Design</option>
-        <option>AI Content / Prompt Engineering</option>
-        <option>UX/UI Design</option>
-        <option>Training & Workshops</option>
-        <option>Consulting</option>
-        <option>Other</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <textarea id="requestDetails" rows="5" placeholder="Tell me about your project..."></textarea>
-    </div>
-    <button class="submit-btn" id="sendRequestBtn">
-      <span class="material-icons">send</span> Submit Request
-    </button>
+    <iframe src="cv.html" id="cvIframe" class="cv-iframe" title="Emmanuel Okwuchukwu CV"></iframe>
   </div>
 </div>
 
 <!-- ========== HEADER ========== -->
 <header>
   <div class="logo-container">
-    <img src="logo.png" alt="Emmanuel Okwuchukwu" class="logo-img" onerror="this.src='https://via.placeholder.com/55?text=EO'">
-    <span class="logo-text">E.C.<span>OKWUCHUKWU</span></span>
+    <img src="logo.png" alt="Emmanuel Okwuchukwu" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+    <span class="logo-text" style="display:none;">E.C.<span>OKWUCHUKWU</span></span>
   </div>
   
   <div class="nav-links" id="navLinks">
@@ -1222,13 +1154,12 @@
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
     <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
     <a href="#projects">Projects</a>
+    <a href="#reference">References</a>
     <a href="#contact">Contact</a>
     <a href="#" id="navViewCvBtn" class="nav-cta">
-      <span class="material-icons">description</span> CV
-    </a>
-    <a href="#" id="navRequestBtn" class="request-btn">
-      <span class="material-icons">request_quote</span> Request
+      <span class="material-icons" style="font-size:1.1rem; margin-right:8px;">description</span> CV
     </a>
   </div>
   
@@ -1242,20 +1173,20 @@
 <!-- ========== HERO SECTION ========== -->
 <section id="home" class="hero">
   <div>
-    <h1 id="heroName">Emmanuel <span>Okwuchukwu</span></h1>
-    <h2 id="heroTitle" style="font-size: 2.2rem; color: #1d7a8c; margin-bottom: 1rem;">AI & Creative Design Specialist</h2>
-    <p id="heroBio"></p>
+    <h1>Emmanuel <span>Okwuchukwu</span></h1>
+    <h2 style="font-size: 2.2rem; color: #1d7a8c; margin-bottom: 1rem;">AI & Creative Design Specialist</h2>
+    <p>Graphic Designer and AI Content Specialist with 5+ years of experience. B.Sc Computer Science candidate at University of Abuja. I bridge creative vision and generative AI to build impactful digital experiences.</p>
     <div class="hero-cta">
       <button class="btn" id="heroViewCvBtn">
-        <span class="material-icons">visibility</span> VIEW CV
+        <span class="material-icons">visibility</span> VIEW FULL CV
       </button>
-      <button class="btn btn-outline" id="heroRequestBtn">
-        <span class="material-icons">request_quote</span> REQUEST QUOTE
-      </button>
+      <a href="#contact" class="btn" style="background: white; color: #0f1e26; border: 2px solid #0f1e26;">
+        <span class="material-icons">chat</span> CONTACT ME
+      </a>
     </div>
   </div>
   <div class="hero-image">
-    <img src="logo.png" alt="Emmanuel Okwuchukwu Portrait" onerror="this.src='https://via.placeholder.com/500?text=EO'">
+    <img src="dike.png" alt="Emmanuel Okwuchukwu Portrait" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800';">
   </div>
 </section>
 
@@ -1264,9 +1195,11 @@
   <div class="section-title">
     <span class="material-icons">badge</span> ABOUT ME
   </div>
+  
   <div class="personal-info-grid" id="personalInfoGrid"></div>
+  
   <div style="background: white; padding: 3rem; border-radius: 40px; box-shadow: 0 20px 40px rgba(0,40,50,0.04);">
-    <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem;">Professional Profile</h3>
+    <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: #0f1e26;">Professional Profile</h3>
     <p id="profileText" style="font-size: 1.2rem; color: #2a404a; line-height: 1.8;"></p>
   </div>
 </section>
@@ -1276,6 +1209,7 @@
   <div class="section-title">
     <span class="material-icons">auto_awesome</span> SKILLS & EXPERTISE
   </div>
+  
   <div class="skills-wrapper" id="skillsWrapper"></div>
 </section>
 
@@ -1284,6 +1218,7 @@
   <div class="section-title">
     <span class="material-icons">work_history</span> WORK EXPERIENCE
   </div>
+  
   <div class="timeline" id="experienceTimeline"></div>
 </section>
 
@@ -1292,6 +1227,7 @@
   <div class="section-title">
     <span class="material-icons">school</span> EDUCATION
   </div>
+  
   <div class="education-grid" id="educationGrid"></div>
 </section>
 
@@ -1300,15 +1236,103 @@
   <div class="section-title">
     <span class="material-icons">auto_stories</span> FEATURED PROJECTS
   </div>
+  <div class="section-sub" style="font-size: 1.3rem; margin-bottom: 3rem;">Click any project to view full details, images, and share links</div>
+  
   <div class="projects-grid" id="projectsGrid"></div>
 </section>
 
-<!-- ========== CONTACT SECTION - ONLY CONTACT INFO + FORM ========== -->
-<section id="contact" class="section">
+<!-- ========== TESTIMONY SECTION ========== -->
+<section id="testimony" class="section" style="background: #f5fbfd;">
   <div class="section-title">
-    <span class="material-icons">contact_mail</span> CONTACT ME
+    <span class="material-icons">format_quote</span> TESTIMONIALS
   </div>
-  <div class="contact-container" id="contactContainer"></div>
+  
+  <div class="testimony-grid" id="testimonyGrid"></div>
+</section>
+
+<!-- ========== REFERENCES SECTION ========== -->
+<section id="reference" class="section">
+  <div class="section-title">
+    <span class="material-icons">diversity_3</span> REFERENCES
+  </div>
+  
+  <div class="references-grid" id="referencesGrid"></div>
+</section>
+
+<!-- ========== CONTACT & REQUEST FORMS ========== -->
+<section id="contact" class="section" style="background: #f5fbfd;">
+  <div class="section-title">
+    <span class="material-icons">forward_to_inbox</span> CONTACT & REQUEST
+  </div>
+  
+  <div class="forms-container">
+    <div class="form-card">
+      <h3>
+        <span class="material-icons">person</span> Contact Me
+      </h3>
+      <div class="input-group">
+        <label>
+          <span class="material-icons">badge</span> Full Name
+        </label>
+        <input type="text" id="contactName" placeholder="Your name">
+      </div>
+      <div class="input-group">
+        <label>
+          <span class="material-icons">email</span> Email Address
+        </label>
+        <input type="email" id="contactEmail" placeholder="your@email.com">
+      </div>
+      <div class="input-group">
+        <label>
+          <span class="material-icons">subject</span> Message
+        </label>
+        <textarea id="contactMessage" rows="5" placeholder="How can I help you?"></textarea>
+      </div>
+      <button class="btn-submit" id="sendContactBtn">
+        <span class="material-icons">send</span> SEND MESSAGE
+      </button>
+    </div>
+
+    <div class="form-card">
+      <h3>
+        <span class="material-icons">assignment</span> Request Quote
+      </h3>
+      <div class="input-group">
+        <label>
+          <span class="material-icons">business</span> Name / Company
+        </label>
+        <input type="text" id="requestName" placeholder="Your name or company">
+      </div>
+      <div class="input-group">
+        <label>
+          <span class="material-icons">email</span> Email
+        </label>
+        <input type="email" id="requestEmail" placeholder="contact@company.com">
+      </div>
+      <div class="input-group">
+        <label>
+          <span class="material-icons">category</span> Project Type
+        </label>
+        <select id="requestType">
+          <option>Brand Identity & Design</option>
+          <option>AI Content / Prompt Engineering</option>
+          <option>UX/UI Design</option>
+          <option>Freelance / Consulting</option>
+          <option>Training & Workshops</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <label>
+          <span class="material-icons">description</span> Project Details
+        </label>
+        <textarea id="requestDetails" rows="4" placeholder="Tell me about your project..."></textarea>
+      </div>
+      <button class="btn-submit" id="sendRequestBtn">
+        <span class="material-icons">request_quote</span> SUBMIT REQUEST
+      </button>
+    </div>
+  </div>
 </section>
 
 <!-- ========== FOOTER ========== -->
@@ -1316,11 +1340,17 @@
   <div class="footer-content">
     <div>
       <div class="footer-logo">
-        <img src="logo.png" alt="logo" onerror="this.src='https://via.placeholder.com/60?text=EO'">
+        <img src="dike.png" alt="logo" onerror="this.style.display='none';">
         <span>E.C.<span>OKWUCHUKWU</span></span>
       </div>
-      <p id="footerBio" style="color: #b6d2da; font-size: 1rem; line-height: 1.7; margin-bottom: 2rem;"></p>
-      <div class="footer-social" id="footerSocial"></div>
+      <p style="color: #b6d2da; font-size: 1rem; line-height: 1.7; margin-bottom: 2rem;">AI Content · Graphic Design · Prompt Engineering · UX/UI. Based in Abuja, Nigeria. Available for remote and on-site collaboration.</p>
+      <div class="social-links">
+        <a href="https://facebook.com/EmaxChimdike" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="mailto:okwuchukwuemmanuel29@gmail.com"><i class="fas fa-envelope"></i></a>
+      </div>
     </div>
     
     <div class="footer-links">
@@ -1336,18 +1366,31 @@
     <div class="footer-links">
       <h4>RESOURCES</h4>
       <a href="#" id="footerViewCv">View CV</a>
-      <a href="#" id="footerDownloadCv">Download CV</a>
-      <a href="#" id="footerRequestBtn">Request Quote</a>
+      <a href="#" id="footerDownloadCv">Download CV (PDF)</a>
+      <a href="#">Portfolio Gallery</a>
+      <a href="#">Testimonials</a>
     </div>
     
-    <div class="footer-links" id="footerContact"></div>
+    <div class="footer-links">
+      <h4>CONNECT</h4>
+      <a href="#">dike-portfolio.netlify.app</a>
+      <a href="mailto:okwuchukwuemmanuel29@gmail.com">okwuchukwuemmanuel29@gmail.com</a>
+      <a href="tel:+2349068366229">+234 906 836 6229</a>
+      <a href="#">Gwagwalada, Abuja, Nigeria</a>
+    </div>
   </div>
   
   <div class="footer-bottom">
-    <span id="copyright"></span>
+    <span>© 2026 Emmanuel Okwuchukwu. B.Sc Computer Science Candidate.</span>
     <span>Designed with AI · Built for excellence</span>
   </div>
 </footer>
+
+
+
+
+
+
 
 <!-- ========== TOAST NOTIFICATION ========== -->
 <div id="toast" class="toast">
@@ -1357,7 +1400,10 @@
 
 <script src="data.js"></script>
 <script>
-// ========== GLOBAL PORTFOLIO DA
+// ========== GLOBAL PORTFOLIO DATA CHECK ==========
+if (typeof portfolioData === 'undefined') {
+  console.error('portfolioData is not defined. Make sure data.js is loaded correctly.');
+}
 
 // ========== MOBILE MENU TOGGLE ==========
 const mobileToggle = document.getElementById('mobileToggle');
@@ -1383,106 +1429,76 @@ window.addEventListener('scroll', function() {
 });
 
 scrollToUp.addEventListener('click', function() {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
 });
 
-// ========== CV MODAL - NO IFRAME ==========
+// ========== CV MODAL ==========
 const cvModal = document.getElementById('cvModal');
-const cvContent = document.getElementById('cvContent');
+const cvIframe = document.getElementById('cvIframe');
+const closeModalBtn = document.getElementById('closeModalBtn');
 
 function openCvModal() {
-  if (!portfolioData) return;
-  
-  // Generate CV HTML
-  const p = portfolioData.personal || {};
-  const skills = portfolioData.skills || {};
-  
-  let aiSkills = '';
-  if (skills.ai) {
-    skills.ai.slice(0, 6).forEach(s => {
-      aiSkills += `<span style="background: #1f3d48; padding: 0.5rem 1rem; border-radius: 60px; margin: 0.3rem; display: inline-block; font-size: 0.85rem;">${s.name}</span>`;
-    });
-  }
-  
-  cvContent.innerHTML = `
-    <div class="cv-header">
-      <h2>${p.fullName || 'EMMANUEL OKWUCHUKWU'}</h2>
-      <span class="material-icons" id="closeCvBtn">close</span>
-    </div>
-    <div class="cv-body">
-      <div class="cv-left">
-        <img src="logo.png" alt="Emmanuel" class="cv-photo" onerror="this.src='https://via.placeholder.com/150?text=EO'">
-        <h3 style="margin-bottom: 1.5rem; text-align: center;">${p.title || 'AI & Creative Specialist'}</h3>
-        <div style="margin-bottom: 2rem;">
-          <div style="display: flex; gap: 10px; margin-bottom: 1rem;"><span class="material-icons">email</span> ${p.email || 'okwuchukwuemmanuel29@gmail.com'}</div>
-          <div style="display: flex; gap: 10px; margin-bottom: 1rem;"><span class="material-icons">phone</span> ${p.phone || '+234 906 836 6229'}</div>
-          <div style="display: flex; gap: 10px; margin-bottom: 1rem;"><span class="material-icons">location_on</span> ${p.location || 'Abuja, Nigeria'}</div>
-        </div>
-        <h4 style="margin-bottom: 1rem;">CORE SKILLS</h4>
-        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
-          ${aiSkills}
-        </div>
-        <button class="cv-download-btn" id="cvDownloadBtn">
-          <span class="material-icons">download</span> Download CV (PDF)
-        </button>
-      </div>
-      <div class="cv-right">
-        <h3 style="margin-bottom: 1.5rem;">Professional Summary</h3>
-        <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem;">${p.profile || 'Creative Graphic Designer and AI Content Specialist with over 5 years of experience.'}</p>
-        
-        <h3 style="margin-bottom: 1.5rem;">Work Experience</h3>
-        ${portfolioData.experience ? portfolioData.experience.map(exp => `
-          <div style="margin-bottom: 2rem;">
-            <h4 style="font-size: 1.3rem;">${exp.title}</h4>
-            <p style="color: #1d7a8c; font-weight: 600;">${exp.company} · ${exp.period}</p>
-            <ul style="margin-top: 0.8rem; padding-left: 1.5rem;">
-              ${exp.description.slice(0, 3).map(d => `<li style="margin-bottom: 0.5rem;">${d}</li>`).join('')}
-            </ul>
-          </div>
-        `).join('') : ''}
-        
-        <h3 style="margin-bottom: 1.5rem;">Education</h3>
-        ${portfolioData.education ? portfolioData.education.map(edu => `
-          <div>
-            <h4 style="font-size: 1.3rem;">${edu.degree}</h4>
-            <p style="color: #1d7a8c;">${edu.school} · ${edu.year || edu.graduation}</p>
-          </div>
-        `).join('') : ''}
-      </div>
-    </div>
-  `;
-  
+  cvIframe.src = 'cv.html';
   cvModal.classList.add('active');
   document.body.style.overflow = 'hidden';
-  
-  document.getElementById('closeCvBtn').addEventListener('click', closeCvModal);
-  document.getElementById('cvDownloadBtn').addEventListener('click', downloadCV);
 }
 
 function closeCvModal() {
   cvModal.classList.remove('active');
+  cvIframe.src = '';
   document.body.style.overflow = '';
 }
 
-// ========== REQUEST MODAL ==========
-const requestModal = document.getElementById('requestModal');
-const closeRequestBtn = document.getElementById('closeRequestBtn');
+document.getElementById('navViewCvBtn')?.addEventListener('click', function(e) {
+  e.preventDefault();
+  openCvModal();
+});
 
-function openRequestModal() {
-  requestModal.classList.add('active');
-  document.body.style.overflow = 'hidden';
-}
+document.getElementById('heroViewCvBtn')?.addEventListener('click', function(e) {
+  e.preventDefault();
+  openCvModal();
+});
 
-function closeRequestModal() {
-  requestModal.classList.remove('active');
-  document.body.style.overflow = '';
-}
+document.getElementById('footerViewCv')?.addEventListener('click', function(e) {
+  e.preventDefault();
+  openCvModal();
+});
+
+closeModalBtn?.addEventListener('click', closeCvModal);
+
+window.addEventListener('click', function(e) {
+  if (e.target === cvModal) {
+    closeCvModal();
+  }
+});
 
 // ========== DOWNLOAD CV ==========
 function downloadCV() {
-  window.print();
-  setTimeout(closeCvModal, 100);
+  const downloadIframe = document.createElement('iframe');
+  downloadIframe.style.position = 'absolute';
+  downloadIframe.style.width = '0';
+  downloadIframe.style.height = '0';
+  downloadIframe.style.border = 'none';
+  document.body.appendChild(downloadIframe);
+  
+  downloadIframe.src = 'cv.html';
+  downloadIframe.onload = function() {
+    setTimeout(() => {
+      downloadIframe.contentWindow.print();
+      setTimeout(() => {
+        document.body.removeChild(downloadIframe);
+      }, 500);
+    }, 300);
+  };
 }
+
+document.getElementById('footerDownloadCv')?.addEventListener('click', function(e) {
+  e.preventDefault();
+  downloadCV();
+});
 
 // ========== TOAST ==========
 const toast = document.getElementById('toast');
@@ -1491,33 +1507,53 @@ const toastMessage = document.getElementById('toastMessage');
 function showToast(message) {
   toastMessage.textContent = message;
   toast.classList.add('active');
-  setTimeout(() => { toast.classList.remove('active'); }, 4000);
+  setTimeout(() => {
+    toast.classList.remove('active');
+  }, 4000);
 }
 
 // ========== FORM HANDLING ==========
 document.getElementById('sendContactBtn')?.addEventListener('click', function() {
-  const name = document.getElementById('contactName')?.value.trim();
-  const email = document.getElementById('contactEmail')?.value.trim();
-  const message = document.getElementById('contactMessage')?.value.trim();
+  const name = document.getElementById('contactName').value.trim();
+  const email = document.getElementById('contactEmail').value.trim();
+  const message = document.getElementById('contactMessage').value.trim();
   
   if (!name || !email || !message) {
     showToast('⚠️ Please fill all fields');
     return;
   }
+  if (!email.includes('@')) {
+    showToast('⚠️ Enter a valid email');
+    return;
+  }
+  
   showToast('✅ Message sent! I will respond within 24h.');
+  
+  document.getElementById('contactName').value = '';
+  document.getElementById('contactEmail').value = '';
+  document.getElementById('contactMessage').value = '';
 });
 
 document.getElementById('sendRequestBtn')?.addEventListener('click', function() {
-  const name = document.getElementById('requestName')?.value.trim();
-  const email = document.getElementById('requestEmail')?.value.trim();
-  const details = document.getElementById('requestDetails')?.value.trim();
+  const name = document.getElementById('requestName').value.trim();
+  const email = document.getElementById('requestEmail').value.trim();
+  const type = document.getElementById('requestType').value;
+  const details = document.getElementById('requestDetails').value.trim();
   
   if (!name || !email || !details) {
     showToast('⚠️ Please fill required fields');
     return;
   }
+  if (!email.includes('@')) {
+    showToast('⚠️ Enter a valid email');
+    return;
+  }
+  
   showToast('📬 Request submitted! I will send a quote soon.');
-  closeRequestModal();
+  
+  document.getElementById('requestName').value = '';
+  document.getElementById('requestEmail').value = '';
+  document.getElementById('requestDetails').value = '';
 });
 
 // ========== OPEN PROJECT IN VIEW.HTML ==========
@@ -1525,18 +1561,14 @@ function openProject(projectId) {
   window.location.href = `view.html?id=${projectId}`;
 }
 
-// ========== LOAD ALL DYNAMIC CONTENT FROM DATA.JS ==========
+// ========== LOAD ALL DYNAMIC CONTENT ==========
 function loadAllContent() {
-  if (!portfolioData) return;
-  
-  const p = portfolioData.personal || {};
-  const s = portfolioData.skills || {};
-  
-  // Hero Section
-  document.getElementById('heroBio').textContent = p.profile ? p.profile.substring(0, 150) + '...' : 'Graphic Designer and AI Content Specialist with 5+ years of experience.';
-  document.getElementById('heroName').innerHTML = `Emmanuel <span>Okwuchukwu</span>`;
-  
-  // Personal Info Grid
+  if (!portfolioData) {
+    console.error('portfolioData is not available');
+    return;
+  }
+
+  // Load Personal Info
   const personalGrid = document.getElementById('personalInfoGrid');
   if (personalGrid) {
     personalGrid.innerHTML = `
@@ -1544,24 +1576,24 @@ function loadAllContent() {
         <div class="info-icon"><span class="material-icons">person</span></div>
         <div class="info-content">
           <h4>Full Name</h4>
-          <p>${p.fullName || 'OKWUCHUKWU, EMMANUEL CHIMDIKE'}</p>
-          <p style="font-size: 0.9rem; color: #1d7a8c;">Born: ${p.birthDate || '28 Nov 2001'} · ${p.nationality || 'Nigerian'}</p>
+          <p>${portfolioData.personal?.fullName || 'OKWUCHUKWU, EMMANUEL CHIMDIKE'}</p>
+          <p style="font-size: 0.9rem; color: #1d7a8c;">Born: ${portfolioData.personal?.birthDate || '28 November 2001'} · ${portfolioData.personal?.nationality || 'Nigerian'}</p>
         </div>
       </div>
       <div class="info-card">
         <div class="info-icon"><span class="material-icons">school</span></div>
         <div class="info-content">
           <h4>Education</h4>
-          <p>${p.education?.degree || 'B.Sc Computer Science'}</p>
-          <p style="color: #1d7a8c;">${p.education?.school || 'University of Abuja'}</p>
-          <p style="font-size: 0.9rem;">${p.education?.graduation || '2025'} · CGPA: ${p.education?.cgpa || '3.5/4.0'}</p>
+          <p>${portfolioData.personal?.education?.degree || 'B.Sc Computer Science'}</p>
+          <p style="color: #1d7a8c;">${portfolioData.personal?.education?.school || 'University of Abuja'}</p>
+          <p style="font-size: 0.9rem;">${portfolioData.personal?.education?.graduation || 'Expected 2025'} · CGPA: ${portfolioData.personal?.education?.cgpa || '3.5/4.0'}</p>
         </div>
       </div>
       <div class="info-card">
         <div class="info-icon"><span class="material-icons">work</span></div>
         <div class="info-content">
           <h4>Experience</h4>
-          <p>${p.experience || '5+ Years'} Professional</p>
+          <p>${portfolioData.personal?.experience || '5+ Years'} Professional</p>
           <p style="color: #1d7a8c;">Graphic Design & AI Content</p>
         </div>
       </div>
@@ -1569,7 +1601,7 @@ function loadAllContent() {
         <div class="info-icon"><span class="material-icons">location_on</span></div>
         <div class="info-content">
           <h4>Location</h4>
-          <p>${p.location || 'Gwagwalada, Abuja'}</p>
+          <p>${portfolioData.personal?.location || 'Gwagwalada, Abuja'}</p>
           <p style="color: #1d7a8c;">Nigeria</p>
         </div>
       </div>
@@ -1577,226 +1609,192 @@ function loadAllContent() {
         <div class="info-icon"><span class="material-icons">email</span></div>
         <div class="info-content">
           <h4>Email</h4>
-          <p>${p.email || 'okwuchukwuemmanuel29@gmail.com'}</p>
+          <p>${portfolioData.personal?.email || 'okwuchukwuemmanuel29@gmail.com'}</p>
         </div>
       </div>
       <div class="info-card">
         <div class="info-icon"><span class="material-icons">phone</span></div>
         <div class="info-content">
           <h4>Phone</h4>
-          <p>${p.phone || '+234 906 836 6229'}</p>
+          <p>${portfolioData.personal?.phone || '+234 906 836 6229'}</p>
         </div>
       </div>
     `;
   }
-  
-  // Profile Text
-  document.getElementById('profileText').textContent = p.profile || 'Creative Graphic Designer and AI Content Specialist with over 5 years of experience in visual design, digital marketing, and emerging AI technologies.';
-  
-  // Skills Section
+
+  // Load Profile Text
+  const profileEl = document.getElementById('profileText');
+  if (profileEl) {
+    profileEl.textContent = portfolioData.personal?.profile || 'Creative Graphic Designer and AI Content Specialist with over 5 years of experience in visual design, digital marketing, and emerging AI technologies. Skilled in Adobe Creative Suite, UX design, and AI prompt engineering.';
+  }
+
+  // Load Skills
   const skillsWrapper = document.getElementById('skillsWrapper');
   if (skillsWrapper) {
-    let aiHtml = '', designHtml = '', softHtml = '', langHtml = '';
-    
-    if (s.ai) {
-      s.ai.forEach(skill => {
+    // AI Skills
+    let aiSkills = '';
+    if (portfolioData.skills?.ai) {
+      portfolioData.skills.ai.forEach(skill => {
         let stars = '';
         for (let i = 0; i < 5; i++) {
-          if (i < Math.floor(skill.rating)) stars += '<span class="material-icons">star</span>';
-          else if (i < skill.rating) stars += '<span class="material-icons">star_half</span>';
-          else stars += '<span class="material-icons">star_border</span>';
+          stars += `<span class="material-icons">${i < Math.round(skill.rating) ? 'star' : (i < skill.rating ? 'star_half' : 'star_border')}</span>`;
         }
-        aiHtml += `<span class="skill-tag">${skill.name} <span class="skill-rating">${stars}</span></span>`;
+        aiSkills += `<span class="skill-tag">${skill.name} <span class="skill-rating">${stars}</span></span>`;
       });
     }
-    
-    if (s.design) {
-      s.design.forEach(skill => {
+
+    // Design Skills
+    let designSkills = '';
+    if (portfolioData.skills?.design) {
+      portfolioData.skills.design.forEach(skill => {
         let stars = '';
         for (let i = 0; i < 5; i++) {
-          if (i < Math.floor(skill.rating)) stars += '<span class="material-icons">star</span>';
-          else if (i < skill.rating) stars += '<span class="material-icons">star_half</span>';
-          else stars += '<span class="material-icons">star_border</span>';
+          stars += `<span class="material-icons">${i < Math.round(skill.rating) ? 'star' : (i < skill.rating ? 'star_half' : 'star_border')}</span>`;
         }
-        designHtml += `<span class="skill-tag">${skill.name} <span class="skill-rating">${stars}</span></span>`;
+        designSkills += `<span class="skill-tag">${skill.name} <span class="skill-rating">${stars}</span></span>`;
       });
     }
-    
-    if (s.soft) {
-      s.soft.forEach(skill => { softHtml += `<span class="soft-skill-tag">${skill}</span>`; });
+
+    // Soft Skills
+    let softSkills = '';
+    if (portfolioData.skills?.soft) {
+      portfolioData.skills.soft.forEach(skill => {
+        softSkills += `<span class="soft-skill-tag">${skill}</span>`;
+      });
     }
-    
-    if (s.languages) {
-      s.languages.forEach(lang => { langHtml += `<span class="lang-tag">${lang.name} (${lang.level})</span>`; });
+
+    // Languages
+    let langSkills = '';
+    if (portfolioData.skills?.languages) {
+      portfolioData.skills.languages.forEach(lang => {
+        langSkills += `<span class="lang-tag">${lang.name} (${lang.level})</span>`;
+      });
     }
-    
+
     skillsWrapper.innerHTML = `
       <div class="skills-category">
         <div class="category-title"><span class="material-icons" style="color: #1d7a8c;">smart_toy</span> AI & Technology</div>
-        <div class="skills-grid">${aiHtml}</div>
+        <div class="skills-grid">${aiSkills}</div>
       </div>
       <div class="skills-category">
         <div class="category-title"><span class="material-icons" style="color: #1d7a8c;">palette</span> Design & Creative</div>
-        <div class="skills-grid">${designHtml}</div>
+        <div class="skills-grid">${designSkills}</div>
       </div>
       <div class="skills-category">
         <div class="category-title"><span class="material-icons" style="color: #1d7a8c;">psychology</span> Professional Skills</div>
-        <div class="skills-grid">${softHtml}</div>
+        <div class="skills-grid">${softSkills}</div>
       </div>
       <div class="skills-category">
         <div class="category-title"><span class="material-icons" style="color: #1d7a8c;">translate</span> Languages</div>
-        <div class="skills-grid">${langHtml}</div>
+        <div class="skills-grid">${langSkills}</div>
       </div>
     `;
   }
-  
-  // Experience
-  const expEl = document.getElementById('experienceTimeline');
-  if (expEl && portfolioData.experience) {
-    expEl.innerHTML = portfolioData.experience.map(exp => `
-      <div class="experience-card">
-        <div class="exp-header">
-          <div>
-            <div class="exp-title">${exp.title}</div>
-            <div class="exp-company">${exp.company}</div>
+
+  // Load Experience
+  const expTimeline = document.getElementById('experienceTimeline');
+  if (expTimeline && portfolioData.experience) {
+    let expHtml = '';
+    portfolioData.experience.forEach(exp => {
+      let duties = '';
+      exp.description.forEach(item => {
+        duties += `<li>${item}</li>`;
+      });
+      expHtml += `
+        <div class="experience-card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-title">${exp.title}</div>
+              <div class="exp-company">${exp.company}</div>
+            </div>
+            <span class="exp-period">${exp.period}</span>
           </div>
-          <span class="exp-period">${exp.period}</span>
+          <ul class="exp-details">${duties}</ul>
         </div>
-        <ul class="exp-details">
-          ${exp.description.map(d => `<li>${d}</li>`).join('')}
-        </ul>
-      </div>
-    `).join('');
+      `;
+    });
+    expTimeline.innerHTML = expHtml;
   }
-  
-  // Education
-  const eduEl = document.getElementById('educationGrid');
-  if (eduEl && portfolioData.education) {
-    eduEl.innerHTML = portfolioData.education.map(edu => `
-      <div class="edu-card">
-        <div class="edu-degree">${edu.degree}</div>
-        <div class="edu-school">${edu.school}</div>
-        <div style="margin-bottom: 1rem;">
-          <span class="edu-detail">${edu.year || edu.graduation || '2025'}</span>
-          ${edu.cgpa ? `<span class="edu-detail">CGPA: ${edu.cgpa}</span>` : ''}
-          ${edu.details ? `<span class="edu-detail">${edu.details}</span>` : ''}
+
+  // Load Education
+  const eduGrid = document.getElementById('educationGrid');
+  if (eduGrid && portfolioData.education) {
+    let eduHtml = '';
+    portfolioData.education.forEach(edu => {
+      eduHtml += `
+        <div class="edu-card">
+          <div class="edu-degree">${edu.degree}</div>
+          <div class="edu-school">${edu.school}</div>
+          <div style="margin-bottom: 1rem;">
+            <span class="edu-detail">${edu.year || edu.graduation || 'Expected 2025'}</span>
+            ${edu.cgpa ? `<span class="edu-detail">CGPA: ${edu.cgpa}</span>` : ''}
+            ${edu.details ? `<span class="edu-detail">${edu.details}</span>` : ''}
+          </div>
+          ${edu.courses ? `<p style="color: #37616b;">${edu.courses}</p>` : ''}
         </div>
-        ${edu.courses ? `<p style="color: #37616b;">${edu.courses}</p>` : ''}
-      </div>
-    `).join('');
+      `;
+    });
+    eduGrid.innerHTML = eduHtml;
   }
-  
-  // Projects with Images
-  const projectsEl = document.getElementById('projectsGrid');
-  if (projectsEl && portfolioData.projects) {
-    projectsEl.innerHTML = portfolioData.projects.map(proj => `
-      <div class="project-card" onclick="openProject(${proj.id})">
-        <img src="${proj.images?.[0] || 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800'}" alt="${proj.title}" class="project-image">
-        <div class="project-icon">
-          <span class="material-icons">${proj.icon || 'folder'}</span>
+
+  // Load Projects - FIXED: Now opens view.html
+  const projectsGrid = document.getElementById('projectsGrid');
+  if (projectsGrid && portfolioData.projects) {
+    let projectsHtml = '';
+    portfolioData.projects.forEach(project => {
+      projectsHtml += `
+        <div class="project-card" onclick="openProject(${project.id})">
+          <div class="project-icon">
+            <span class="material-icons">${project.icon}</span>
+          </div>
+          <h3>${project.title}</h3>
+          <p>${project.shortDesc}</p>
+          <div class="project-tags">
+            ${project.tags.slice(0, 3).map(tag => `<span class="project-tag">${tag}</span>`).join('')}
+            <span class="project-tag" style="background: #1d7a8c; color: white;">⭐ ${project.rating}/5</span>
+          </div>
         </div>
-        <h3>${proj.title}</h3>
-        <p>${proj.shortDesc}</p>
-        <div class="project-tags">
-          ${proj.tags?.slice(0, 3).map(t => `<span class="project-tag">${t}</span>`).join('')}
-          <span class="project-tag" style="background: #1d7a8c; color: white;">⭐ ${proj.rating}/5</span>
-        </div>
-      </div>
-    `).join('');
+      `;
+    });
+    projectsGrid.innerHTML = projectsHtml;
   }
-  
-  // Contact Section
-  const contactEl = document.getElementById('contactContainer');
-  if (contactEl) {
-    contactEl.innerHTML = `
-      <div class="contact-info">
-        <h3>Get In Touch</h3>
-        <div class="contact-detail">
-          <span class="material-icons">person</span>
-          <p>${p.fullName || 'Emmanuel Okwuchukwu'}</p>
+
+  // Load Testimonials
+  const testimonyGrid = document.getElementById('testimonyGrid');
+  if (testimonyGrid && portfolioData.testimonials) {
+    let testimonyHtml = '';
+    portfolioData.testimonials.forEach(test => {
+      testimonyHtml += `
+        <div class="testimony-card">
+          <span class="material-icons">format_quote</span>
+          <p class="testimony-text">"${test.text}"</p>
+          <div class="testimony-author">— ${test.author}</div>
+          <div class="testimony-title">${test.title}</div>
         </div>
-        <div class="contact-detail">
-          <span class="material-icons">email</span>
-          <p>${p.email || 'okwuchukwuemmanuel29@gmail.com'}</p>
-        </div>
-        <div class="contact-detail">
-          <span class="material-icons">phone</span>
-          <p>${p.phone || '+234 906 836 6229'}</p>
-        </div>
-        <div class="contact-detail">
-          <span class="material-icons">location_on</span>
-          <p>${p.location || 'Abuja, Nigeria'}</p>
-        </div>
-        <div class="contact-social">
-          <a href="https://facebook.com/EmaxChimdike"><i class="fab fa-facebook"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-linkedin"></i></a>
-          <a href="#"><i class="fab fa-whatsapp"></i></a>
-          <a href="mailto:${p.email}"><i class="fas fa-envelope"></i></a>
-        </div>
-      </div>
-      <div class="contact-form">
-        <h3>Send a Message</h3>
-        <div class="form-group">
-          <input type="text" id="contactName" placeholder="Your Name">
-        </div>
-        <div class="form-group">
-          <input type="email" id="contactEmail" placeholder="Your Email">
-        </div>
-        <div class="form-group">
-          <textarea id="contactMessage" rows="5" placeholder="Your Message"></textarea>
-        </div>
-        <button class="submit-btn" id="sendContactBtn">
-          <span class="material-icons">send</span> Send Message
-        </button>
-      </div>
-    `;
+      `;
+    });
+    testimonyGrid.innerHTML = testimonyHtml;
   }
-  
-  // Footer
-  document.getElementById('footerBio').textContent = `AI Content · Graphic Design · Prompt Engineering · UX/UI. Based in ${p.location || 'Abuja, Nigeria'}.`;
-  
-  const footerSocial = document.getElementById('footerSocial');
-  if (footerSocial) {
-    footerSocial.innerHTML = `
-      <a href="https://facebook.com/EmaxChimdike"><i class="fab fa-facebook"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="#"><i class="fab fa-linkedin"></i></a>
-      <a href="#"><i class="fab fa-whatsapp"></i></a>
-      <a href="mailto:${p.email}"><i class="fas fa-envelope"></i></a>
-    `;
+
+  // Load References
+  const refsGrid = document.getElementById('referencesGrid');
+  if (refsGrid && portfolioData.references) {
+    let refsHtml = '';
+    portfolioData.references.forEach(ref => {
+      refsHtml += `
+        <div class="ref-card">
+          <div class="ref-name">${ref.name}</div>
+          <div class="ref-title">${ref.title} · ${ref.company}</div>
+          <div class="ref-contact"><span class="material-icons">email</span> ${ref.email}</div>
+          <div class="ref-contact"><span class="material-icons">phone</span> ${ref.phone}</div>
+        </div>
+      `;
+    });
+    refsGrid.innerHTML = refsHtml;
   }
-  
-  const footerContact = document.getElementById('footerContact');
-  if (footerContact) {
-    footerContact.innerHTML = `
-      <h4>CONTACT</h4>
-      <a href="mailto:${p.email}">${p.email || 'okwuchukwuemmanuel29@gmail.com'}</a>
-      <a href="tel:${p.phone}">${p.phone || '+234 906 836 6229'}</a>
-      <a href="#">${p.location || 'Abuja, Nigeria'}</a>
-    `;
-  }
-  
-  document.getElementById('copyright').innerHTML = `© ${new Date().getFullYear()} Emmanuel Okwuchukwu. ${p.education?.degree || 'B.Sc Computer Science'} Candidate.`;
 }
 
-// ========== EVENT LISTENERS ==========
-document.getElementById('navViewCvBtn')?.addEventListener('click', (e) => { e.preventDefault(); openCvModal(); });
-document.getElementById('heroViewCvBtn')?.addEventListener('click', (e) => { e.preventDefault(); openCvModal(); });
-document.getElementById('footerViewCv')?.addEventListener('click', (e) => { e.preventDefault(); openCvModal(); });
-
-document.getElementById('navRequestBtn')?.addEventListener('click', (e) => { e.preventDefault(); openRequestModal(); });
-document.getElementById('heroRequestBtn')?.addEventListener('click', (e) => { e.preventDefault(); openRequestModal(); });
-document.getElementById('footerRequestBtn')?.addEventListener('click', (e) => { e.preventDefault(); openRequestModal(); });
-document.getElementById('footerDownloadCv')?.addEventListener('click', (e) => { e.preventDefault(); downloadCV(); });
-
-closeRequestBtn?.addEventListener('click', closeRequestModal);
-window.addEventListener('click', (e) => { 
-  if (e.target === cvModal) closeCvModal();
-  if (e.target === requestModal) closeRequestModal();
-});
-
-// ========== CLOSE MOBILE MENU ==========
+// ========== CLOSE MOBILE MENU ON LINK CLICK ==========
 document.querySelectorAll('.nav-links a').forEach(link => {
   link.addEventListener('click', () => {
     navLinks.classList.remove('active');
@@ -1806,7 +1804,9 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 });
 
 // ========== INITIALIZE ==========
-document.addEventListener('DOMContentLoaded', loadAllContent);
+document.addEventListener('DOMContentLoaded', function() {
+  loadAllContent();
+});
 </script>
 
 </body>
