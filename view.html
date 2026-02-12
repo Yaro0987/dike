@@ -1082,7 +1082,7 @@
     const projectTitle = `${project.title} | Emmanuel Okwuchukwu · AI & Creative Portfolio`;
     const projectDescription = `${project.shortDesc} ⭐ Rating: ${project.rating}/5 · ${project.category} · ${project.year}`;
     const projectImage = project.images?.[0] || 'https://chimdike.netlify.app/logo.png';
-    const projectUrl = `https://chimdike.netlify.app/view.html?id=${project.id}`;
+    const projectUrl = `https://chimdike.netlify.app/view?id=${project.id}`;
     
     forceMetaUpdate(projectTitle, projectDescription, projectImage, projectUrl);
     
@@ -1143,7 +1143,7 @@
       // Add View All Projects button
       relatedHtml += `
         <div class="view-all-container">
-          <a href="view.html?view=all" class="view-all-btn">
+          <a href="view?view=all" class="view-all-btn">
             <span class="material-icons">grid_view</span> View All Projects
             <span class="material-icons">arrow_forward</span>
           </a>

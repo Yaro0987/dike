@@ -21,18 +21,18 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Emmanuel Okwuchukwu · AI & Creative Specialist" />
   
-  <!-- Favicon - LOGO.PNG -->
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="logo.png" />
   <link rel="apple-touch-icon" href="logo.png" />
   
   <title>Emmanuel Okwuchukwu · AI Creative & Design | Portfolio</title>
   
-  <!-- Google Material Icons & Fonts - ALL ICONS FROM GOOGLE ICONS -->
+  <!-- Google Material Icons & Fonts -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   
   <style>
-    /* ========== GLOBAL RESET - PERFECTED ========== */
+    /* ========== GLOBAL RESET ========== */
     * {
       margin: 0;
       padding: 0;
@@ -47,14 +47,13 @@
     }
 
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: 'Inter', sans-serif;
       background: #f9fcfe;
       color: #0a1a1f;
       line-height: 1.6;
       width: 100%;
       max-width: 100%;
       overflow-x: hidden;
-      position: relative;
     }
 
     body.menu-open {
@@ -64,7 +63,7 @@
       height: 100%;
     }
 
-    /* ========== TYPOGRAPHY - MODERN & CLEAN ========== */
+    /* ========== TYPOGRAPHY ========== */
     h1, h2, h3, h4 {
       font-weight: 700;
       letter-spacing: -0.02em;
@@ -81,13 +80,13 @@
       h3 { font-size: 1.8rem; }
     }
 
-    /* ========== ANIMATIONS - SMOOTH ========== */
+    /* ========== ANIMATIONS ========== */
     @keyframes fadeUp {
       0% { opacity: 0; transform: translateY(20px); }
       100% { opacity: 1; transform: translateY(0); }
     }
 
-    .hero, .hero-image, #about, #skills, #experience, #education, #projects, #contact, footer {
+    .hero, .hero-image, #about, #skills, #experience, #education, #projects, #testimonials, #contact, footer {
       animation: fadeUp 0.8s cubic-bezier(0.2, 0.9, 0.3, 1) forwards;
       opacity: 0;
     }
@@ -98,10 +97,11 @@
     #experience { animation-delay: 0.35s; }
     #education { animation-delay: 0.4s; }
     #projects { animation-delay: 0.45s; }
-    #contact { animation-delay: 0.5s; }
-    footer { animation-delay: 0.55s; }
+    #testimonials { animation-delay: 0.5s; }
+    #contact { animation-delay: 0.55s; }
+    footer { animation-delay: 0.6s; }
 
-    /* ========== SCROLL TO TOP - MODERN ========== */
+    /* ========== SCROLL TO TOP ========== */
     .scroll-to-up {
       position: fixed;
       bottom: 24px;
@@ -136,7 +136,7 @@
       font-size: 28px;
     }
 
-    /* ========== HEADER - STICKY TO TOP ========== */
+    /* ========== HEADER - STICKY ========== */
     header {
       background: rgba(255,255,255,0.95);
       backdrop-filter: blur(12px);
@@ -235,7 +235,7 @@
       display: none !important;
     }
 
-    /* MOBILE MENU - PERFECTED, NO SCROLL WHEN OPEN */
+    /* MOBILE MENU */
     .mobile-menu-toggle {
       display: none;
       flex-direction: column;
@@ -323,10 +323,7 @@
       .nav-links { width: 85%; padding: 4rem 1.8rem; }
     }
 
-    /* ========== CV MODAL - OPENS CV.HTML IN NEW TAB ========== */
-    /* No modal - we open cv.html directly */
-
-    /* ========== REQUEST MODAL - ELEGANT ========== */
+    /* ========== REQUEST MODAL ========== */
     .request-modal {
       display: none;
       position: fixed;
@@ -382,7 +379,7 @@
       border-radius: 16px;
     }
 
-    /* ========== HERO SECTION - MODERN ========== */
+    /* ========== HERO SECTION ========== */
     .hero {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -703,7 +700,7 @@
     /* ========== PROJECT CARDS ========== */
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
       gap: 2rem;
     }
     .project-card {
@@ -744,9 +741,11 @@
     .project-card h3 {
       font-size: 1.4rem;
       margin-bottom: 0.5rem;
-      display: flex;
-      align-items: center;
-      gap: 8px;
+    }
+    .project-card p {
+      font-size: 0.95rem;
+      color: #37616b;
+      margin-bottom: 1.2rem;
     }
     .project-tags {
       display: flex;
@@ -767,6 +766,70 @@
     }
     .project-tag .material-icons {
       font-size: 0.8rem;
+    }
+
+    /* ========== TESTIMONIALS ========== */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+    .testimonial-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 28px;
+      box-shadow: 0 15px 35px rgba(0,40,50,0.03);
+      border-left: 6px solid #1d7a8c;
+    }
+    .testimonial-text {
+      font-size: 1rem;
+      font-style: italic;
+      color: #2a4a55;
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+    .testimonial-author {
+      font-weight: 700;
+      color: #0f1e26;
+    }
+    .testimonial-title {
+      font-size: 0.85rem;
+      color: #1d7a8c;
+    }
+
+    /* ========== REFERENCES ========== */
+    .references-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .ref-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 28px;
+      box-shadow: 0 15px 35px rgba(0,40,50,0.03);
+    }
+    .ref-name {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #0f1e26;
+      margin-bottom: 0.3rem;
+    }
+    .ref-title {
+      color: #1d7a8c;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .ref-contact {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #37616b;
+      margin-bottom: 0.5rem;
+    }
+    .ref-contact .material-icons {
+      font-size: 1rem;
+      color: #1d7a8c;
     }
 
     /* ========== CONTACT SECTION ========== */
@@ -883,7 +946,7 @@
       .contact-container { grid-template-columns: 1fr; }
     }
 
-    /* ========== FOOTER - MODERN ========== */
+    /* ========== FOOTER ========== */
     footer {
       background: #0f1e26;
       color: white;
@@ -1053,10 +1116,9 @@
   </div>
 </div>
 
-<!-- ========== HEADER - STICKY TO TOP ========== -->
+<!-- ========== HEADER ========== -->
 <header>
   <div class="logo-container">
-    <!-- LOGO.PNG - Brand logo -->
     <img src="logo.png" alt="Emmanuel Okwuchukwu Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/44?text=EO'">
     <span class="logo-text">E.C.<span>OKWUCHUKWU</span></span>
   </div>
@@ -1068,8 +1130,7 @@
     <a href="#experience"><span class="material-icons">work_history</span> Experience</a>
     <a href="#projects"><span class="material-icons">auto_stories</span> Projects</a>
     <a href="#contact"><span class="material-icons">contact_mail</span> Contact</a>
-    <!-- CV button opens cv.html in new tab -->
-    <a href="cv.html" target="_blank" class="nav-cta">
+    <a href="cv" target="_blank" class="nav-cta">
       <span class="material-icons">description</span> CV
     </a>
     <a href="#" id="navRequestBtn" class="request-btn">
@@ -1102,7 +1163,6 @@
     </div>
   </div>
   <div class="hero-image">
-    <!-- DIKE.PNG - Personal portrait -->
     <img src="dike.png" alt="Emmanuel Okwuchukwu Portrait" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800'">
   </div>
 </section>
@@ -1153,6 +1213,22 @@
   <div class="projects-grid" id="projectsGrid"></div>
 </section>
 
+<!-- ========== TESTIMONIALS SECTION ========== -->
+<section id="testimonials" class="section" style="background: #f5fbfd;">
+  <div class="section-title">
+    <span class="material-icons">format_quote</span> TESTIMONIALS
+  </div>
+  <div class="testimonials-grid" id="testimonialsGrid"></div>
+</section>
+
+<!-- ========== REFERENCES SECTION ========== -->
+<section id="references" class="section">
+  <div class="section-title">
+    <span class="material-icons">diversity_3</span> REFERENCES
+  </div>
+  <div class="references-grid" id="referencesGrid"></div>
+</section>
+
 <!-- ========== CONTACT SECTION ========== -->
 <section id="contact" class="section">
   <div class="section-title">
@@ -1187,6 +1263,7 @@
       <h4><span class="material-icons">folder</span> RESOURCES</h4>
       <a href="cv.html" target="_blank"><span class="material-icons">description</span> View CV</a>
       <a href="#" id="footerRequestBtn"><span class="material-icons">request_quote</span> Request Quote</a>
+      <a href="administrator.html" target="_blank"><span class="material-icons">admin_panel_settings</span> Admin</a>
     </div>
     
     <div class="footer-links" id="footerContact"></div>
@@ -1195,7 +1272,7 @@
   <div class="footer-bottom">
     <span id="copyright"></span>
     <span style="display: flex; align-items: center; gap: 6px;">
-      
+      <span class="material-icons" style="font-size: 1rem;">auto_awesome</span> Designed with AI · Built for excellence
     </span>
   </div>
 </footer>
@@ -1207,157 +1284,78 @@
 </div>
 
 <script>
-// ========== COMPLETE PORTFOLIO DATA ==========
-const portfolioData = {
-  personal: {
-    fullName: "OKWUCHUKWU, EMMANUEL CHIMDIKE",
-    title: "AI & Creative Design Specialist",
-    profile: "Creative Graphic Designer and AI Content Specialist with over 5 years of experience in visual design, digital marketing, and emerging AI technologies. Skilled in Adobe Creative Suite, UX design, and AI prompt engineering. Passionate about leveraging AI tools to enhance content creation, streamline workflows, and deliver data-driven creative solutions. B.Sc Computer Science candidate at University of Abuja.",
-    email: "okwuchukwuemmanuel29@gmail.com",
-    phone: "+234 906 836 6229",
-    location: "Gwagwalada, Abuja, Nigeria",
-    website: "chimdike.netlify.app",
-    birthDate: "28 November 2001",
-    nationality: "Nigerian",
-    education: {
-      degree: "B.Sc Computer Science",
-      school: "University of Abuja",
-      graduation: "2025",
-      cgpa: "3.5/4.0"
-    },
-    experience: "5+ Years"
-  },
-  
-  skills: {
-    ai: [
-      { name: "AI Content Creation", rating: 4.9 },
-      { name: "Prompt Engineering", rating: 4.8 },
-      { name: "ChatGPT", rating: 5.0 },
-      { name: "Midjourney", rating: 4.7 },
-      { name: "DALL-E", rating: 4.5 },
-      { name: "Stable Diffusion", rating: 4.3 },
-      { name: "Runway ML", rating: 4.2 },
-      { name: "AI Ethics", rating: 4.0 }
-    ],
-    design: [
-      { name: "Figma", rating: 4.9 },
-      { name: "Adobe Illustrator", rating: 4.8 },
-      { name: "Photoshop", rating: 4.6 },
-      { name: "UX Research", rating: 4.7 },
-      { name: "Brand Identity", rating: 4.9 },
-      { name: "After Effects", rating: 4.1 }
-    ],
-    soft: [
-      "Strategic Thinking",
-      "Cross-functional Collaboration",
-      "Storytelling",
-      "Deadline-driven",
-      "Mentoring",
-      "Problem Solving",
-      "Adaptability"
-    ],
-    languages: [
-      { name: "English", level: "Native" },
-      { name: "Igbo", level: "Native" },
-      { name: "French", level: "Intermediate" }
-    ]
-  },
-  
-  experience: [
-    {
-      title: "AI Content Lead",
-      company: "Creative Sync Labs",
-      period: "2023 – Present",
-      description: [
-        "Develop prompt libraries for marketing campaigns, generating 200+ high-quality images using Midjourney",
-        "Reduced content production time by 40% through AI-assisted workflows",
-        "Train and mentor junior team members on AI prompt engineering",
-        "Collaborate with creative directors to align AI-generated content with brand strategy"
-      ]
-    },
-    {
-      title: "Senior Graphic Designer",
-      company: "BrandCraft Nigeria",
-      period: "2021 – 2023",
-      description: [
-        "Led visual identity projects for 15+ brands across fintech, fashion, and lifestyle sectors",
-        "Designed comprehensive brand systems including logos, packaging, and digital assets",
-        "Mentored 3 junior designers, improving team output by 35%",
-        "Implemented new design workflows that reduced revision cycles by 25%"
-      ]
-    },
-    {
-      title: "Junior Designer",
-      company: "AfriLabs",
-      period: "2019 – 2021",
-      description: [
-        "Created visual assets for tech conferences and innovation events",
-        "Collaborated on UI mockups for startup accelerator programs",
-        "Supported senior designers in rebranding initiatives",
-        "Maintained brand consistency across all digital touchpoints"
-      ]
-    }
-  ],
-  
-  education: [
-    {
-      degree: "B.Sc Computer Science",
-      school: "University of Abuja",
-      year: "Expected 2025",
-      cgpa: "3.5/4.0",
-      details: "In view",
-      courses: "Artificial Intelligence, HCI, Database Systems"
-    },
-    {
-      degree: "Diploma in Graphic Design",
-      school: "NIIT Abuja",
-      year: "2019",
-      details: "Distinction",
-      cgpa: "4.8/5.0"
-    },
-    {
-      degree: "AI Prompt Engineering",
-      school: "DeepLearning.AI",
-      year: "2023",
-      details: "Specialization"
-    }
-  ],
-  
-  projects: [
-    {
-      id: 1,
-      title: "AI Brand Kit Generator",
-      shortDesc: "Generative branding system using GPT-4 + Midjourney",
-      fullDesc: "Created an automated brand identity generator that produces logos, color palettes, and visual assets from text prompts. Used by 5+ startups.",
-      tags: ["AI", "Branding", "Automation", "Midjourney"],
-      rating: 4.8,
-      icon: "auto_awesome",
-      images: ["https://images.unsplash.com/photo-1634944902853-3e977c5de884?w=600"]
-    },
-    {
-      id: 2,
-      title: "UX Audit – Fintech App",
-      shortDesc: "Complete usability overhaul for loan platform",
-      fullDesc: "Conducted comprehensive UX audit for a lending app, redesigned user flows, and created high-fidelity prototypes in Figma.",
-      tags: ["UX Research", "Figma", "Prototype", "Fintech"],
-      rating: 4.9,
-      icon: "assessment",
-      images: ["https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=600"]
-    },
-    {
-      id: 3,
-      title: "Prompt Engineering Guide",
-      shortDesc: "Open-source resource for AI prompt writing",
-      fullDesc: "Authored a comprehensive guide to prompt engineering with 100+ tested prompts for ChatGPT and Midjourney.",
-      tags: ["Education", "AI", "eBook", "Resource"],
-      rating: 4.7,
-      icon: "menu_book",
-      images: ["https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=600"]
-    }
-  ]
-};
+// ========== LOAD PORTFOLIO DATA FROM GLOBAL ==========
+// This will use the data from your data.js file
+let portfolioData = window.portfolioData || {};
 
-// ========== MOBILE MENU - PERFECTED, NO SCROLL WHEN OPEN ==========
+// ========== PERMANENT STORAGE FUNCTIONS ==========
+// These save contacts and requests to localStorage for the admin panel
+
+// Save contact to permanent storage
+function saveContact(name, email, message) {
+  const contact = {
+    id: Date.now(),
+    name: name,
+    email: email,
+    message: message,
+    date: new Date().toISOString(),
+    read: false
+  };
+  
+  // Get existing contacts
+  let contacts = [];
+  const stored = localStorage.getItem('portfolio_contacts');
+  if (stored) {
+    contacts = JSON.parse(stored);
+  }
+  
+  // Add new contact
+  contacts.push(contact);
+  
+  // Save to localStorage (permanent storage)
+  localStorage.setItem('portfolio_contacts', JSON.stringify(contacts));
+  
+  // Also try to save to server via API if available
+  try {
+    // You can implement server-side saving here later
+    console.log('Contact saved to localStorage:', contact);
+  } catch (error) {
+    console.error('Error saving contact:', error);
+  }
+  
+  return contact;
+}
+
+// Save request to permanent storage
+function saveRequest(name, email, type, details) {
+  const request = {
+    id: Date.now(),
+    name: name,
+    email: email,
+    type: type,
+    details: details,
+    date: new Date().toISOString(),
+    status: 'pending'
+  };
+  
+  // Get existing requests
+  let requests = [];
+  const stored = localStorage.getItem('portfolio_requests');
+  if (stored) {
+    requests = JSON.parse(stored);
+  }
+  
+  // Add new request
+  requests.push(request);
+  
+  // Save to localStorage (permanent storage)
+  localStorage.setItem('portfolio_requests', JSON.stringify(requests));
+  
+  console.log('Request saved to localStorage:', request);
+  return request;
+}
+
+// ========== MOBILE MENU ==========
 const mobileToggle = document.getElementById('mobileToggle');
 const navLinks = document.getElementById('navLinks');
 const body = document.body;
@@ -1368,7 +1366,6 @@ if (mobileToggle) {
     this.classList.toggle('active');
     navLinks.classList.toggle('active');
     
-    // PREVENT SCROLLING WHEN MENU IS OPEN
     if (navLinks.classList.contains('active')) {
       body.classList.add('menu-open');
       body.style.overflow = 'hidden';
@@ -1385,7 +1382,7 @@ if (mobileToggle) {
   });
 }
 
-// Close mobile menu on link click and restore scrolling
+// Close mobile menu on link click
 document.querySelectorAll('.nav-links a').forEach(link => {
   link.addEventListener('click', function() {
     navLinks.classList.remove('active');
@@ -1421,6 +1418,7 @@ function closeRequestModal() {
   body.style.overflow = '';
 }
 
+// Request modal triggers
 document.getElementById('navRequestBtn')?.addEventListener('click', (e) => { e.preventDefault(); openRequestModal(); });
 document.getElementById('heroRequestBtn')?.addEventListener('click', (e) => { e.preventDefault(); openRequestModal(); });
 document.getElementById('footerRequestBtn')?.addEventListener('click', (e) => { e.preventDefault(); openRequestModal(); });
@@ -1439,266 +1437,381 @@ function showToast(message) {
   setTimeout(() => toast.classList.remove('active'), 3500);
 }
 
-// ========== SEND REQUEST ==========
+// ========== SEND REQUEST FORM ==========
 document.getElementById('sendRequestBtn')?.addEventListener('click', function() {
   const name = document.getElementById('requestName')?.value.trim();
   const email = document.getElementById('requestEmail')?.value.trim();
+  const type = document.getElementById('requestType')?.value;
+  const details = document.getElementById('requestDetails')?.value.trim();
+  
   if (!name || !email) {
     showToast('⚠️ Name and email required');
     return;
   }
+  
+  // Save to permanent storage
+  saveRequest(name, email, type, details);
   showToast('📬 Request submitted! I will reply soon.');
-  closeRequestModal();
   
   // Clear form
   document.getElementById('requestName').value = '';
   document.getElementById('requestEmail').value = '';
   document.getElementById('requestDetails').value = '';
+  
+  closeRequestModal();
 });
 
 // ========== OPEN PROJECT ==========
 function openProject(projectId) {
-  window.location.href = `view.html?id=${projectId}`;
+  window.location.href = `view?id=${projectId}`;
 }
 
-// ========== LOAD DYNAMIC CONTENT ==========
+// ========== LOAD ALL DYNAMIC CONTENT FROM DATA.JS ==========
 function loadContent() {
+  if (!portfolioData || Object.keys(portfolioData).length === 0) {
+    console.error('portfolioData not loaded. Make sure data.js is included.');
+    return;
+  }
+
   const p = portfolioData.personal;
   const s = portfolioData.skills;
-  
-  // Hero bio
-  document.getElementById('heroBio').innerHTML = p.profile.substring(0, 150) + '...';
-  
-  // Personal info grid
-  document.getElementById('personalInfoGrid').innerHTML = `
-    <div class="info-card">
-      <div class="info-icon"><span class="material-icons">person</span></div>
-      <div class="info-content">
-        <h4>Full Name</h4>
-        <p>${p.fullName}</p>
-        <p style="font-size: 0.85rem; color: #1d7a8c;"><span class="material-icons" style="font-size: 0.8rem;">cake</span> ${p.birthDate} · ${p.nationality}</p>
-      </div>
-    </div>
-    <div class="info-card">
-      <div class="info-icon"><span class="material-icons">school</span></div>
-      <div class="info-content">
-        <h4>Education</h4>
-        <p>${p.education.degree}</p>
-        <p style="color: #1d7a8c;">${p.education.school}</p>
-        <p style="font-size: 0.85rem;"><span class="material-icons" style="font-size: 0.8rem;">calendar_today</span> ${p.education.graduation} · CGPA: ${p.education.cgpa}</p>
-      </div>
-    </div>
-    <div class="info-card">
-      <div class="info-icon"><span class="material-icons">work</span></div>
-      <div class="info-content">
-        <h4>Experience</h4>
-        <p>${p.experience} Professional</p>
-        <p style="color: #1d7a8c;">Graphic Design & AI Content</p>
-      </div>
-    </div>
-    <div class="info-card">
-      <div class="info-icon"><span class="material-icons">location_on</span></div>
-      <div class="info-content">
-        <h4>Location</h4>
-        <p>${p.location}</p>
-        <p style="color: #1d7a8c;">Nigeria</p>
-      </div>
-    </div>
-    <div class="info-card">
-      <div class="info-icon"><span class="material-icons">email</span></div>
-      <div class="info-content">
-        <h4>Email</h4>
-        <p>${p.email}</p>
-      </div>
-    </div>
-    <div class="info-card">
-      <div class="info-icon"><span class="material-icons">phone</span></div>
-      <div class="info-content">
-        <h4>Phone</h4>
-        <p>${p.phone}</p>
-      </div>
-    </div>
-  `;
-  
-  // Profile text
-  document.getElementById('profileText').innerHTML = p.profile;
-  
-  // Skills
-  let aiSkills = s.ai.map(skill => {
-    let stars = '';
-    for (let i = 0; i < 5; i++) {
-      if (i < Math.floor(skill.rating)) stars += '★';
-      else if (i < skill.rating) stars += '½';
-      else stars += '☆';
-    }
-    return `<span class="skill-tag"><span class="material-icons">smart_toy</span> ${skill.name} <span style="color: #ffc107; margin-left: 4px;">${stars}</span></span>`;
-  }).join('');
-  
-  let designSkills = s.design.map(skill => {
-    let stars = '';
-    for (let i = 0; i < 5; i++) {
-      if (i < Math.floor(skill.rating)) stars += '★';
-      else if (i < skill.rating) stars += '½';
-      else stars += '☆';
-    }
-    return `<span class="skill-tag"><span class="material-icons">brush</span> ${skill.name} <span style="color: #ffc107; margin-left: 4px;">${stars}</span></span>`;
-  }).join('');
-  
-  let softSkills = s.soft.map(skill => `<span class="soft-skill-tag"><span class="material-icons">psychology</span> ${skill}</span>`).join('');
-  
-  let langSkills = s.languages.map(lang => `<span class="lang-tag"><span class="material-icons">translate</span> ${lang.name} (${lang.level})</span>`).join('');
-  
-  document.getElementById('skillsWrapper').innerHTML = `
-    <div class="skills-category">
-      <div class="category-title"><span class="material-icons">smart_toy</span> AI & Technology</div>
-      <div class="skills-grid">${aiSkills}</div>
-    </div>
-    <div class="skills-category">
-      <div class="category-title"><span class="material-icons">palette</span> Design & Creative</div>
-      <div class="skills-grid">${designSkills}</div>
-    </div>
-    <div class="skills-category">
-      <div class="category-title"><span class="material-icons">psychology</span> Professional Skills</div>
-      <div class="skills-grid">${softSkills}</div>
-    </div>
-    <div class="skills-category">
-      <div class="category-title"><span class="material-icons">translate</span> Languages</div>
-      <div class="skills-grid">${langSkills}</div>
-    </div>
-  `;
-  
-  // Experience
-  document.getElementById('experienceTimeline').innerHTML = portfolioData.experience.map(exp => `
-    <div class="experience-card">
-      <div class="exp-header">
-        <div>
-          <div class="exp-title"><span class="material-icons">work</span> ${exp.title}</div>
-          <div class="exp-company">${exp.company}</div>
+  const exp = portfolioData.experience;
+  const edu = portfolioData.education;
+  const projects = portfolioData.projects;
+  const testimonials = portfolioData.testimonials;
+  const references = portfolioData.references;
+
+  // ===== HERO SECTION =====
+  if (p) {
+    document.getElementById('heroBio').innerHTML = p.profile ? p.profile.substring(0, 180) + '...' : '';
+  }
+
+  // ===== PERSONAL INFO GRID =====
+  if (p) {
+    document.getElementById('personalInfoGrid').innerHTML = `
+      <div class="info-card">
+        <div class="info-icon"><span class="material-icons">person</span></div>
+        <div class="info-content">
+          <h4>Full Name</h4>
+          <p>${p.fullName || ''}</p>
+          <p style="font-size: 0.85rem; color: #1d7a8c;">
+            <span class="material-icons" style="font-size: 0.8rem;">cake</span> ${p.birthDate || ''} · ${p.nationality || ''}
+          </p>
         </div>
-        <span class="exp-period"><span class="material-icons" style="font-size: 0.9rem;">calendar_month</span> ${exp.period}</span>
       </div>
-      <ul class="exp-details">
-        ${exp.description.map(d => `<li><span class="material-icons">chevron_right</span> ${d}</li>`).join('')}
-      </ul>
-    </div>
-  `).join('');
-  
-  // Education
-  document.getElementById('educationGrid').innerHTML = portfolioData.education.map(edu => `
-    <div class="edu-card">
-      <div class="edu-degree"><span class="material-icons">school</span> ${edu.degree}</div>
-      <div class="edu-school">${edu.school}</div>
-      <div>
-        <span class="edu-detail"><span class="material-icons" style="font-size: 0.8rem;">calendar_today</span> ${edu.year}</span>
-        ${edu.cgpa ? `<span class="edu-detail"><span class="material-icons" style="font-size: 0.8rem;">star</span> CGPA: ${edu.cgpa}</span>` : ''}
-        ${edu.details ? `<span class="edu-detail"><span class="material-icons" style="font-size: 0.8rem;">info</span> ${edu.details}</span>` : ''}
+      <div class="info-card">
+        <div class="info-icon"><span class="material-icons">school</span></div>
+        <div class="info-content">
+          <h4>Education</h4>
+          <p>${p.education?.degree || ''}</p>
+          <p style="color: #1d7a8c;">${p.education?.school || ''}</p>
+          <p style="font-size: 0.85rem;">
+            <span class="material-icons" style="font-size: 0.8rem;">calendar_today</span> ${p.education?.graduation || ''} · CGPA: ${p.education?.cgpa || ''}
+          </p>
+        </div>
       </div>
-    </div>
-  `).join('');
-  
-  // Projects
-  document.getElementById('projectsGrid').innerHTML = portfolioData.projects.map(proj => `
-    <div class="project-card" onclick="openProject(${proj.id})">
-      <img src="${proj.images[0]}" alt="${proj.title}" class="project-image" onerror="this.src='https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600'">
-      <div class="project-icon">
-        <span class="material-icons">${proj.icon}</span>
+      <div class="info-card">
+        <div class="info-icon"><span class="material-icons">work</span></div>
+        <div class="info-content">
+          <h4>Experience</h4>
+          <p>${p.experience || ''} Professional</p>
+          <p style="color: #1d7a8c;">Graphic Design & AI Content</p>
+        </div>
       </div>
-      <h3>${proj.title}</h3>
-      <p>${proj.shortDesc}</p>
-      <div class="project-tags">
-        ${proj.tags.map(tag => `<span class="project-tag"><span class="material-icons">lens</span> ${tag}</span>`).join('')}
-        <span class="project-tag" style="background: #0f1e26; color: white;"><span class="material-icons" style="color: #ffc107;">star</span> ${proj.rating}</span>
+      <div class="info-card">
+        <div class="info-icon"><span class="material-icons">location_on</span></div>
+        <div class="info-content">
+          <h4>Location</h4>
+          <p>${p.location || ''}</p>
+          <p style="color: #1d7a8c;">Nigeria</p>
+        </div>
       </div>
-    </div>
-  `).join('');
-  
-  // Contact container
-  document.getElementById('contactContainer').innerHTML = `
-    <div class="contact-info">
-      <h3><span class="material-icons">contact_mail</span> Get In Touch</h3>
-      <div class="contact-detail">
-        <span class="material-icons">person</span>
-        <p style="color: white;">${p.fullName}</p>
+      <div class="info-card">
+        <div class="info-icon"><span class="material-icons">email</span></div>
+        <div class="info-content">
+          <h4>Email</h4>
+          <p>${p.email || ''}</p>
+        </div>
       </div>
-      <div class="contact-detail">
-        <span class="material-icons">email</span>
-        <p style="color: white;">${p.email}</p>
+      <div class="info-card">
+        <div class="info-icon"><span class="material-icons">phone</span></div>
+        <div class="info-content">
+          <h4>Phone</h4>
+          <p>${p.phone || ''}</p>
+        </div>
       </div>
-      <div class="contact-detail">
-        <span class="material-icons">phone</span>
-        <p style="color: white;">${p.phone}</p>
-      </div>
-      <div class="contact-detail">
-        <span class="material-icons">location_on</span>
-        <p style="color: white;">${p.location}</p>
-      </div>
-      <div class="contact-social">
-        <a href="#"><span class="material-icons">facebook</span></a>
-        <a href="#"><span class="material-icons">alternate_email</span></a>
-        <a href="#"><span class="material-icons">linked_camera</span></a>
-        <a href="#"><span class="material-icons">chat</span></a>
-        <a href="#"><span class="material-icons">code</span></a>
-      </div>
-    </div>
-    <div class="contact-form">
-      <h3><span class="material-icons">send</span> Send a Message</h3>
-      <div class="form-group">
-        <input type="text" id="contactName" placeholder="Your Name">
-      </div>
-      <div class="form-group">
-        <input type="email" id="contactEmail" placeholder="Your Email">
-      </div>
-      <div class="form-group">
-        <textarea id="contactMessage" rows="4" placeholder="Your Message"></textarea>
-      </div>
-      <button class="submit-btn" id="sendContactBtn">
-        <span class="material-icons">send</span> Send Message
-      </button>
-    </div>
-  `;
-  
-  // Contact form handler
-  document.getElementById('sendContactBtn').addEventListener('click', function() {
-    const name = document.getElementById('contactName').value.trim();
-    const email = document.getElementById('contactEmail').value.trim();
-    const msg = document.getElementById('contactMessage').value.trim();
-    
-    if (!name || !email || !msg) {
-      showToast('⚠️ Please fill all fields');
-      return;
+    `;
+  }
+
+  // ===== PROFILE TEXT =====
+  if (p) {
+    document.getElementById('profileText').innerHTML = p.profile || '';
+  }
+
+  // ===== SKILLS SECTION =====
+  if (s) {
+    // AI Skills
+    let aiSkills = '';
+    if (s.ai) {
+      s.ai.forEach(skill => {
+        let stars = '';
+        for (let i = 0; i < 5; i++) {
+          if (i < Math.floor(skill.rating)) stars += '★';
+          else if (i < skill.rating) stars += '½';
+          else stars += '☆';
+        }
+        aiSkills += `<span class="skill-tag"><span class="material-icons">smart_toy</span> ${skill.name} <span style="color: #ffc107; margin-left: 4px;">${stars}</span></span>`;
+      });
     }
-    showToast('✅ Message sent! I will respond within 24h.');
+
+    // Design Skills
+    let designSkills = '';
+    if (s.design) {
+      s.design.forEach(skill => {
+        let stars = '';
+        for (let i = 0; i < 5; i++) {
+          if (i < Math.floor(skill.rating)) stars += '★';
+          else if (i < skill.rating) stars += '½';
+          else stars += '☆';
+        }
+        designSkills += `<span class="skill-tag"><span class="material-icons">brush</span> ${skill.name} <span style="color: #ffc107; margin-left: 4px;">${stars}</span></span>`;
+      });
+    }
+
+    // Soft Skills
+    let softSkills = '';
+    if (s.soft) {
+      s.soft.forEach(skill => {
+        softSkills += `<span class="soft-skill-tag"><span class="material-icons">psychology</span> ${skill}</span>`;
+      });
+    }
+
+    // Languages
+    let langSkills = '';
+    if (s.languages) {
+      s.languages.forEach(lang => {
+        langSkills += `<span class="lang-tag"><span class="material-icons">translate</span> ${lang.name} (${lang.level})</span>`;
+      });
+    }
+
+    document.getElementById('skillsWrapper').innerHTML = `
+      <div class="skills-category">
+        <div class="category-title"><span class="material-icons">smart_toy</span> AI & Technology</div>
+        <div class="skills-grid">${aiSkills}</div>
+      </div>
+      <div class="skills-category">
+        <div class="category-title"><span class="material-icons">palette</span> Design & Creative</div>
+        <div class="skills-grid">${designSkills}</div>
+      </div>
+      <div class="skills-category">
+        <div class="category-title"><span class="material-icons">psychology</span> Professional Skills</div>
+        <div class="skills-grid">${softSkills}</div>
+      </div>
+      <div class="skills-category">
+        <div class="category-title"><span class="material-icons">translate</span> Languages</div>
+        <div class="skills-grid">${langSkills}</div>
+      </div>
+    `;
+  }
+
+  // ===== EXPERIENCE SECTION =====
+  if (exp) {
+    let expHtml = '';
+    exp.forEach(item => {
+      expHtml += `
+        <div class="experience-card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-title"><span class="material-icons">work</span> ${item.title}</div>
+              <div class="exp-company">${item.company}</div>
+            </div>
+            <span class="exp-period"><span class="material-icons" style="font-size: 0.9rem;">calendar_month</span> ${item.period}</span>
+          </div>
+          <ul class="exp-details">
+            ${item.description.map(d => `<li><span class="material-icons">chevron_right</span> ${d}</li>`).join('')}
+          </ul>
+        </div>
+      `;
+    });
+    document.getElementById('experienceTimeline').innerHTML = expHtml;
+  }
+
+  // ===== EDUCATION SECTION =====
+  if (edu) {
+    let eduHtml = '';
+    edu.forEach(item => {
+      eduHtml += `
+        <div class="edu-card">
+          <div class="edu-degree"><span class="material-icons">school</span> ${item.degree}</div>
+          <div class="edu-school">${item.school}</div>
+          <div>
+            <span class="edu-detail"><span class="material-icons" style="font-size: 0.8rem;">calendar_today</span> ${item.year || item.graduation || ''}</span>
+            ${item.cgpa ? `<span class="edu-detail"><span class="material-icons" style="font-size: 0.8rem;">star</span> CGPA: ${item.cgpa}</span>` : ''}
+            ${item.details ? `<span class="edu-detail"><span class="material-icons" style="font-size: 0.8rem;">info</span> ${item.details}</span>` : ''}
+          </div>
+        </div>
+      `;
+    });
+    document.getElementById('educationGrid').innerHTML = eduHtml;
+  }
+
+  // ===== PROJECTS SECTION =====
+  if (projects) {
+    let projectsHtml = '';
+    projects.forEach(proj => {
+      projectsHtml += `
+        <div class="project-card" onclick="openProject(${proj.id})">
+          <img src="${proj.images ? proj.images[0] : 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600'}" alt="${proj.title}" class="project-image" onerror="this.src='https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600'">
+          <div class="project-icon">
+            <span class="material-icons">${proj.icon || 'folder'}</span>
+          </div>
+          <h3>${proj.title}</h3>
+          <p>${proj.shortDesc || ''}</p>
+          <div class="project-tags">
+            ${proj.tags ? proj.tags.slice(0, 3).map(tag => `<span class="project-tag"><span class="material-icons">lens</span> ${tag}</span>`).join('') : ''}
+            <span class="project-tag" style="background: #0f1e26; color: white;"><span class="material-icons" style="color: #ffc107;">star</span> ${proj.rating || ''}</span>
+          </div>
+        </div>
+      `;
+    });
+    document.getElementById('projectsGrid').innerHTML = projectsHtml;
+  }
+
+  // ===== TESTIMONIALS SECTION =====
+  if (testimonials) {
+    let testimonialHtml = '';
+    testimonials.forEach(test => {
+      testimonialHtml += `
+        <div class="testimonial-card">
+          <div class="testimonial-text">"${test.text}"</div>
+          <div class="testimonial-author">— ${test.author}</div>
+          <div class="testimonial-title">${test.title}</div>
+        </div>
+      `;
+    });
+    document.getElementById('testimonialsGrid').innerHTML = testimonialHtml;
+  }
+
+  // ===== REFERENCES SECTION =====
+  if (references) {
+    let refHtml = '';
+    references.forEach(ref => {
+      refHtml += `
+        <div class="ref-card">
+          <div class="ref-name">${ref.name}</div>
+          <div class="ref-title">${ref.title} · ${ref.company}</div>
+          <div class="ref-contact"><span class="material-icons">email</span> ${ref.email}</div>
+          <div class="ref-contact"><span class="material-icons">phone</span> ${ref.phone}</div>
+        </div>
+      `;
+    });
+    document.getElementById('referencesGrid').innerHTML = refHtml;
+  }
+
+  // ===== CONTACT SECTION =====
+  if (p) {
+    document.getElementById('contactContainer').innerHTML = `
+      <div class="contact-info">
+        <h3><span class="material-icons">contact_mail</span> Get In Touch</h3>
+        <div class="contact-detail">
+          <span class="material-icons">person</span>
+          <p style="color: white;">${p.fullName || ''}</p>
+        </div>
+        <div class="contact-detail">
+          <span class="material-icons">email</span>
+          <p style="color: white;">${p.email || ''}</p>
+        </div>
+        <div class="contact-detail">
+          <span class="material-icons">phone</span>
+          <p style="color: white;">${p.phone || ''}</p>
+        </div>
+        <div class="contact-detail">
+          <span class="material-icons">location_on</span>
+          <p style="color: white;">${p.location || ''}</p>
+        </div>
+        <div class="contact-social">
+          <a href="#"><span class="material-icons">facebook</span></a>
+          <a href="#"><span class="material-icons">alternate_email</span></a>
+          <a href="#"><span class="material-icons">linked_camera</span></a>
+          <a href="#"><span class="material-icons">chat</span></a>
+        </div>
+      </div>
+      <div class="contact-form">
+        <h3><span class="material-icons">send</span> Send a Message</h3>
+        <div class="form-group">
+          <input type="text" id="contactName" placeholder="Your Name">
+        </div>
+        <div class="form-group">
+          <input type="email" id="contactEmail" placeholder="Your Email">
+        </div>
+        <div class="form-group">
+          <textarea id="contactMessage" rows="4" placeholder="Your Message"></textarea>
+        </div>
+        <button class="submit-btn" id="sendContactBtn">
+          <span class="material-icons">send</span> Send Message
+        </button>
+      </div>
+    `;
+
+    // ===== CONTACT FORM HANDLER =====
+    document.getElementById('sendContactBtn').addEventListener('click', function() {
+      const name = document.getElementById('contactName').value.trim();
+      const email = document.getElementById('contactEmail').value.trim();
+      const msg = document.getElementById('contactMessage').value.trim();
+      
+      if (!name || !email || !msg) {
+        showToast('⚠️ Please fill all fields');
+        return;
+      }
+      
+      // Save to permanent storage
+      saveContact(name, email, msg);
+      showToast('✅ Message sent! I will respond within 24h.');
+      
+      // Clear form
+      document.getElementById('contactName').value = '';
+      document.getElementById('contactEmail').value = '';
+      document.getElementById('contactMessage').value = '';
+    });
+  }
+
+  // ===== FOOTER =====
+  if (p) {
+    document.getElementById('footerBio').innerHTML = `AI Content · Graphic Design · Prompt Engineering · UX/UI. Based in ${p.location ? p.location.split(',')[0] : 'Abuja'}.`;
     
-    document.getElementById('contactName').value = '';
-    document.getElementById('contactEmail').value = '';
-    document.getElementById('contactMessage').value = '';
-  });
-  
-  // Footer
-  document.getElementById('footerBio').innerHTML = `AI Content · Graphic Design · Prompt Engineering · UX/UI. Based in ${p.location.split(',')[0]}.`;
-  
-  document.getElementById('footerSocial').innerHTML = `
-    <a href="#"><span class="material-icons">facebook</span></a>
-    <a href="#"><span class="material-icons">alternate_email</span></a>
-    <a href="#"><span class="material-icons">whatsapp</span></a>
-    <a href="#"><span class="material-icons">twitter</span></a>
-    <a href="#"><span class="material-icons">github</span></a>
-  `;
-  
-  document.getElementById('footerContact').innerHTML = `
-    <h4><span class="material-icons">contact_phone</span> CONTACT</h4>
-    <a href="mailto:${p.email}"><span class="material-icons">email</span> ${p.email}</a>
-    <a href="tel:${p.phone}"><span class="material-icons">phone</span> ${p.phone}</a>
-    <a href="#"><span class="material-icons">location_on</span> ${p.location.split(',')[0]}</a>
-    <a href="chimdike.netlify.app"><span class="material-icons">language</span> ${p.website}</a>
-  `;
-  
-  document.getElementById('copyright').innerHTML = `© ${new Date().getFullYear()} Emmanuel Okwuchukwu · ${p.education.degree} Candidate`;
+    document.getElementById('footerSocial').innerHTML = `
+      <a href="#"><span class="material-icons">facebook</span></a>
+      <a href="#"><span class="material-icons">alternate_email</span></a>
+      <a href="#"><span class="material-icons">linked_camera</span></a>
+      <a href="#"><span class="material-icons">chat</span></a>
+    `;
+    
+    document.getElementById('footerContact').innerHTML = `
+      <h4><span class="material-icons">contact_phone</span> CONTACT</h4>
+      <a href="mailto:${p.email || ''}"><span class="material-icons">email</span> ${p.email || ''}</a>
+      <a href="tel:${p.phone || ''}"><span class="material-icons">phone</span> ${p.phone || ''}</a>
+      <a href="#"><span class="material-icons">location_on</span> ${p.location ? p.location.split(',')[0] : 'Abuja'}</a>
+      <a href="#"><span class="material-icons">language</span> ${p.website || 'chimdike.netlify.app'}</a>
+    `;
+    
+    document.getElementById('copyright').innerHTML = `© ${new Date().getFullYear()} Emmanuel Okwuchukwu · ${p.education?.degree || 'B.Sc Computer Science'} Candidate`;
+  }
 }
 
 // ========== INITIALIZE ==========
-document.addEventListener('DOMContentLoaded', loadContent);
+document.addEventListener('DOMContentLoaded', function() {
+  // Wait a tiny bit for data.js to load
+  setTimeout(() => {
+    if (window.portfolioData) {
+      portfolioData = window.portfolioData;
+    }
+    loadContent();
+  }, 100);
+});
 </script>
+
+<!-- Load data.js -->
+<script src="data.js"></script>
 
 </body>
 </html>
