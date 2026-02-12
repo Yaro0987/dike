@@ -2,7 +2,7 @@
 // Edit this file to update ALL content across the website
 // Domain: https://chimdike.netlify.app
 
-const portfolioData = {
+portfolioData = {
   // ===== PERSONAL INFORMATION =====
   personal: {
     fullName: "OKWUCHUKWU, EMMANUEL CHIMDIKE",
@@ -158,7 +158,7 @@ const portfolioData = {
     }
   ],
 
-  // ===== PROJECTS - 6+ PROJECTS WITH FULL DETAILS =====
+  // ===== PROJECTS - 7 PROJECTS WITH FULL DETAILS =====
   projects: [
     {
       id: 1,
@@ -392,13 +392,40 @@ const portfolioData = {
   ]
 };
 
+// ===== ADMIN CREDENTIALS =====
+// Default: username: dike, password: 0000
+// These can be changed in the admin panel
+const adminCredentials = {
+  username: "dike",
+  password: "0000"
+};
+
+// ===== INITIALIZE STORAGE IF EMPTY =====
+if (typeof window !== 'undefined') {
+  // Initialize contacts storage if not exists
+  if (!localStorage.getItem('portfolio_contacts')) {
+    localStorage.setItem('portfolio_contacts', JSON.stringify([]));
+  }
+  
+  // Initialize requests storage if not exists
+  if (!localStorage.getItem('portfolio_requests')) {
+    localStorage.setItem('portfolio_requests', JSON.stringify([]));
+  }
+  
+  // Initialize admin credentials if not exists
+  if (!localStorage.getItem('admin_credentials')) {
+    localStorage.setItem('admin_credentials', JSON.stringify(adminCredentials));
+  }
+}
+
 // Make available globally
 if (typeof window !== 'undefined') {
   window.portfolioData = portfolioData;
+  window.adminCredentials = adminCredentials;
   window.fallbackData = portfolioData; // Backup
 }
 
 // For Node.js
 if (typeof module !== 'undefined' && module.exports) {
-  module.exports = portfolioData;
+  module.exports = { portfolioData, adminCredentials };
 }
