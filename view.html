@@ -45,7 +45,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   
   <style>
-    /* ========== COMPLETE STYLES (SAME AS BEFORE) ========== */
+    /* ========== COMPLETE STYLES ========== */
     * {
       margin: 0;
       padding: 0;
@@ -147,6 +147,7 @@
       color: #1d7a8c;
       font-size: 1.2rem;
       margin-bottom: 30px;
+      flex-wrap: wrap;
     }
 
     .slider-container {
@@ -364,27 +365,82 @@
       background: #1d7a8c;
     }
 
-    .related-section { margin-top: 60px; }
+    /* ========== FIXED: RELATED PROJECTS WITH VISIBLE IMAGES ========== */
+    .related-section { 
+      margin-top: 60px; 
+    }
+    
+    .related-title {
+      font-size: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+    
     .related-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
       gap: 30px;
-      margin-top: 30px;
     }
 
     .related-card {
       background: white;
-      padding: 30px;
       border-radius: 28px;
+      overflow: hidden;
       cursor: pointer;
-      transition: 0.3s;
+      transition: all 0.3s ease;
       border: 1px solid #e3f0f2;
+      box-shadow: 0 10px 25px rgba(0,40,50,0.04);
     }
 
     .related-card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+      box-shadow: 0 25px 50px rgba(29,122,140,0.15);
       border-color: #9ac2cc;
+    }
+
+    .related-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .related-content {
+      padding: 1.8rem;
+    }
+
+    .related-content h4 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #0f1e26;
+      margin-bottom: 10px;
+    }
+
+    .related-content p {
+      color: #37616b;
+      margin-bottom: 15px;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .related-category {
+      display: inline-block;
+      background: #e1f0f3;
+      padding: 0.4rem 1.2rem;
+      border-radius: 60px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #1d5a67;
+    }
+
+    .related-rating {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      margin-left: 10px;
+      color: #ffb800;
     }
 
     .toast {
@@ -497,6 +553,7 @@
       .footer-content { grid-template-columns: 1fr; }
       .nav-links { display: none; }
       .slider-btn { width: 45px; height: 45px; }
+      .related-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -591,7 +648,7 @@
     project = portfolioData.projects.find(p => p.id === projectId);
   }
   
-  // Fallback if not found - COMPLETE FALLBACK DATA
+  // Fallback if not found
   if (!project) {
     console.warn('Project not found, using fallback data');
     project = {
@@ -617,44 +674,44 @@
     };
   }
 
-  // ========== CRITICAL FIX: UPDATE ALL META TAGS WITH ACTUAL PROJECT DATA ==========
+  // ========== UPDATE ALL META TAGS WITH ACTUAL PROJECT DATA ==========
   
-  // 1. Page Title - Shows in browser tab and search results
+  // 1. Page Title
   document.title = `${project.title} | Emmanuel Okwuchukwu · AI & Creative Portfolio`;
   document.getElementById('pageTitle').textContent = `${project.title} | Emmanuel Okwuchukwu`;
   
-  // 2. Meta Description - Shows in Google search results
+  // 2. Meta Description
   const metaDescription = document.querySelector('meta[name="description"]');
   if (metaDescription) {
     metaDescription.setAttribute('content', `${project.title}: ${project.shortDesc} Created by Emmanuel Okwuchukwu, AI Content Specialist & Graphic Designer. View full project details, images, and results.`);
   }
   
-  // 3. Meta Keywords - SEO
+  // 3. Meta Keywords
   const metaKeywords = document.querySelector('meta[name="keywords"]');
   if (metaKeywords) {
     metaKeywords.setAttribute('content', `${project.category}, ${project.tags?.join(', ') || 'AI, Design'}, Emmanuel Okwuchukwu, Portfolio, AI Content Creation, Graphic Design, Nigeria`);
   }
   
-  // 4. Open Graph Title - Shows when shared on Facebook, LinkedIn
+  // 4. Open Graph Title
   const ogTitle = document.getElementById('ogTitle');
   if (ogTitle) {
     ogTitle.setAttribute('content', `${project.title} | Emmanuel Okwuchukwu Portfolio`);
   }
   
-  // 5. Open Graph Description - Shows below title in social shares
+  // 5. Open Graph Description
   const ogDescription = document.getElementById('ogDescription');
   if (ogDescription) {
     ogDescription.setAttribute('content', `${project.shortDesc} ⭐ Rating: ${project.rating}/5. View full project details, images, and results.`);
   }
   
-  // 6. Open Graph URL - The canonical URL for this project
+  // 6. Open Graph URL
   const ogUrl = document.getElementById('ogUrl');
   const projectUrl = `https://chimdike.netlify.app/view.html?id=${project.id}`;
   if (ogUrl) {
     ogUrl.setAttribute('content', projectUrl);
   }
   
-  // 7. Open Graph Image - CRITICAL: Use the actual project image, not logo.png
+  // 7. Open Graph Image - Use actual project image
   const ogImage = document.getElementById('ogImage');
   const projectImage = (project.images && project.images.length > 0) 
     ? project.images[0] 
@@ -676,51 +733,16 @@
     twitterDescription.setAttribute('content', `${project.shortDesc} ⭐ ${project.rating}/5 · ${project.category} · ${project.year}`);
   }
   
-  // 10. Twitter Image - Use the actual project image
+  // 10. Twitter Image - Use actual project image
   const twitterImage = document.getElementById('twitterImage');
   if (twitterImage) {
     twitterImage.setAttribute('content', projectImage);
-  }
-  
-  // 11. Additional OG Tags for better sharing
-  let ogType = document.querySelector('meta[property="og:type"]');
-  if (!ogType) {
-    ogType = document.createElement('meta');
-    ogType.setAttribute('property', 'og:type');
-    ogType.setAttribute('content', 'article');
-    document.head.appendChild(ogType);
-  }
-  
-  // 12. Article Meta for structured data
-  let ogArticleSection = document.querySelector('meta[property="article:section"]');
-  if (!ogArticleSection) {
-    ogArticleSection = document.createElement('meta');
-    ogArticleSection.setAttribute('property', 'article:section');
-    ogArticleSection.setAttribute('content', project.category || 'Portfolio');
-    document.head.appendChild(ogArticleSection);
-  }
-  
-  let ogPublishedTime = document.querySelector('meta[property="article:published_time"]');
-  if (!ogPublishedTime) {
-    ogPublishedTime = document.createElement('meta');
-    ogPublishedTime.setAttribute('property', 'article:published_time');
-    ogPublishedTime.setAttribute('content', `${project.year}-01-01T00:00:00Z`);
-    document.head.appendChild(ogPublishedTime);
-  }
-  
-  // 13. Author meta
-  let ogAuthor = document.querySelector('meta[property="article:author"]');
-  if (!ogAuthor) {
-    ogAuthor = document.createElement('meta');
-    ogAuthor.setAttribute('property', 'article:author');
-    ogAuthor.setAttribute('content', 'Emmanuel Okwuchukwu');
-    document.head.appendChild(ogAuthor);
   }
 
   // ========== STARS GENERATOR ==========
   function getStarsHtml(rating) {
     let stars = '';
-    const rounded = Math.round(rating * 2) / 2; // Round to nearest 0.5
+    const rounded = Math.round(rating * 2) / 2;
     
     for (let i = 0; i < 5; i++) {
       if (i < Math.floor(rounded)) {
@@ -758,7 +780,7 @@
     `;
   }
 
-  // ========== RELATED PROJECTS ==========
+  // ========== FIXED: RELATED PROJECTS WITH VISIBLE IMAGES ==========
   function getRelatedHtml(currentId) {
     if (typeof portfolioData === 'undefined' || !portfolioData.projects) return '';
     
@@ -766,13 +788,42 @@
       .filter(p => p.id !== currentId)
       .slice(0, 3);
     
-    return related.map(p => `
-      <div class="related-card" onclick="window.location.href='view.html?id=${p.id}'">
-        <h4 style="font-size: 1.3rem; margin-bottom: 10px;">${p.title}</h4>
-        <p style="color: #37616b; margin-bottom: 15px;">${p.shortDesc.substring(0, 70)}...</p>
-        <span style="background: #e1f0f3; padding: 0.4rem 1.2rem; border-radius: 60px; font-size: 0.85rem; font-weight: 600;">${p.category}</span>
-      </div>
-    `).join('');
+    if (related.length === 0) return '<p style="color: #37616b;">No related projects found.</p>';
+    
+    return related.map(p => {
+      // Get the first image or use a fallback
+      const relatedImage = (p.images && p.images.length > 0) 
+        ? p.images[0] 
+        : 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800';
+      
+      // Generate star rating for related project
+      let relatedStars = '';
+      for (let i = 0; i < 5; i++) {
+        if (i < Math.floor(p.rating || 4.5)) {
+          relatedStars += '<span class="material-icons" style="font-size: 0.9rem;">star</span>';
+        } else if (i < (p.rating || 4.5)) {
+          relatedStars += '<span class="material-icons" style="font-size: 0.9rem;">star_half</span>';
+        } else {
+          relatedStars += '<span class="material-icons" style="font-size: 0.9rem;">star_border</span>';
+        }
+      }
+      
+      return `
+        <div class="related-card" onclick="window.location.href='view.html?id=${p.id}'">
+          <img src="${relatedImage}" alt="${p.title}" class="related-image" loading="lazy">
+          <div class="related-content">
+            <h4>${p.title}</h4>
+            <p>${p.shortDesc.substring(0, 70)}${p.shortDesc.length > 70 ? '...' : ''}</p>
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+              <span class="related-category">${p.category}</span>
+              <span class="related-rating">
+                ${relatedStars} <span style="color: #0f1e26; margin-left: 5px;">${p.rating || 4.5}</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      `;
+    }).join('');
   }
 
   // ========== RENDER PROJECT PAGE ==========
@@ -785,6 +836,8 @@
       <span><span class="material-icons" style="font-size: 1.2rem; vertical-align: middle;">category</span> ${project.category}</span>
       <span>•</span>
       <span><span class="material-icons" style="font-size: 1.2rem; vertical-align: middle;">calendar_today</span> ${project.year}</span>
+      <span>•</span>
+      <span><span class="material-icons" style="font-size: 1.2rem; vertical-align: middle;">star</span> ${project.rating}/5</span>
     </div>
     
     ${getSliderHtml(project.images)}
@@ -821,7 +874,7 @@
             <a href="https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}" target="_blank" class="share-btn">
               <i class="fab fa-linkedin-in"></i> LinkedIn
             </a>
-            <a href="https://wa.me/?text=${encodeURIComponent(projectUrl + ' ' + shareText)}" target="_blank" class="share-btn">
+            <a href="https://wa.me/?text=${encodeURIComponent(project.title + ' - ' + projectUrl)}" target="_blank" class="share-btn">
               <i class="fab fa-whatsapp"></i> WhatsApp
             </a>
             <button class="share-btn copy-btn" onclick="copyProjectUrl()">
@@ -868,7 +921,7 @@
     </div>
     
     <div class="related-section">
-      <h2 style="font-size: 2rem; display: flex; align-items: center; gap: 15px;">
+      <h2 class="related-title">
         <span class="material-icons" style="color: #1d7a8c; font-size: 2.2rem;">layers</span> Related Projects
       </h2>
       <div class="related-grid" id="relatedGrid">
@@ -910,7 +963,6 @@
     navigator.clipboard.writeText(projectUrl).then(() => {
       showToast('🔗 Link copied to clipboard!');
     }).catch(() => {
-      // Fallback for older browsers
       const textarea = document.createElement('textarea');
       textarea.value = projectUrl;
       document.body.appendChild(textarea);
@@ -920,30 +972,6 @@
       showToast('🔗 Link copied to clipboard!');
     });
   };
-
-  /* ========== VERIFICATION LOG ==========
-  console.log('✅ Meta tags updated for project:', project.title);
-  console.log('📸 OG Image:', projectImage);
-  console.log('📝 Description:', project.shortDesc);
-  console.log('🔗 URL:', projectUrl);
- 
-  */
-  
-</script>
-
-<!-- ========== FALLBACK META VERIFICATION ========== -->
-<script>
-  // Double-check meta tags are set (runs after everything)
-  setTimeout(() => {
-    const ogImage = document.querySelector('meta[property="og:image"]');
-    if (ogImage && ogImage.getAttribute('content') === 'https://chimdike.netlify.app/logo.png') {
-      // If still using logo, force update with project image
-      if (project && project.images && project.images[0]) {
-        ogImage.setAttribute('content', project.images[0]);
-        console.log('🔄 Meta image force-updated to:', project.images[0]);
-      }
-    }
-  }, 100);
 </script>
 
 </body>
