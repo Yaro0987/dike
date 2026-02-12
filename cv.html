@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Emmanuel Okwuchukwu · AI & Creative CV</title>
+  <!-- Google Material Icons & Font -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', 'Segoe UI', sans-serif;
+      background: #eef2f5;
+      color: #1e2e3a;
+      line-height: 1.5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 30px 20px;
+      min-width:210mm;
+    }
+
+    /* PERFECT HEIGHT MATCH – FLEX CONTAINER */
+    .resume-container {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      background: white;
+      box-shadow: 0 15px 45px rgba(0,20,30,0.12);
+      display: flex;
+      overflow: hidden;
+    }
+
+    /* LEFT COLUMN – FLEX COLUMN, EQUAL STRETCH */
+    .left-column {
+      width: 34%;
+      background: #0f1e26;
+      color: #e6edf0;
+      padding: 40px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; /* ensures full height usage */
+    }
+
+    /* RIGHT COLUMN – FLEX COLUMN, EQUAL STRETCH */
+    .right-column {
+      width: 66%;
+      background: white;
+      padding: 40px 40px 40px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* CONTENT WRAPPERS – allow natural spacing */
+    .left-content, .right-content {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    /* PHOTO – refined square */
+    .photo {
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border: 3px solid #6e9fb1;
+      margin: 0 auto 25px auto;
+      display: block;
+    }
+
+    /* LEFT TYPOGRAPHY */
+    .left-subhead {
+      color: #b6d2da;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-weight: 500;
+      text-align: center;
+      margin-bottom: 1.8rem;
+      border-bottom: 1px solid #3c6570;
+      padding-bottom: 1rem;
+    }
+
+    /* SECTION TITLES WITH GOOGLE ICONS */
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      margin: 1.2rem 0 0.8rem 0;
+      border-bottom: 1.5px solid #4e7b88;
+      padding-bottom: 0.6rem;
+      font-weight: 700;
+      color: #d2e6ec;
+    }
+
+    .section-title .material-icons {
+      font-size: 1.1rem;
+      color: #95c8d6;
+    }
+
+    .right-section-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1rem;
+      color: #0f1e26;
+      margin: 0.8rem 0 1rem 0;
+      border-bottom: 2.5px solid #0f1e26;
+      padding-bottom: 0.4rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .right-section-title .material-icons {
+      font-size: 1.2rem;
+      color: #1d5a6d;
+    }
+
+    /* CONTACT ITEMS WITH ICONS */
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 0.8rem;
+      font-size: 0.8rem;
+      color: #d3e3e8;
+      line-height: 1.4;
+    }
+
+    .contact-item .material-icons {
+      font-size: 1rem;
+      color: #95c8d6;
+      width: 20px;
+    }
+
+    /* SKILL TAGS – NO ICONS INSIDE, CLEAN */
+    .skill-tag {
+      background: #1f3d48;
+      padding: 0.3rem 1rem;
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: white;
+      letter-spacing: 0.3px;
+      border-left: 3px solid #86b9c9;
+      margin-bottom: 0.2rem;
+      display: inline-block;
+    }
+
+    .lang-tag {
+      background: #1a3741;
+      padding: 0.3rem 1.2rem;
+      font-size: 0.7rem;
+      color: white;
+      margin-right: 0.3rem;
+      margin-bottom: 0.3rem;
+      display: inline-block;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      list-style: none;
+    }
+
+    /* RIGHT COLUMN – PROFILE */
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: -2px;
+      color: #0f1e26;
+      line-height: 1.1;
+      margin-bottom: 0.2rem;
+    }
+
+    .subhead {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.8rem;
+      color: #4c6a75;
+      font-weight: 400;
+      margin-bottom: 1.2rem;
+      border-bottom: 2px solid #e5edef;
+      padding-bottom: 1rem;
+    }
+
+    .profile p {
+      font-size: 0.85rem;
+      color: #2a404a;
+      margin-bottom: 0.8rem;
+      line-height: 1.65;
+    }
+
+    /* EXPERIENCE */
+    .experience-item {
+      margin-bottom: 1.5rem;
+    }
+
+    .job-title {
+      font-weight: 700;
+      font-size: 1rem;
+      color: #0f1e26;
+    }
+
+    .company-period {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #3e6a78;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .experience-item ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .experience-item li {
+      position: relative;
+      padding-left: 22px;
+      margin-bottom: 0.4rem;
+      font-size: 0.75rem;
+      color: #2a4a55;
+    }
+
+    .experience-item li:before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: #578692;
+    }
+
+    /* EDUCATION CARD – RIGHT COLUMN */
+    .edu-card {
+      background: #f5fafc;
+      padding: 1.1rem 1.3rem;
+      border-left: 6px solid #578692;
+      margin-bottom: 0.5rem;
+    }
+
+    .edu-degree {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #0f1e26;
+    }
+
+    .edu-school {
+      font-size: 0.8rem;
+      color: #1f6573;
+      font-weight: 600;
+    }
+
+    .edu-detail {
+      font-size: 0.75rem;
+      color: #3c6e7a;
+    }
+
+    /* REFERENCES */
+    .ref-item {
+      margin-bottom: 1rem;
+      background: #f6fbfc;
+      padding: 0.9rem 1.2rem;
+      border-left: 4px solid #7aa3b1;
+      font-size: 0.78rem;
+    }
+
+    .ref-name {
+      font-weight: 700;
+      color: #0f1e26;
+    }
+
+    /* ADDITIONAL CARD */
+    .additional {
+      font-size: 0.72rem;
+      background: #f0f7f9;
+      padding: 1rem 1.2rem;
+      margin-top: 0.5rem;
+      border-left: 4px solid #578692;
+    }
+
+    .availability-badge {
+      background: #d4e7ec;
+      padding: 0.2rem 1rem;
+      font-size: 0.7rem;
+      display: inline-block;
+      margin-right: 0.4rem;
+      margin-bottom: 0.3rem;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #dae7ea;
+      margin: 0.8rem 0 0.5rem 0;
+    }
+
+    @media print {
+      body { background: white; padding: 0; }
+      .resume-container { box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="resume-container">
+
+  <!-- LEFT COLUMN – NO NAME, ONLY PHOTO, CONTACT, SKILLS, LANGUAGES -->
+  <div class="left-column">
+    <div class="left-content">
+
+      <!-- PROFILE PHOTO -->
+      <img 
+        src="dike.png" 
+        alt="Emmanuel Okwuchukwu"
+        class="photo"
+      />
+
+      <div class="left-subhead">AI · CREATIVE · DESIGN</div>
+
+      <!-- CONTACT SECTION WITH GOOGLE ICONS -->
+      <div class="section-title">
+        <span class="material-icons">contact_page</span> CONTACT
+      </div>
+      <div class="contact-item">
+        <span class="material-icons">email</span> okwuchukwuemmanuel29@gmail.com
+      </div>
+      <div class="contact-item">
+        <span class="material-icons">phone</span> +234 906 836 6229
+      </div>
+      <div class="contact-item">
+        <span class="material-icons">location_on</span> Gwagwalada, Abuja, Nigeria
+      </div>
+      <div class="contact-item">
+        <span class="material-icons">facebook</span> facebook.com/EmaxChimdike
+      </div>
+      <div class="contact-item">
+        <span class="material-icons">language</span> dike-portfolio.netlify.app
+      </div>
+      <div class="contact-item">
+        <span class="material-icons">folder_open</span> Portfolio: available on request
+      </div>
+
+      <!-- AI & TECH SKILLS -->
+      <div class="section-title">
+        <span class="material-icons">smart_toy</span> AI & TECH
+      </div>
+      <div class="skills-list">
+        <span class="skill-tag">AI CONTENT CREATION</span>
+        <span class="skill-tag">PROMPT ENGINEERING</span>
+        <span class="skill-tag">CHATGPT / MIDJOURNEY</span>
+        <span class="skill-tag">DIGITAL MARKETING</span>
+        <span class="skill-tag">PYTHON NLP BASICS</span>
+      </div>
+
+      <!-- DESIGN SKILLS -->
+      <div class="section-title">
+        <span class="material-icons">palette</span> DESIGN
+      </div>
+      <div class="skills-list">
+        <span class="skill-tag">GRAPHIC DESIGN</span>
+        <span class="skill-tag">UX DESIGN</span>
+        <span class="skill-tag">ADOBE ILLUSTRATOR</span>
+        <span class="skill-tag">FIGMA</span>
+        <span class="skill-tag">BRAND IDENTITY</span>
+      </div>
+
+      <!-- SOFT SKILLS -->
+      <div class="section-title">
+        <span class="material-icons">psychology</span> MINDSET
+      </div>
+      <div class="skills-list">
+        <span class="skill-tag">TIME MANAGEMENT</span>
+        <span class="skill-tag">COLLABORATION</span>
+        <span class="skill-tag">PROBLEM SOLVING</span>
+        <span class="skill-tag">ADAPTABILITY</span>
+      </div>
+
+      <!-- LANGUAGES -->
+      <div class="section-title">
+        <span class="material-icons">translate</span> LANGUAGES
+      </div>
+      <div>
+        <span class="lang-tag">ENGLISH</span>
+        <span class="lang-tag">IGBO</span>
+        <span class="lang-tag">FRENCH</span>
+      </div>
+
+    </div>
+  </div> <!-- END LEFT COLUMN -->
+
+  <!-- RIGHT COLUMN – NAME, PROFILE, EXPERIENCE, EDUCATION, REFERENCES -->
+  <div class="right-column">
+    <div class="right-content">
+
+      <!-- FULL NAME -->
+      <h1>OKWUCHUKWU,<br>EMMANUEL CH.</h1>
+      
+      <!-- PERSONAL DETAILS – NO ICONS, PLAIN -->
+      <div class="subhead">
+        <span>28 NOVEMBER 2001</span>
+        <span>NIGERIAN</span>
+        <span>SINGLE</span>
+      </div>
+
+      <!-- PROFILE SECTION -->
+      <div class="right-section-title">
+        <span class="material-icons">badge</span> PROFILE
+      </div>
+      <div class="profile">
+        <p>Creative Graphic Designer and AI Content Specialist with over 5 years of experience in visual design, digital marketing, and emerging AI technologies. Skilled in Adobe Creative Suite, UX design, and AI prompt engineering. Passionate about leveraging AI tools to enhance content creation, streamline workflows, and deliver data-driven creative solutions.</p>
+      </div>
+
+      <!-- WORK EXPERIENCE – ONLY AESTHETIC INSTITUTE -->
+      <div class="right-section-title">
+        <span class="material-icons">work</span> WORK EXPERIENCE
+      </div>
+      
+      <div class="experience-item">
+        <div class="job-title">Graphic Designer & AI Content Creator</div>
+        <div class="company-period">Aesthetic Institute · JAN 2019 – JUL 2021</div>
+        <ul>
+          <li>Designed branding materials, social media graphics, and web assets using Adobe Illustrator and Figma.</li>
+          <li>Established office procedures, design workflows, and deadline management systems.</li>
+          <li>Integrated AI tools (ChatGPT, Midjourney) to generate visual concepts and copywriting drafts.</li>
+          <li>Developed and tested AI prompts for automated content generation, reducing production time by 30%.</li>
+          <li>Collaborated with marketing teams to align visual content with campaign goals.</li>
+          <li>Trained junior staff on basic AI prompt engineering for creative tasks.</li>
+        </ul>
+      </div>
+
+      <!-- EDUCATION – MOVED TO RIGHT COLUMN (ONLY YOUR REAL EDUCATION) -->
+      <div class="right-section-title">
+        <span class="material-icons">school</span> EDUCATION
+      </div>
+      
+      <div class="edu-card">
+        <span class="edu-degree">B.Sc. Computer Science</span><br>
+        <span class="edu-school">UNIVERSITY OF ABUJA, NIGERIA</span><br>
+        <span class="edu-detail">Expected graduation: 2025 · CGPA: 3.5/4.0</span>
+      </div>
+
+      <!-- REFERENCES – CORRECT NAMES, NO FABRICATED INFO -->
+      <div class="right-section-title">
+        <span class="material-icons">diversity_3</span> REFERENCES
+      </div>
+      
+      <div class="ref-item">
+        <span class="ref-name">Divine Okwuchukwu</span><br>
+        <span style="font-size:0.7rem; color:#3f6570;">Information Analyst, Deloitte US</span><br>
+        <span style="font-size:0.75rem;">generalokwugod@gmail.com</span><br>
+        <span style="font-size:0.75rem;">+1 214 742 9443</span>
+      </div>
+      
+      <div class="ref-item">
+        <span class="ref-name">Brianda Washington</span><br>
+        <span style="font-size:0.7rem; color:#3f6570;">Medical Student, Ross Medical School</span><br>
+        <span style="font-size:0.75rem;">Briandawashington@yahoo.com</span><br>
+        <span style="font-size:0.75rem;">+1 346 221 9627</span>
+      </div>
+
+      <!-- ADDITIONAL INFO – ONLY WHAT YOU PROVIDED -->
+      <div class="additional">
+        <span style="display: flex; align-items: center; gap: 8px; font-weight: 700; letter-spacing:1px;">
+          <span class="material-icons" style="font-size:1rem;">event_available</span> AVAILABILITY
+        </span>
+        <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.6rem;">
+          <span class="availability-badge">REMOTE</span>
+          <span class="availability-badge">ON-SITE</span>
+          <span class="availability-badge">FREELANCE</span>
+          <span class="availability-badge">FULL-TIME</span>
+        </div>
+        <div style="margin-top: 0.6rem; display: flex; gap: 8px; align-items: center;">
+          <span class="material-icons" style="font-size:0.9rem;">auto_awesome</span>
+          <span>AI-assisted creativity · Automation · Portfolio on request</span>
+        </div>
+      </div>
+
+      <!-- subtle footer with skills – no new info -->
+      <hr>
+      <div style="display: flex; justify-content: flex-start; gap: 1.5rem; font-size: 0.65rem; color: #2e6c7a; text-transform: uppercase; letter-spacing: 1px; margin-top: 0.2rem;">
+        <span>ADOBE CERTIFIED</span>
+        <span>FIGMA</span>
+        <span>AI PROMPT ENGINEER</span>
+        <span>5+ YEARS</span>
+      </div>
+
+    </div>
+  </div> <!-- END RIGHT COLUMN -->
+
+</div> <!-- END RESUME CONTAINER -->
+
+</body>
+</html>
