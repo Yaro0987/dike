@@ -3,7 +3,7 @@
 <head>
   <!-- ========== COMPLETE META PROPERTIES ========== -->
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover" />
   <meta name="description" content="Emmanuel Okwuchukwu – AI Content Specialist & Graphic Designer. 5+ years experience. B.Sc Computer Science, University of Abuja." />
   <meta name="keywords" content="AI Content Creation, Prompt Engineering, Graphic Design, UX Design, Figma, Adobe Illustrator, Midjourney, ChatGPT, Nigeria, Abuja" />
   <meta name="author" content="Emmanuel Okwuchukwu" />
@@ -21,21 +21,18 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Emmanuel Okwuchukwu · AI & Creative Specialist" />
   
-  <!-- Favicon -->
+  <!-- Favicon - LOGO.PNG -->
   <link rel="icon" type="image/png" href="logo.png" />
   <link rel="apple-touch-icon" href="logo.png" />
   
   <title>Emmanuel Okwuchukwu · AI Creative & Design | Portfolio</title>
   
-  <!-- Google Material Icons & Fonts -->
+  <!-- Google Material Icons & Fonts - ALL ICONS FROM GOOGLE ICONS -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   
-  <!-- Font Awesome 6 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-  
   <style>
-    /* ========== GLOBAL RESET — NO OVERFLOW ISSUES ========== */
+    /* ========== GLOBAL RESET - PERFECTED ========== */
     * {
       margin: 0;
       padding: 0;
@@ -51,29 +48,47 @@
 
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: #f5fafc;
+      background: #f9fcfe;
       color: #0a1a1f;
-      line-height: 1.5;
+      line-height: 1.6;
       width: 100%;
       max-width: 100%;
       overflow-x: hidden;
       position: relative;
     }
 
-    /* ========== MOBILE VIEWPORT FIX ========== */
-    img, video, canvas, iframe {
-      max-width: 100%;
-      height: auto;
+    body.menu-open {
+      overflow: hidden !important;
+      position: fixed;
+      width: 100%;
+      height: 100%;
     }
 
-    /* ========== ANIMATIONS (KEPT) ========== */
-    @keyframes fadeInUp {
+    /* ========== TYPOGRAPHY - MODERN & CLEAN ========== */
+    h1, h2, h3, h4 {
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+    h1 { font-size: 2.6rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.5rem; }
+    p { font-size: 1rem; line-height: 1.7; color: #2e5a65; }
+
+    @media (min-width: 768px) {
+      h1 { font-size: 3.6rem; }
+      h2 { font-size: 2.4rem; }
+      h3 { font-size: 1.8rem; }
+    }
+
+    /* ========== ANIMATIONS - SMOOTH ========== */
+    @keyframes fadeUp {
       0% { opacity: 0; transform: translateY(20px); }
       100% { opacity: 1; transform: translateY(0); }
     }
-    /* ... other animations unchanged but performance-light ... */
+
     .hero, .hero-image, #about, #skills, #experience, #education, #projects, #contact, footer {
-      animation: fadeInUp 0.7s ease forwards;
+      animation: fadeUp 0.8s cubic-bezier(0.2, 0.9, 0.3, 1) forwards;
       opacity: 0;
     }
     .hero { animation-delay: 0.1s; }
@@ -86,48 +101,47 @@
     #contact { animation-delay: 0.5s; }
     footer { animation-delay: 0.55s; }
 
-    /* ========== SCROLL TO UP ========== */
+    /* ========== SCROLL TO TOP - MODERN ========== */
     .scroll-to-up {
       position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 50px;
-      height: 50px;
+      bottom: 24px;
+      right: 24px;
+      width: 52px;
+      height: 52px;
       background: #0f1e26;
       color: white;
-      border-radius: 50%;
+      border-radius: 16px;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      box-shadow: 0 8px 24px rgba(0,30,40,0.15);
       z-index: 9999;
       opacity: 0;
       visibility: hidden;
-      transition: 0.25s;
-      border: 2px solid #4fa6b9;
+      transition: all 0.25s ease;
+      border: none;
+      transform: scale(0.9);
     }
-    .scroll-to-up.show { opacity: 1; visibility: visible; }
-
-    /* ========== TYPOGRAPHY (MOBILE-OPTIMIZED) ========== */
-    h1 { font-size: 2.4rem; font-weight: 800; letter-spacing: -1.5px; line-height: 1.1; }
-    h2 { font-size: 1.9rem; font-weight: 700; letter-spacing: -1px; }
-    h3 { font-size: 1.5rem; }
-    p { font-size: 1rem; line-height: 1.6; }
-
-    @media (min-width: 768px) {
-      h1 { font-size: 3.4rem; }
-      h2 { font-size: 2.4rem; }
-      h3 { font-size: 1.8rem; }
-      p { font-size: 1.1rem; }
+    .scroll-to-up.show {
+      opacity: 1;
+      visibility: visible;
+      transform: scale(1);
+    }
+    .scroll-to-up:hover {
+      background: #1d7a8c;
+      transform: scale(1.05) translateY(-3px);
+    }
+    .scroll-to-up .material-icons {
+      font-size: 28px;
     }
 
-    /* ========== HEADER — REMASTERED NAV, NO OVERFLOW ========== */
+    /* ========== HEADER - STICKY TO TOP ========== */
     header {
-      background: rgba(255,255,255,0.98);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      box-shadow: 0 2px 15px rgba(0,40,50,0.03);
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 2px 20px rgba(0,40,50,0.03);
       padding: 0.8rem 5%;
       position: sticky;
       top: 0;
@@ -136,33 +150,34 @@
       justify-content: space-between;
       align-items: center;
       width: 100%;
-      flex-wrap: nowrap;
+      border-bottom: 1px solid rgba(29,122,140,0.08);
     }
 
     .logo-container {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 12px;
       flex-shrink: 0;
     }
     .logo-img {
-      height: 42px;
+      height: 44px;
       width: auto;
-      border-radius: 10px;
+      border-radius: 12px;
+      object-fit: contain;
     }
     .logo-text {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       font-weight: 800;
-      letter-spacing: -0.5px;
+      letter-spacing: -0.02em;
       color: #0f1e26;
       white-space: nowrap;
     }
     .logo-text span { color: #1d7a8c; }
 
-    /* ----- DESKTOP NAVIGATION (REFINED) ----- */
+    /* DESKTOP NAVIGATION */
     .nav-links {
       display: flex;
-      gap: 1.5rem;
+      gap: 1.8rem;
       align-items: center;
     }
     .nav-links a {
@@ -173,19 +188,54 @@
       text-transform: uppercase;
       letter-spacing: 1px;
       transition: 0.2s;
-      padding: 0.4rem 0;
-      white-space: nowrap;
+      padding: 0.5rem 0;
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 4px;
     }
-    .nav-links a:hover { color: #0f1e26; }
+    .nav-links a .material-icons {
+      font-size: 1.1rem;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2.5px;
+      background: #1d7a8c;
+      transition: 0.25s;
+      border-radius: 4px;
+    }
+    .nav-links a:hover {
+      color: #0f1e26;
+    }
+    .nav-links a:hover::after {
+      width: 100%;
+    }
     .nav-cta, .request-btn {
-      padding: 0.5rem 1.5rem !important;
-      border-radius: 40px;
+      padding: 0.6rem 1.8rem !important;
+      border-radius: 40px !important;
       color: white !important;
     }
-    .nav-cta { background: #0f1e26; }
-    .request-btn { background: #1d7a8c; }
+    .nav-cta {
+      background: #0f1e26;
+    }
+    .nav-cta:hover {
+      background: #1d7a8c !important;
+    }
+    .request-btn {
+      background: #1d7a8c;
+    }
+    .request-btn:hover {
+      background: #0f1e26 !important;
+    }
+    .nav-cta::after, .request-btn::after {
+      display: none !important;
+    }
 
-    /* ----- MOBILE MENU — REMASTERED: NO OVERFLOW, FIXED WIDTH, SMOOTH ----- */
+    /* MOBILE MENU - PERFECTED, NO SCROLL WHEN OPEN */
     .mobile-menu-toggle {
       display: none;
       flex-direction: column;
@@ -198,10 +248,20 @@
     .mobile-menu-toggle span {
       display: block;
       width: 100%;
-      height: 2.8px;
+      height: 2.5px;
       background: #0f1e26;
-      border-radius: 3px;
+      border-radius: 4px;
       transition: 0.25s ease;
+    }
+    .mobile-menu-toggle.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    .mobile-menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+      transform: translateX(-10px);
+    }
+    .mobile-menu-toggle.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -6px);
     }
 
     @media (max-width: 1024px) {
@@ -213,79 +273,69 @@
         top: 0;
         right: -100%;
         width: 80%;
-        max-width: 360px;
+        max-width: 340px;
         height: 100vh;
         background: white;
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
         padding: 5rem 2.5rem;
-        box-shadow: -8px 0 25px rgba(0,0,0,0.08);
-        transition: right 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+        box-shadow: -10px 0 30px rgba(0,0,0,0.05);
+        transition: right 0.4s cubic-bezier(0.23, 1, 0.32, 1);
         z-index: 1001;
         gap: 1.8rem;
         overflow-y: auto;
       }
-      .nav-links.active { right: 0; }
+      .nav-links.active { 
+        right: 0; 
+      }
       
       .nav-links a {
         font-size: 1.1rem;
-        padding: 0.6rem 0;
+        padding: 0.7rem 0;
         width: 100%;
         text-align: left;
         border-bottom: 1px solid #ecf3f5;
         white-space: normal;
         text-transform: none;
-        font-weight: 600;
         letter-spacing: 0.5px;
       }
+      .nav-links a .material-icons {
+        font-size: 1.3rem;
+      }
+      .nav-links a::after { display: none; }
+      
       .nav-links a:last-child, .nav-links a:nth-last-child(2) {
         border-bottom: none;
         text-align: center;
         justify-content: center;
         margin-top: 0.5rem;
-      }
-      .nav-cta, .request-btn {
-        width: 100%;
-        text-align: center;
         padding: 0.9rem !important;
-        border-radius: 60px;
+        width: 100%;
+        border-radius: 60px !important;
       }
       .mobile-menu-toggle { display: flex; }
     }
 
     @media (max-width: 480px) {
-      .logo-img { height: 36px; }
+      .logo-img { height: 38px; }
       .logo-text { font-size: 0.95rem; }
       .nav-links { width: 85%; padding: 4rem 1.8rem; }
     }
 
-    /* ========== NO IFRAMES — CV OPEN SEPARATELY (PDF LINK) ========== */
-    .cv-pdf-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: transparent;
-      border: 2px solid #1d7a8c;
-      color: #1d7a8c;
-      padding: 0.5rem 1.8rem;
-      border-radius: 60px;
-      font-weight: 700;
-      text-decoration: none;
-      transition: 0.2s;
-    }
-    .cv-pdf-link:hover {
-      background: #1d7a8c;
-      color: white;
-    }
+    /* ========== CV MODAL - OPENS CV.HTML IN NEW TAB ========== */
+    /* No modal - we open cv.html directly */
 
-    /* ========== REQUEST MODAL (MINIMAL, NO IFRAME) ========== */
+    /* ========== REQUEST MODAL - ELEGANT ========== */
     .request-modal {
       display: none;
       position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(15,30,38,0.98);
- backdrop-filter: blur(10px);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(15,30,38,0.97);
+      backdrop-filter: blur(12px);
       z-index: 10000;
       justify-content: center;
       align-items: center;
@@ -297,103 +347,637 @@
       max-width: 600px;
       background: white;
       border-radius: 32px;
-      padding: 2.2rem 1.8rem;
+      padding: 2.5rem;
       position: relative;
       max-height: 90vh;
       overflow-y: auto;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.2);
     }
 
-    /* ========== SECTION CONTAINERS (NO WIDTH BREAK) ========== */
+    /* ========== SECTION CONTAINERS ========== */
     .section {
-      padding: 4rem 5%;
+      padding: 5rem 5%;
       max-width: 1400px;
       margin: 0 auto;
       width: 100%;
     }
     @media (max-width: 768px) {
-      .section { padding: 3rem 4%; }
+      .section { padding: 3.5rem 4%; }
     }
 
     .section-title {
       display: flex;
       align-items: center;
       gap: 12px;
-      font-size: 1.8rem;
+      font-size: 2rem;
       font-weight: 700;
       color: #0f1e26;
-      margin-bottom: 2rem;
-      flex-wrap: wrap;
-    }
-    .section-title .material-icons { font-size: 2.2rem; color: #1d7a8c; }
-
-    /* ========== PERSONAL INFO GRID (MOBILE FRIENDLY) ========== */
-    .personal-info-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-      background: white;
-      padding: 2rem;
-      border-radius: 32px;
-      box-shadow: 0 12px 28px rgba(0,40,50,0.03);
       margin-bottom: 2.5rem;
     }
+    .section-title .material-icons {
+      font-size: 2.2rem;
+      color: #1d7a8c;
+      background: rgba(29,122,140,0.08);
+      padding: 8px;
+      border-radius: 16px;
+    }
 
-    /* ========== SKILLS ========== */
+    /* ========== HERO SECTION - MODERN ========== */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      padding: 3rem 5%;
+      max-width: 1400px;
+      margin: 0 auto;
+      align-items: center;
+    }
+    .hero h1 {
+      margin-bottom: 1rem;
+    }
+    .hero h1 span {
+      color: #1d7a8c;
+      position: relative;
+      display: inline-block;
+    }
+    .hero h1 span::after {
+      content: '';
+      position: absolute;
+      bottom: 6px;
+      left: 0;
+      width: 100%;
+      height: 10px;
+      background: rgba(29,122,140,0.12);
+      z-index: -1;
+      border-radius: 10px;
+    }
+    .hero-image {
+      background: linear-gradient(145deg, #e3f0f5, #d2e7ed);
+      border-radius: 32px;
+      padding: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-image img {
+      width: 100%;
+      max-width: 420px;
+      border-radius: 24px;
+      box-shadow: 0 20px 40px rgba(20,100,110,0.15);
+    }
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; gap: 2rem; }
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0.8rem 2rem;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: 0.2s;
+      cursor: pointer;
+      border: none;
+      text-decoration: none;
+    }
+    .btn .material-icons {
+      font-size: 1.2rem;
+    }
+    .btn-primary {
+      background: #0f1e26;
+      color: white;
+    }
+    .btn-primary:hover {
+      background: #1d7a8c;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(29,122,140,0.2);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid #0f1e26;
+      color: #0f1e26;
+    }
+    .btn-outline:hover {
+      background: #0f1e26;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    /* ========== PERSONAL INFO GRID ========== */
+    .personal-info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.8rem;
+      background: white;
+      padding: 2.5rem;
+      border-radius: 32px;
+      box-shadow: 0 15px 35px rgba(0,40,50,0.03);
+      margin-bottom: 2.5rem;
+    }
+    .info-card {
+      display: flex;
+      gap: 1.2rem;
+      align-items: flex-start;
+    }
+    .info-icon {
+      background: rgba(29,122,140,0.08);
+      width: 60px;
+      height: 60px;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .info-icon .material-icons {
+      font-size: 1.8rem;
+      color: #1d7a8c;
+    }
+    .info-content h4 {
+      font-size: 1rem;
+      color: #1d5a67;
+      margin-bottom: 0.3rem;
+    }
+    .info-content p {
+      font-size: 0.95rem;
+      color: #0f1e26;
+      font-weight: 500;
+    }
+
+    /* ========== SKILLS SECTION ========== */
     .skills-wrapper {
       background: white;
       border-radius: 32px;
-      padding: 2rem;
+      padding: 2.5rem;
+      box-shadow: 0 15px 35px rgba(0,40,50,0.03);
+    }
+    .skills-category {
+      margin-bottom: 2.5rem;
+    }
+    .category-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #0f1e26;
+      margin-bottom: 1.5rem;
+    }
+    .category-title .material-icons {
+      font-size: 1.8rem;
+      color: #1d7a8c;
+    }
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
     }
     .skill-tag {
       background: #0f1e26;
       padding: 0.6rem 1.4rem;
       border-radius: 60px;
       font-size: 0.85rem;
+      font-weight: 500;
       color: white;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: 0.2s;
     }
-    @media (max-width: 600px) {
-      .skill-tag { padding: 0.5rem 1.2rem; font-size: 0.8rem; }
+    .skill-tag .material-icons {
+      font-size: 1rem;
+      color: #ffc107;
+    }
+    .skill-tag:hover {
+      background: #1d7a8c;
+      transform: translateY(-3px);
+    }
+    .soft-skill-tag {
+      background: #e1f0f3;
+      padding: 0.6rem 1.4rem;
+      border-radius: 60px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #0f1e26;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .soft-skill-tag .material-icons {
+      font-size: 1rem;
+      color: #1d7a8c;
+    }
+    .lang-tag {
+      background: #1a3741;
+      padding: 0.6rem 1.4rem;
+      border-radius: 60px;
+      font-size: 0.85rem;
+      color: white;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .lang-tag .material-icons {
+      font-size: 1rem;
+      color: #86b9c9;
     }
 
-    /* ========== PROJECT CARDS — FIXED WIDTH ON MOBILE ========== */
+    /* ========== EXPERIENCE CARDS ========== */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+    }
+    .experience-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 28px;
+      box-shadow: 0 15px 35px rgba(0,40,50,0.03);
+      border-left: 6px solid #1d7a8c;
+      transition: 0.25s;
+    }
+    .experience-card:hover {
+      transform: translateX(10px);
+      box-shadow: 0 20px 45px rgba(29,122,140,0.08);
+    }
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.2rem;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+    .exp-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #0f1e26;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .exp-title .material-icons {
+      font-size: 1.6rem;
+      color: #1d7a8c;
+    }
+    .exp-company {
+      font-size: 1rem;
+      color: #1d7a8c;
+      font-weight: 600;
+    }
+    .exp-period {
+      background: #ebf5f7;
+      padding: 0.3rem 1.2rem;
+      border-radius: 60px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #1d5a67;
+    }
+    .exp-details {
+      list-style: none;
+    }
+    .exp-details li {
+      position: relative;
+      padding-left: 28px;
+      margin-bottom: 0.8rem;
+      font-size: 0.95rem;
+      color: #2a4a55;
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+    .exp-details li .material-icons {
+      font-size: 1rem;
+      color: #1d7a8c;
+      position: absolute;
+      left: 0;
+    }
+
+    /* ========== EDUCATION GRID ========== */
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.8rem;
+    }
+    .edu-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 28px;
+      box-shadow: 0 15px 35px rgba(0,40,50,0.03);
+      border-bottom: 4px solid #578692;
+    }
+    .edu-degree {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #0f1e26;
+      margin-bottom: 0.3rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .edu-degree .material-icons {
+      font-size: 1.4rem;
+      color: #1d7a8c;
+    }
+    .edu-school {
+      font-size: 1rem;
+      color: #1d7a8c;
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+    }
+    .edu-detail {
+      display: inline-block;
+      background: #ebf5f7;
+      padding: 0.3rem 1rem;
+      border-radius: 60px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #1d5a67;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* ========== PROJECT CARDS ========== */
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
       gap: 2rem;
     }
     .project-card {
       background: white;
       border-radius: 28px;
       padding: 1.8rem;
-      box-shadow: 0 10px 25px rgba(0,40,50,0.03);
-      transition: 0.25s;
+      box-shadow: 0 15px 35px rgba(0,40,50,0.03);
+      transition: all 0.25s;
+      border: 1px solid #ecf3f5;
+      cursor: pointer;
+    }
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 50px rgba(29,122,140,0.08);
+      border-color: #cde3e8;
     }
     .project-image {
       width: 100%;
       height: 200px;
       border-radius: 20px;
       object-fit: cover;
+      margin-bottom: 1.2rem;
+    }
+    .project-icon {
+      background: rgba(29,122,140,0.08);
+      width: 60px;
+      height: 60px;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.2rem;
+    }
+    .project-icon .material-icons {
+      font-size: 2rem;
+      color: #1d7a8c;
+    }
+    .project-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1rem;
+    }
+    .project-tag {
+      background: #ebf5f7;
+      padding: 0.3rem 1rem;
+      border-radius: 60px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #1d5a67;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .project-tag .material-icons {
+      font-size: 0.8rem;
     }
 
-    /* ========== CONTACT ========== */
+    /* ========== CONTACT SECTION ========== */
     .contact-container {
       display: grid;
       grid-template-columns: 1fr 1.3fr;
       gap: 2rem;
       background: white;
-      border-radius: 36px;
-      padding: 2rem;
+      border-radius: 32px;
+      padding: 2.5rem;
+      box-shadow: 0 15px 35px rgba(0,40,50,0.03);
     }
+    .contact-info {
+      background: #0f1e26;
+      padding: 2rem;
+      border-radius: 24px;
+      color: white;
+    }
+    .contact-info h3 {
+      color: white;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .contact-info h3 .material-icons {
+      color: #86b9c9;
+    }
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 1.2rem;
+    }
+    .contact-detail .material-icons {
+      color: #86b9c9;
+    }
+    .contact-detail p {
+      color: white;
+    }
+    .contact-social {
+      display: flex;
+      gap: 1.2rem;
+      margin-top: 2rem;
+    }
+    .contact-social a {
+      color: white;
+      font-size: 1.5rem;
+      transition: 0.2s;
+    }
+    .contact-social a .material-icons {
+      font-size: 1.8rem;
+    }
+    .contact-social a:hover {
+      color: #86b9c9;
+      transform: translateY(-3px);
+    }
+    .contact-form {
+      padding: 0.5rem;
+    }
+    .contact-form h3 {
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .contact-form h3 .material-icons {
+      color: #1d7a8c;
+    }
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 1rem 1.4rem;
+      border: 2px solid #ecf3f5;
+      border-radius: 20px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      transition: 0.2s;
+    }
+    input:focus, textarea:focus, select:focus {
+      outline: none;
+      border-color: #1d7a8c;
+      box-shadow: 0 0 0 4px rgba(29,122,140,0.05);
+    }
+    .submit-btn {
+      background: #0f1e26;
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: 0.2s;
+      width: 100%;
+      justify-content: center;
+    }
+    .submit-btn .material-icons {
+      font-size: 1.2rem;
+    }
+    .submit-btn:hover {
+      background: #1d7a8c;
+      transform: translateY(-2px);
+    }
+
     @media (max-width: 900px) {
       .contact-container { grid-template-columns: 1fr; }
     }
 
-    /* ========== FOOTER (RESPONSIVE) ========== */
+    /* ========== FOOTER - MODERN ========== */
+    footer {
+      background: #0f1e26;
+      color: white;
+      padding: 4rem 5% 2rem;
+      margin-top: 3rem;
+    }
     .footer-content {
       display: grid;
       grid-template-columns: 2fr 1fr 1fr 1.5fr;
-      gap: 2rem;
+      gap: 2.5rem;
+      max-width: 1400px;
+      margin: 0 auto;
     }
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 1.2rem;
+    }
+    .footer-logo img {
+      height: 48px;
+      width: auto;
+      border-radius: 12px;
+    }
+    .footer-logo span {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: white;
+    }
+    .footer-logo span span {
+      color: #86b9c9;
+    }
+    .footer-links h4 {
+      color: white;
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .footer-links h4 .material-icons {
+      font-size: 1.2rem;
+      color: #86b9c9;
+    }
+    .footer-links a {
+      color: #b6d2da;
+      display: block;
+      margin-bottom: 0.8rem;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .footer-links a .material-icons {
+      font-size: 1rem;
+      color: #86b9c9;
+    }
+    .footer-links a:hover {
+      color: white;
+      transform: translateX(5px);
+    }
+    .footer-social {
+      display: flex;
+      gap: 1.2rem;
+      margin-top: 1.5rem;
+    }
+    .footer-social a {
+      color: #b6d2da;
+      font-size: 1.6rem;
+      transition: 0.2s;
+    }
+    .footer-social a .material-icons {
+      font-size: 1.8rem;
+    }
+    .footer-social a:hover {
+      color: white;
+      transform: translateY(-3px);
+    }
+    .footer-bottom {
+      border-top: 1px solid #2f5460;
+      padding-top: 2rem;
+      margin-top: 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      color: #98b8c2;
+      max-width: 1400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
     @media (max-width: 900px) {
       .footer-content { grid-template-columns: 1fr 1fr; }
     }
@@ -404,66 +988,88 @@
     /* ========== TOAST ========== */
     .toast {
       position: fixed;
-      bottom: 25px; right: 25px;
+      bottom: 24px;
+      right: 24px;
       background: #0f1e26;
       color: white;
       padding: 1.2rem 2rem;
       border-radius: 60px;
       display: flex;
       align-items: center;
-      gap: 10px;
-      box-shadow: 0 12px 28px rgba(0,0,0,0.2);
+      gap: 12px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.2);
       transform: translateY(80px);
       opacity: 0;
       transition: 0.3s;
       z-index: 99999;
     }
-    .toast.active { transform: translateY(0); opacity: 1; }
+    .toast.active {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    .toast .material-icons {
+      font-size: 1.3rem;
+    }
   </style>
 </head>
 <body>
 
-<!-- ========== SCROLL TO UP ========== -->
-<div class="scroll-to-up" id="scrollToUp"><span class="material-icons">arrow_upward</span></div>
+<!-- ========== SCROLL TO TOP ========== -->
+<div class="scroll-to-up" id="scrollToUp">
+  <span class="material-icons">arrow_upward</span>
+</div>
 
-<!-- ========== REQUEST MODAL (NO IFRAME) ========== -->
+<!-- ========== REQUEST MODAL ========== -->
 <div id="requestModal" class="request-modal">
   <div class="request-content">
-    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:2rem;">
-      <h2 style="font-size:1.8rem;">Request a Quote</h2>
-      <span class="material-icons" id="closeRequestBtn" style="cursor:pointer; font-size:2rem; color:#1d7a8c;">close</span>
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+      <h2 style="font-size: 1.8rem; color: #0f1e26; display: flex; align-items: center; gap: 12px;">
+        <span class="material-icons" style="color: #1d7a8c;">request_quote</span> Request a Quote
+      </h2>
+      <span class="material-icons" id="closeRequestBtn" style="cursor: pointer; font-size: 2rem; color: #1d7a8c;">close</span>
     </div>
-    <div class="form-group"><input type="text" id="requestName" placeholder="Your Name / Company"></div>
-    <div class="form-group"><input type="email" id="requestEmail" placeholder="Email Address"></div>
     <div class="form-group">
-      <select id="requestType" style="width:100%; padding:1rem 1.4rem; border:2px solid #e0edf0; border-radius:20px;">
-        <option>Brand Identity & Design</option><option>AI Content / Prompt Engineering</option>
-        <option>UX/UI Design</option><option>Training & Workshops</option><option>Consulting</option><option>Other</option>
+      <input type="text" id="requestName" placeholder="Your Name / Company">
+    </div>
+    <div class="form-group">
+      <input type="email" id="requestEmail" placeholder="Email Address">
+    </div>
+    <div class="form-group">
+      <select id="requestType">
+        <option>Brand Identity & Design</option>
+        <option>AI Content / Prompt Engineering</option>
+        <option>UX/UI Design</option>
+        <option>Training & Workshops</option>
+        <option>Consulting</option>
+        <option>Other</option>
       </select>
     </div>
-    <div class="form-group"><textarea id="requestDetails" rows="4" placeholder="Tell me about your project..."></textarea></div>
-    <button class="submit-btn" id="sendRequestBtn" style="background:#0f1e26; color:white; padding:1rem; border-radius:60px; width:100%; font-weight:700; border:none;">
+    <div class="form-group">
+      <textarea id="requestDetails" rows="4" placeholder="Tell me about your project..."></textarea>
+    </div>
+    <button class="submit-btn" id="sendRequestBtn">
       <span class="material-icons">send</span> Submit Request
     </button>
   </div>
 </div>
 
-<!-- ========== HEADER — REMASTERED NAV ========== -->
+<!-- ========== HEADER - STICKY TO TOP ========== -->
 <header>
   <div class="logo-container">
-    <img src="logo.png" alt="Emmanuel Okwuchukwu" class="logo-img" onerror="this.src='https://via.placeholder.com/42?text=EO'">
+    <!-- LOGO.PNG - Brand logo -->
+    <img src="logo.png" alt="Emmanuel Okwuchukwu Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/44?text=EO'">
     <span class="logo-text">E.C.<span>OKWUCHUKWU</span></span>
   </div>
   
   <div class="nav-links" id="navLinks">
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#experience">Experience</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-    <!-- NO IFRAME: direct link to open CV pdf separately -->
-    <a href="cv.html" target="_blank" class="nav-cta" id="navViewCvBtn">
+    <a href="#home"><span class="material-icons">home</span> Home</a>
+    <a href="#about"><span class="material-icons">badge</span> About</a>
+    <a href="#skills"><span class="material-icons">auto_awesome</span> Skills</a>
+    <a href="#experience"><span class="material-icons">work_history</span> Experience</a>
+    <a href="#projects"><span class="material-icons">auto_stories</span> Projects</a>
+    <a href="#contact"><span class="material-icons">contact_mail</span> Contact</a>
+    <!-- CV button opens cv.html in new tab -->
+    <a href="cv.html" target="_blank" class="nav-cta">
       <span class="material-icons">description</span> CV
     </a>
     <a href="#" id="navRequestBtn" class="request-btn">
@@ -472,317 +1078,627 @@
   </div>
   
   <div class="mobile-menu-toggle" id="mobileToggle">
-    <span></span><span></span><span></span>
+    <span></span>
+    <span></span>
+    <span></span>
   </div>
 </header>
 
-<!-- ========== HERO ========== -->
-<section id="home" class="hero" style="display:grid; grid-template-columns:1fr 1fr; gap:2rem; padding:3rem 5%; max-width:1400px; margin:0 auto;">
+<!-- ========== HERO SECTION ========== -->
+<section id="home" class="hero">
   <div>
     <h1 id="heroName">Emmanuel <span>Okwuchukwu</span></h1>
-    <h2 style="font-size:1.9rem; color:#1d7a8c; margin-bottom:0.8rem;">AI & Creative Design Specialist</h2>
-    <p id="heroBio" style="font-size:1.1rem;"></p>
-    <div class="hero-cta" style="display:flex; gap:1rem; margin-top:1.8rem; flex-wrap:wrap;">
-      <a href="cv.html" target="_blank" class="btn" style="background:#0f1e26; color:white; padding:0.8rem 2rem; border-radius:60px; text-decoration:none;">
+    <h2 style="font-size: 1.9rem; color: #1d7a8c; margin-bottom: 1rem; display: flex; align-items: center; gap: 8px;">
+      <span class="material-icons" style="font-size: 2rem;">auto_awesome</span> AI & Creative Design Specialist
+    </h2>
+    <p id="heroBio" style="font-size: 1.1rem;"></p>
+    <div style="display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap;">
+      <a href="cv.html" target="_blank" class="btn btn-primary">
         <span class="material-icons">visibility</span> VIEW CV
       </a>
-      <button class="btn btn-outline" id="heroRequestBtn" style="background:white; color:#0f1e26; border:2px solid #0f1e26; padding:0.8rem 2rem; border-radius:60px;">
+      <button class="btn btn-outline" id="heroRequestBtn">
         <span class="material-icons">request_quote</span> REQUEST QUOTE
       </button>
     </div>
   </div>
-  <div class="hero-image" style="background:linear-gradient(145deg, #d9eaf0, #c5dee6); border-radius:32px; padding:1.8rem; display:flex; align-items:center; justify-content:center;">
-    <img src="logo.png" alt="Emmanuel" style="max-width:100%; border-radius:24px;" onerror="this.src='https://via.placeholder.com/400?text=EO'">
+  <div class="hero-image">
+    <!-- DIKE.PNG - Personal portrait -->
+    <img src="dike.png" alt="Emmanuel Okwuchukwu Portrait" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800'">
   </div>
 </section>
 
-<!-- ========== ABOUT ========== -->
+<!-- ========== ABOUT SECTION ========== -->
 <section id="about" class="section">
-  <div class="section-title"><span class="material-icons">badge</span> ABOUT ME</div>
+  <div class="section-title">
+    <span class="material-icons">badge</span> ABOUT ME
+  </div>
   <div class="personal-info-grid" id="personalInfoGrid"></div>
-  <div style="background:white; padding:2rem; border-radius:32px;">
-    <h3 style="font-size:1.6rem; margin-bottom:1.2rem;">Professional Profile</h3>
-    <p id="profileText" style="font-size:1.1rem; color:#2a404a;"></p>
+  <div style="background: white; padding: 2.5rem; border-radius: 32px; box-shadow: 0 15px 35px rgba(0,40,50,0.03);">
+    <h3 style="font-size: 1.6rem; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 8px;">
+      <span class="material-icons" style="color: #1d7a8c;">person_outline</span> Professional Profile
+    </h3>
+    <p id="profileText" style="font-size: 1.1rem; color: #2a404a; line-height: 1.8;"></p>
   </div>
 </section>
 
-<!-- ========== SKILLS ========== -->
-<section id="skills" class="section" style="background:#f5fbfd;">
-  <div class="section-title"><span class="material-icons">auto_awesome</span> SKILLS & EXPERTISE</div>
+<!-- ========== SKILLS SECTION ========== -->
+<section id="skills" class="section" style="background: #f5fbfd;">
+  <div class="section-title">
+    <span class="material-icons">auto_awesome</span> SKILLS & EXPERTISE
+  </div>
   <div class="skills-wrapper" id="skillsWrapper"></div>
 </section>
 
-<!-- ========== EXPERIENCE ========== -->
+<!-- ========== EXPERIENCE SECTION ========== -->
 <section id="experience" class="section">
-  <div class="section-title"><span class="material-icons">work_history</span> WORK EXPERIENCE</div>
+  <div class="section-title">
+    <span class="material-icons">work_history</span> WORK EXPERIENCE
+  </div>
   <div class="timeline" id="experienceTimeline"></div>
 </section>
 
-<!-- ========== EDUCATION ========== -->
-<section id="education" class="section" style="background:#f5fbfd;">
-  <div class="section-title"><span class="material-icons">school</span> EDUCATION</div>
+<!-- ========== EDUCATION SECTION ========== -->
+<section id="education" class="section" style="background: #f5fbfd;">
+  <div class="section-title">
+    <span class="material-icons">school</span> EDUCATION
+  </div>
   <div class="education-grid" id="educationGrid"></div>
 </section>
 
-<!-- ========== PROJECTS ========== -->
+<!-- ========== PROJECTS SECTION ========== -->
 <section id="projects" class="section">
-  <div class="section-title"><span class="material-icons">auto_stories</span> FEATURED PROJECTS</div>
+  <div class="section-title">
+    <span class="material-icons">auto_stories</span> FEATURED PROJECTS
+  </div>
   <div class="projects-grid" id="projectsGrid"></div>
 </section>
 
-<!-- ========== CONTACT ========== -->
+<!-- ========== CONTACT SECTION ========== -->
 <section id="contact" class="section">
-  <div class="section-title"><span class="material-icons">contact_mail</span> CONTACT ME</div>
+  <div class="section-title">
+    <span class="material-icons">contact_mail</span> CONTACT ME
+  </div>
   <div class="contact-container" id="contactContainer"></div>
 </section>
 
 <!-- ========== FOOTER ========== -->
-<footer style="background:#0f1e26; color:white; padding:4rem 5% 2rem;">
+<footer>
   <div class="footer-content">
     <div>
-      <div class="footer-logo" style="display:flex; align-items:center; gap:10px; margin-bottom:1.2rem;">
-        <img src="logo.png" alt="logo" style="height:50px; border-radius:10px;" onerror="this.src='https://via.placeholder.com/50?text=EO'">
-        <span style="font-size:1.5rem; font-weight:800;">E.C.<span style="color:#86b9c9;">OKWUCHUKWU</span></span>
+      <div class="footer-logo">
+        <img src="logo.png" alt="Emmanuel Okwuchukwu Logo" onerror="this.src='https://via.placeholder.com/48?text=EO'">
+        <span>E.C.<span>OKWUCHUKWU</span></span>
       </div>
-      <p id="footerBio" style="color:#b6d2da; font-size:0.95rem; margin-bottom:1.8rem;"></p>
+      <p id="footerBio" style="color: #b6d2da; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem;"></p>
       <div class="footer-social" id="footerSocial"></div>
     </div>
+    
     <div class="footer-links">
-      <h4 style="color:white; letter-spacing:2px;">NAVIGATE</h4>
-      <a href="#home" style="color:#b6d2da; display:block; margin-bottom:0.8rem;">Home</a>
-      <a href="#about" style="color:#b6d2da; display:block; margin-bottom:0.8rem;">About</a>
-      <a href="#skills" style="color:#b6d2da; display:block; margin-bottom:0.8rem;">Skills</a>
-      <a href="#contact" style="color:#b6d2da; display:block;">Contact</a>
+      <h4><span class="material-icons">explore</span> NAVIGATE</h4>
+      <a href="#home"><span class="material-icons">home</span> Home</a>
+      <a href="#about"><span class="material-icons">badge</span> About</a>
+      <a href="#skills"><span class="material-icons">auto_awesome</span> Skills</a>
+      <a href="#experience"><span class="material-icons">work_history</span> Experience</a>
+      <a href="#projects"><span class="material-icons">auto_stories</span> Projects</a>
+      <a href="#contact"><span class="material-icons">contact_mail</span> Contact</a>
     </div>
+    
     <div class="footer-links">
-      <h4 style="color:white; letter-spacing:2px;">RESOURCES</h4>
-      <a href="cv.html" target="_blank" style="color:#b6d2da; display:block; margin-bottom:0.8rem;">📄 View CV (PDF)</a>
-      <a href="cv.html" download style="color:#b6d2da; display:block; margin-bottom:0.8rem;">⬇️ Download CV</a>
-      <a href="#" id="footerRequestBtn" style="color:#b6d2da; display:block;">📬 Request Quote</a>
+      <h4><span class="material-icons">folder</span> RESOURCES</h4>
+      <a href="cv.html" target="_blank"><span class="material-icons">description</span> View CV</a>
+      <a href="#" id="footerRequestBtn"><span class="material-icons">request_quote</span> Request Quote</a>
     </div>
+    
     <div class="footer-links" id="footerContact"></div>
   </div>
-  <div class="footer-bottom" style="border-top:1px solid #2f5460; margin-top:2.5rem; padding-top:1.8rem; display:flex; justify-content:space-between; flex-wrap:wrap; color:#98b8c2;">
+  
+  <div class="footer-bottom">
     <span id="copyright"></span>
-    <span>Designed with AI · Built for excellence</span>
+    <span style="display: flex; align-items: center; gap: 6px;">
+      
+    </span>
   </div>
 </footer>
 
-<!-- ========== TOAST ========== -->
-<div id="toast" class="toast"><span class="material-icons">check_circle</span><span id="toastMessage">Message sent!</span></div>
+<!-- ========== TOAST NOTIFICATION ========== -->
+<div id="toast" class="toast">
+  <span class="material-icons">check_circle</span>
+  <span id="toastMessage">Message sent successfully!</span>
+</div>
 
 <script>
-// ---------- GLOBAL PORTFOLIO DATA (EMBEDDED, NO external data.js needed) ----------
+// ========== COMPLETE PORTFOLIO DATA ==========
 const portfolioData = {
   personal: {
     fullName: "OKWUCHUKWU, EMMANUEL CHIMDIKE",
     title: "AI & Creative Design Specialist",
-    profile: "Creative Graphic Designer and AI Content Specialist with over 5 years of experience in visual design, digital marketing, and emerging AI technologies. B.Sc Computer Science candidate at University of Abuja.",
+    profile: "Creative Graphic Designer and AI Content Specialist with over 5 years of experience in visual design, digital marketing, and emerging AI technologies. Skilled in Adobe Creative Suite, UX design, and AI prompt engineering. Passionate about leveraging AI tools to enhance content creation, streamline workflows, and deliver data-driven creative solutions. B.Sc Computer Science candidate at University of Abuja.",
     email: "okwuchukwuemmanuel29@gmail.com",
     phone: "+234 906 836 6229",
     location: "Gwagwalada, Abuja, Nigeria",
-    birthDate: "28 Nov 2001",
+    website: "chimdike.netlify.app",
+    birthDate: "28 November 2001",
     nationality: "Nigerian",
-    education: { degree: "B.Sc Computer Science", school: "University of Abuja", graduation: "2025", cgpa: "3.5/4.0" },
+    education: {
+      degree: "B.Sc Computer Science",
+      school: "University of Abuja",
+      graduation: "2025",
+      cgpa: "3.5/4.0"
+    },
     experience: "5+ Years"
   },
+  
   skills: {
     ai: [
-      { name: "ChatGPT / Prompt Eng", rating: 4.8 },
+      { name: "AI Content Creation", rating: 4.9 },
+      { name: "Prompt Engineering", rating: 4.8 },
+      { name: "ChatGPT", rating: 5.0 },
       { name: "Midjourney", rating: 4.7 },
+      { name: "DALL-E", rating: 4.5 },
       { name: "Stable Diffusion", rating: 4.3 },
       { name: "Runway ML", rating: 4.2 },
-      { name: "Copilot Studio", rating: 4.5 },
       { name: "AI Ethics", rating: 4.0 }
     ],
     design: [
       { name: "Figma", rating: 4.9 },
-      { name: "Adobe Illustrator", rating: 4.7 },
-      { name: "Photoshop", rating: 4.5 },
-      { name: "After Effects", rating: 4.0 },
-      { name: "UX Research", rating: 4.6 }
+      { name: "Adobe Illustrator", rating: 4.8 },
+      { name: "Photoshop", rating: 4.6 },
+      { name: "UX Research", rating: 4.7 },
+      { name: "Brand Identity", rating: 4.9 },
+      { name: "After Effects", rating: 4.1 }
     ],
-    soft: ["Strategic Thinking", "Cross-functional Collaboration", "Storytelling", "Deadline-driven", "Mentoring"],
+    soft: [
+      "Strategic Thinking",
+      "Cross-functional Collaboration",
+      "Storytelling",
+      "Deadline-driven",
+      "Mentoring",
+      "Problem Solving",
+      "Adaptability"
+    ],
     languages: [
       { name: "English", level: "Native" },
-      { name: "Igbo", level: "Fluent" },
-      { name: "Hausa", level: "Conversational" }
+      { name: "Igbo", level: "Native" },
+      { name: "French", level: "Intermediate" }
     ]
   },
+  
   experience: [
-    { title: "AI Content Lead", company: "Creative Sync Labs", period: "2023 – Present", description: ["Develop prompt libraries for marketing campaigns", "Generated 200+ high-quality images using Midjourney", "Reduced content production time by 40%"] },
-    { title: "Senior Graphic Designer", company: "BrandCraft Nigeria", period: "2021 – 2023", description: ["Led visual identity for 15+ brands", "Designed packaging, social media assets", "Mentored junior designers"] },
-    { title: "Junior Designer", company: "AfriLabs", period: "2019 – 2021", description: ["Created graphics for tech events", "Collaborated on UI mockups", "Supported rebranding projects"] }
+    {
+      title: "AI Content Lead",
+      company: "Creative Sync Labs",
+      period: "2023 – Present",
+      description: [
+        "Develop prompt libraries for marketing campaigns, generating 200+ high-quality images using Midjourney",
+        "Reduced content production time by 40% through AI-assisted workflows",
+        "Train and mentor junior team members on AI prompt engineering",
+        "Collaborate with creative directors to align AI-generated content with brand strategy"
+      ]
+    },
+    {
+      title: "Senior Graphic Designer",
+      company: "BrandCraft Nigeria",
+      period: "2021 – 2023",
+      description: [
+        "Led visual identity projects for 15+ brands across fintech, fashion, and lifestyle sectors",
+        "Designed comprehensive brand systems including logos, packaging, and digital assets",
+        "Mentored 3 junior designers, improving team output by 35%",
+        "Implemented new design workflows that reduced revision cycles by 25%"
+      ]
+    },
+    {
+      title: "Junior Designer",
+      company: "AfriLabs",
+      period: "2019 – 2021",
+      description: [
+        "Created visual assets for tech conferences and innovation events",
+        "Collaborated on UI mockups for startup accelerator programs",
+        "Supported senior designers in rebranding initiatives",
+        "Maintained brand consistency across all digital touchpoints"
+      ]
+    }
   ],
+  
   education: [
-    { degree: "B.Sc Computer Science", school: "University of Abuja", year: "2025", cgpa: "3.5/4.0", details: "In view" },
-    { degree: "Diploma in Graphic Design", school: "Niit Abuja", year: "2019", details: "Distinction" }
+    {
+      degree: "B.Sc Computer Science",
+      school: "University of Abuja",
+      year: "Expected 2025",
+      cgpa: "3.5/4.0",
+      details: "In view",
+      courses: "Artificial Intelligence, HCI, Database Systems"
+    },
+    {
+      degree: "Diploma in Graphic Design",
+      school: "NIIT Abuja",
+      year: "2019",
+      details: "Distinction",
+      cgpa: "4.8/5.0"
+    },
+    {
+      degree: "AI Prompt Engineering",
+      school: "DeepLearning.AI",
+      year: "2023",
+      details: "Specialization"
+    }
   ],
+  
   projects: [
-    { id: 1, title: "AI Brand Kit Generator", shortDesc: "Generative branding system using GPT-4 + Midjourney", tags: ["AI", "Branding", "Automation"], rating: 4.8, icon: "auto_awesome", images: ["https://images.unsplash.com/photo-1634944902853-3e977c5de884?w=600"] },
-    { id: 2, title: "UX Audit – Fintech App", shortDesc: "Complete usability overhaul for loan platform", tags: ["UX Research", "Figma", "Prototype"], rating: 4.9, icon: "assessment", images: ["https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=600"] },
-    { id: 3, title: "Prompt Engineering Guide", shortDesc: "Open-source resource for AI prompt writing", tags: ["Education", "AI", "eBook"], rating: 4.7, icon: "menu_book", images: ["https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=600"] }
+    {
+      id: 1,
+      title: "AI Brand Kit Generator",
+      shortDesc: "Generative branding system using GPT-4 + Midjourney",
+      fullDesc: "Created an automated brand identity generator that produces logos, color palettes, and visual assets from text prompts. Used by 5+ startups.",
+      tags: ["AI", "Branding", "Automation", "Midjourney"],
+      rating: 4.8,
+      icon: "auto_awesome",
+      images: ["https://images.unsplash.com/photo-1634944902853-3e977c5de884?w=600"]
+    },
+    {
+      id: 2,
+      title: "UX Audit – Fintech App",
+      shortDesc: "Complete usability overhaul for loan platform",
+      fullDesc: "Conducted comprehensive UX audit for a lending app, redesigned user flows, and created high-fidelity prototypes in Figma.",
+      tags: ["UX Research", "Figma", "Prototype", "Fintech"],
+      rating: 4.9,
+      icon: "assessment",
+      images: ["https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=600"]
+    },
+    {
+      id: 3,
+      title: "Prompt Engineering Guide",
+      shortDesc: "Open-source resource for AI prompt writing",
+      fullDesc: "Authored a comprehensive guide to prompt engineering with 100+ tested prompts for ChatGPT and Midjourney.",
+      tags: ["Education", "AI", "eBook", "Resource"],
+      rating: 4.7,
+      icon: "menu_book",
+      images: ["https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=600"]
+    }
   ]
 };
 
-// ========== MOBILE MENU (REMASTERED, STABLE) ==========
+// ========== MOBILE MENU - PERFECTED, NO SCROLL WHEN OPEN ==========
 const mobileToggle = document.getElementById('mobileToggle');
 const navLinks = document.getElementById('navLinks');
+const body = document.body;
+
 if (mobileToggle) {
   mobileToggle.addEventListener('click', function(e) {
     e.stopPropagation();
     this.classList.toggle('active');
     navLinks.classList.toggle('active');
-    document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+    
+    // PREVENT SCROLLING WHEN MENU IS OPEN
+    if (navLinks.classList.contains('active')) {
+      body.classList.add('menu-open');
+      body.style.overflow = 'hidden';
+      body.style.position = 'fixed';
+      body.style.width = '100%';
+      body.style.height = '100%';
+    } else {
+      body.classList.remove('menu-open');
+      body.style.overflow = '';
+      body.style.position = '';
+      body.style.width = '';
+      body.style.height = '';
+    }
   });
 }
-// close on link click
+
+// Close mobile menu on link click and restore scrolling
 document.querySelectorAll('.nav-links a').forEach(link => {
   link.addEventListener('click', function() {
     navLinks.classList.remove('active');
     mobileToggle?.classList.remove('active');
-    document.body.style.overflow = '';
+    body.classList.remove('menu-open');
+    body.style.overflow = '';
+    body.style.position = '';
+    body.style.width = '';
+    body.style.height = '';
   });
 });
 
-// ========== SCROLL TO UP ==========
+// ========== SCROLL TO TOP ==========
 const scrollBtn = document.getElementById('scrollToUp');
-window.addEventListener('scroll', ()=> { scrollBtn.classList.toggle('show', window.pageYOffset > 300); });
-scrollBtn.addEventListener('click', ()=> window.scrollTo({top:0, behavior:'smooth'}));
+window.addEventListener('scroll', () => {
+  scrollBtn.classList.toggle('show', window.pageYOffset > 300);
+});
+scrollBtn.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
 
-// ========== REQUEST MODAL (NO IFRAME) ==========
+// ========== REQUEST MODAL ==========
 const requestModal = document.getElementById('requestModal');
 const closeRequestBtn = document.getElementById('closeRequestBtn');
-function openRequestModal() { requestModal.classList.add('active'); document.body.style.overflow = 'hidden'; }
-function closeRequestModal() { requestModal.classList.remove('active'); document.body.style.overflow = ''; }
+
+function openRequestModal() {
+  requestModal.classList.add('active');
+  body.style.overflow = 'hidden';
+}
+
+function closeRequestModal() {
+  requestModal.classList.remove('active');
+  body.style.overflow = '';
+}
 
 document.getElementById('navRequestBtn')?.addEventListener('click', (e) => { e.preventDefault(); openRequestModal(); });
 document.getElementById('heroRequestBtn')?.addEventListener('click', (e) => { e.preventDefault(); openRequestModal(); });
 document.getElementById('footerRequestBtn')?.addEventListener('click', (e) => { e.preventDefault(); openRequestModal(); });
 closeRequestBtn?.addEventListener('click', closeRequestModal);
-window.addEventListener('click', (e) => { if (e.target === requestModal) closeRequestModal(); });
+window.addEventListener('click', (e) => {
+  if (e.target === requestModal) closeRequestModal();
+});
 
 // ========== TOAST ==========
 const toast = document.getElementById('toast');
 const toastMsg = document.getElementById('toastMessage');
-function showToast(msg) { toastMsg.textContent = msg; toast.classList.add('active'); setTimeout(()=> toast.classList.remove('active'), 3500); }
+
+function showToast(message) {
+  toastMsg.textContent = message;
+  toast.classList.add('active');
+  setTimeout(() => toast.classList.remove('active'), 3500);
+}
 
 // ========== SEND REQUEST ==========
 document.getElementById('sendRequestBtn')?.addEventListener('click', function() {
-  let name = document.getElementById('requestName')?.value.trim();
-  let email = document.getElementById('requestEmail')?.value.trim();
-  if (!name || !email) { showToast('⚠️ Name and email required'); return; }
+  const name = document.getElementById('requestName')?.value.trim();
+  const email = document.getElementById('requestEmail')?.value.trim();
+  if (!name || !email) {
+    showToast('⚠️ Name and email required');
+    return;
+  }
   showToast('📬 Request submitted! I will reply soon.');
   closeRequestModal();
+  
+  // Clear form
+  document.getElementById('requestName').value = '';
+  document.getElementById('requestEmail').value = '';
+  document.getElementById('requestDetails').value = '';
 });
 
-// ========== CONTACT FORM ==========
-document.addEventListener('click', function(e) {
-  if (e.target.id === 'sendContactBtn') {
-    let name = document.getElementById('contactName')?.value.trim();
-    let email = document.getElementById('contactEmail')?.value.trim();
-    let msg = document.getElementById('contactMessage')?.value.trim();
-    if (!name || !email || !msg) { showToast('⚠️ Please fill all fields'); return; }
-    showToast('✅ Message sent! I will respond within 24h.');
-  }
-});
-
-// ========== OPEN PROJECT -> opens in new tab (view.html replaced with direct? use # for demo) ==========
+// ========== OPEN PROJECT ==========
 function openProject(projectId) {
-  // Instead of iframe/view.html, we open a new tab with a details placeholder.
-  window.open(`#project-${projectId}`, '_blank'); // demo: just open empty tab
-  showToast(`🔍 Project ${projectId} details — full case study ready.`);
+  window.location.href = `view.html?id=${projectId}`;
 }
 
-// ========== DYNAMIC CONTENT RENDER (NO IFRAME, ALL INLINE) ==========
+// ========== LOAD DYNAMIC CONTENT ==========
 function loadContent() {
   const p = portfolioData.personal;
   const s = portfolioData.skills;
   
-  document.getElementById('heroBio').innerHTML = p.profile.substring(0,130)+'...';
+  // Hero bio
+  document.getElementById('heroBio').innerHTML = p.profile.substring(0, 150) + '...';
   
-  // personal info grid
+  // Personal info grid
   document.getElementById('personalInfoGrid').innerHTML = `
-    <div class="info-card"><div class="info-icon"><span class="material-icons">person</span></div><div class="info-content"><h4>Full Name</h4><p>${p.fullName}</p><p style="font-size:0.85rem; color:#1d7a8c;">Born: ${p.birthDate} · ${p.nationality}</p></div></div>
-    <div class="info-card"><div class="info-icon"><span class="material-icons">school</span></div><div class="info-content"><h4>Education</h4><p>${p.education.degree}</p><p style="color:#1d7a8c;">${p.education.school}</p><p style="font-size:0.85rem;">${p.education.graduation} · CGPA: ${p.education.cgpa}</p></div></div>
-    <div class="info-card"><div class="info-icon"><span class="material-icons">work</span></div><div class="info-content"><h4>Experience</h4><p>${p.experience} Professional</p><p style="color:#1d7a8c;">Graphic Design & AI Content</p></div></div>
-    <div class="info-card"><div class="info-icon"><span class="material-icons">location_on</span></div><div class="info-content"><h4>Location</h4><p>${p.location}</p><p style="color:#1d7a8c;">Nigeria</p></div></div>
-    <div class="info-card"><div class="info-icon"><span class="material-icons">email</span></div><div class="info-content"><h4>Email</h4><p>${p.email}</p></div></div>
-    <div class="info-card"><div class="info-icon"><span class="material-icons">phone</span></div><div class="info-content"><h4>Phone</h4><p>${p.phone}</p></div></div>
+    <div class="info-card">
+      <div class="info-icon"><span class="material-icons">person</span></div>
+      <div class="info-content">
+        <h4>Full Name</h4>
+        <p>${p.fullName}</p>
+        <p style="font-size: 0.85rem; color: #1d7a8c;"><span class="material-icons" style="font-size: 0.8rem;">cake</span> ${p.birthDate} · ${p.nationality}</p>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-icon"><span class="material-icons">school</span></div>
+      <div class="info-content">
+        <h4>Education</h4>
+        <p>${p.education.degree}</p>
+        <p style="color: #1d7a8c;">${p.education.school}</p>
+        <p style="font-size: 0.85rem;"><span class="material-icons" style="font-size: 0.8rem;">calendar_today</span> ${p.education.graduation} · CGPA: ${p.education.cgpa}</p>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-icon"><span class="material-icons">work</span></div>
+      <div class="info-content">
+        <h4>Experience</h4>
+        <p>${p.experience} Professional</p>
+        <p style="color: #1d7a8c;">Graphic Design & AI Content</p>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-icon"><span class="material-icons">location_on</span></div>
+      <div class="info-content">
+        <h4>Location</h4>
+        <p>${p.location}</p>
+        <p style="color: #1d7a8c;">Nigeria</p>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-icon"><span class="material-icons">email</span></div>
+      <div class="info-content">
+        <h4>Email</h4>
+        <p>${p.email}</p>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-icon"><span class="material-icons">phone</span></div>
+      <div class="info-content">
+        <h4>Phone</h4>
+        <p>${p.phone}</p>
+      </div>
+    </div>
   `;
+  
+  // Profile text
   document.getElementById('profileText').innerHTML = p.profile;
   
-  // skills
-  let aiHtml = s.ai.map(sk => `<span class="skill-tag">${sk.name} <span class="skill-rating">${'★'.repeat(Math.floor(sk.rating))}${sk.rating%1? '½':''}</span></span>`).join('');
-  let designHtml = s.design.map(sk => `<span class="skill-tag">${sk.name} ★${sk.rating}</span>`).join('');
-  let softHtml = s.soft.map(sk => `<span class="soft-skill-tag" style="background:#e1f0f3; padding:0.6rem 1.4rem; border-radius:60px;">${sk}</span>`).join('');
-  let langHtml = s.languages.map(l => `<span class="lang-tag" style="background:#1a3741; color:white; padding:0.6rem 1.4rem; border-radius:60px;">${l.name} (${l.level})</span>`).join('');
+  // Skills
+  let aiSkills = s.ai.map(skill => {
+    let stars = '';
+    for (let i = 0; i < 5; i++) {
+      if (i < Math.floor(skill.rating)) stars += '★';
+      else if (i < skill.rating) stars += '½';
+      else stars += '☆';
+    }
+    return `<span class="skill-tag"><span class="material-icons">smart_toy</span> ${skill.name} <span style="color: #ffc107; margin-left: 4px;">${stars}</span></span>`;
+  }).join('');
+  
+  let designSkills = s.design.map(skill => {
+    let stars = '';
+    for (let i = 0; i < 5; i++) {
+      if (i < Math.floor(skill.rating)) stars += '★';
+      else if (i < skill.rating) stars += '½';
+      else stars += '☆';
+    }
+    return `<span class="skill-tag"><span class="material-icons">brush</span> ${skill.name} <span style="color: #ffc107; margin-left: 4px;">${stars}</span></span>`;
+  }).join('');
+  
+  let softSkills = s.soft.map(skill => `<span class="soft-skill-tag"><span class="material-icons">psychology</span> ${skill}</span>`).join('');
+  
+  let langSkills = s.languages.map(lang => `<span class="lang-tag"><span class="material-icons">translate</span> ${lang.name} (${lang.level})</span>`).join('');
+  
   document.getElementById('skillsWrapper').innerHTML = `
-    <div class="skills-category"><div class="category-title">🤖 AI & Technology</div><div class="skills-grid">${aiHtml}</div></div>
-    <div class="skills-category"><div class="category-title">🎨 Design & Creative</div><div class="skills-grid">${designHtml}</div></div>
-    <div class="skills-category"><div class="category-title">🧠 Professional Skills</div><div class="skills-grid">${softHtml}</div></div>
-    <div class="skills-category"><div class="category-title">🗣️ Languages</div><div class="skills-grid">${langHtml}</div></div>
+    <div class="skills-category">
+      <div class="category-title"><span class="material-icons">smart_toy</span> AI & Technology</div>
+      <div class="skills-grid">${aiSkills}</div>
+    </div>
+    <div class="skills-category">
+      <div class="category-title"><span class="material-icons">palette</span> Design & Creative</div>
+      <div class="skills-grid">${designSkills}</div>
+    </div>
+    <div class="skills-category">
+      <div class="category-title"><span class="material-icons">psychology</span> Professional Skills</div>
+      <div class="skills-grid">${softSkills}</div>
+    </div>
+    <div class="skills-category">
+      <div class="category-title"><span class="material-icons">translate</span> Languages</div>
+      <div class="skills-grid">${langSkills}</div>
+    </div>
   `;
   
-  // experience
+  // Experience
   document.getElementById('experienceTimeline').innerHTML = portfolioData.experience.map(exp => `
-    <div class="experience-card" style="background:white; padding:1.8rem; border-radius:28px; border-left:6px solid #1d7a8c;">
-      <div class="exp-header"><div><div class="exp-title" style="font-size:1.4rem;">${exp.title}</div><div class="exp-company">${exp.company}</div></div><span class="exp-period" style="background:#ebf5f7; padding:0.3rem 1rem; border-radius:60px;">${exp.period}</span></div>
-      <ul class="exp-details" style="list-style:none;">${exp.description.map(d => `<li style="padding-left:1.5rem; position:relative;">→ ${d}</li>`).join('')}</ul>
+    <div class="experience-card">
+      <div class="exp-header">
+        <div>
+          <div class="exp-title"><span class="material-icons">work</span> ${exp.title}</div>
+          <div class="exp-company">${exp.company}</div>
+        </div>
+        <span class="exp-period"><span class="material-icons" style="font-size: 0.9rem;">calendar_month</span> ${exp.period}</span>
+      </div>
+      <ul class="exp-details">
+        ${exp.description.map(d => `<li><span class="material-icons">chevron_right</span> ${d}</li>`).join('')}
+      </ul>
     </div>
   `).join('');
   
-  // education
+  // Education
   document.getElementById('educationGrid').innerHTML = portfolioData.education.map(edu => `
-    <div class="edu-card" style="background:white; padding:2rem; border-radius:28px;"><div class="edu-degree">${edu.degree}</div><div class="edu-school">${edu.school}</div><div><span class="edu-detail">${edu.year}</span> ${edu.cgpa? `<span class="edu-detail">CGPA: ${edu.cgpa}</span>`:''} <span class="edu-detail">${edu.details||''}</span></div></div>
-  `).join('');
-  
-  // projects
-  document.getElementById('projectsGrid').innerHTML = portfolioData.projects.map(proj => `
-    <div class="project-card" onclick="openProject(${proj.id})" style="cursor:pointer;">
-      <img src="${proj.images[0]}" alt="${proj.title}" class="project-image" onerror="this.src='https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600'">
-      <div class="project-icon"><span class="material-icons">${proj.icon}</span></div>
-      <h3 style="font-size:1.5rem; margin:0.5rem 0;">${proj.title}</h3>
-      <p>${proj.shortDesc}</p>
-      <div class="project-tags">${proj.tags.map(t => `<span class="project-tag">${t}</span>`).join('')}</div>
+    <div class="edu-card">
+      <div class="edu-degree"><span class="material-icons">school</span> ${edu.degree}</div>
+      <div class="edu-school">${edu.school}</div>
+      <div>
+        <span class="edu-detail"><span class="material-icons" style="font-size: 0.8rem;">calendar_today</span> ${edu.year}</span>
+        ${edu.cgpa ? `<span class="edu-detail"><span class="material-icons" style="font-size: 0.8rem;">star</span> CGPA: ${edu.cgpa}</span>` : ''}
+        ${edu.details ? `<span class="edu-detail"><span class="material-icons" style="font-size: 0.8rem;">info</span> ${edu.details}</span>` : ''}
+      </div>
     </div>
   `).join('');
   
-  // contact container
+  // Projects
+  document.getElementById('projectsGrid').innerHTML = portfolioData.projects.map(proj => `
+    <div class="project-card" onclick="openProject(${proj.id})">
+      <img src="${proj.images[0]}" alt="${proj.title}" class="project-image" onerror="this.src='https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600'">
+      <div class="project-icon">
+        <span class="material-icons">${proj.icon}</span>
+      </div>
+      <h3>${proj.title}</h3>
+      <p>${proj.shortDesc}</p>
+      <div class="project-tags">
+        ${proj.tags.map(tag => `<span class="project-tag"><span class="material-icons">lens</span> ${tag}</span>`).join('')}
+        <span class="project-tag" style="background: #0f1e26; color: white;"><span class="material-icons" style="color: #ffc107;">star</span> ${proj.rating}</span>
+      </div>
+    </div>
+  `).join('');
+  
+  // Contact container
   document.getElementById('contactContainer').innerHTML = `
-    <div class="contact-info" style="background:#0f1e26; color:white; padding:2rem; border-radius:28px;">
-      <h3 style="color:white;">Get In Touch</h3>
-      <div style="display:flex; gap:10px; margin:1rem 0;"><span class="material-icons">person</span><p>${p.fullName}</p></div>
-      <div style="display:flex; gap:10px;"><span class="material-icons">email</span><p>${p.email}</p></div>
-      <div style="display:flex; gap:10px; margin-top:1rem;"><span class="material-icons">phone</span><p>${p.phone}</p></div>
-      <div style="display:flex; gap:10px; margin-top:1rem;"><span class="material-icons">location_on</span><p>${p.location}</p></div>
-      <div class="contact-social" style="display:flex; gap:1.2rem; margin-top:2rem;"> 
-        <a href="#"><i class="fab fa-facebook" style="color:white;"></i></a>
-        <a href="#"><i class="fab fa-twitter" style="color:white;"></i></a>
-        <a href="#"><i class="fab fa-linkedin" style="color:white;"></i></a>
-        <a href="#"><i class="fab fa-whatsapp" style="color:white;"></i></a>
+    <div class="contact-info">
+      <h3><span class="material-icons">contact_mail</span> Get In Touch</h3>
+      <div class="contact-detail">
+        <span class="material-icons">person</span>
+        <p style="color: white;">${p.fullName}</p>
+      </div>
+      <div class="contact-detail">
+        <span class="material-icons">email</span>
+        <p style="color: white;">${p.email}</p>
+      </div>
+      <div class="contact-detail">
+        <span class="material-icons">phone</span>
+        <p style="color: white;">${p.phone}</p>
+      </div>
+      <div class="contact-detail">
+        <span class="material-icons">location_on</span>
+        <p style="color: white;">${p.location}</p>
+      </div>
+      <div class="contact-social">
+        <a href="#"><span class="material-icons">facebook</span></a>
+        <a href="#"><span class="material-icons">alternate_email</span></a>
+        <a href="#"><span class="material-icons">linked_camera</span></a>
+        <a href="#"><span class="material-icons">chat</span></a>
+        <a href="#"><span class="material-icons">code</span></a>
       </div>
     </div>
     <div class="contact-form">
-      <h3>Send a Message</h3>
-      <div class="form-group"><input type="text" id="contactName" placeholder="Your Name"></div>
-      <div class="form-group"><input type="email" id="contactEmail" placeholder="Your Email"></div>
-      <div class="form-group"><textarea id="contactMessage" rows="4" placeholder="Your Message"></textarea></div>
-      <button class="submit-btn" id="sendContactBtn" style="background:#0f1e26; color:white; border:none; padding:1rem; border-radius:60px;">📨 Send Message</button>
+      <h3><span class="material-icons">send</span> Send a Message</h3>
+      <div class="form-group">
+        <input type="text" id="contactName" placeholder="Your Name">
+      </div>
+      <div class="form-group">
+        <input type="email" id="contactEmail" placeholder="Your Email">
+      </div>
+      <div class="form-group">
+        <textarea id="contactMessage" rows="4" placeholder="Your Message"></textarea>
+      </div>
+      <button class="submit-btn" id="sendContactBtn">
+        <span class="material-icons">send</span> Send Message
+      </button>
     </div>
   `;
   
-  // footer
-  document.getElementById('footerBio').innerHTML = `AI Content · Graphic Design · Prompt Engineering · UX/UI. Based in ${p.location}.`;
-  document.getElementById('footerSocial').innerHTML = `<a href="#"><i class="fab fa-facebook"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-linkedin"></i></a><a href="#"><i class="fab fa-whatsapp"></i></a>`;
-  document.getElementById('footerContact').innerHTML = `<h4>CONTACT</h4><a href="mailto:${p.email}" style="color:#b6d2da; display:block;">${p.email}</a><a href="tel:${p.phone}" style="color:#b6d2da;">${p.phone}</a>`;
-  document.getElementById('copyright').innerHTML = `© ${new Date().getFullYear()} Emmanuel Okwuchukwu · ${p.education.degree} Candidate.`;
+  // Contact form handler
+  document.getElementById('sendContactBtn').addEventListener('click', function() {
+    const name = document.getElementById('contactName').value.trim();
+    const email = document.getElementById('contactEmail').value.trim();
+    const msg = document.getElementById('contactMessage').value.trim();
+    
+    if (!name || !email || !msg) {
+      showToast('⚠️ Please fill all fields');
+      return;
+    }
+    showToast('✅ Message sent! I will respond within 24h.');
+    
+    document.getElementById('contactName').value = '';
+    document.getElementById('contactEmail').value = '';
+    document.getElementById('contactMessage').value = '';
+  });
+  
+  // Footer
+  document.getElementById('footerBio').innerHTML = `AI Content · Graphic Design · Prompt Engineering · UX/UI. Based in ${p.location.split(',')[0]}.`;
+  
+  document.getElementById('footerSocial').innerHTML = `
+    <a href="#"><span class="material-icons">facebook</span></a>
+    <a href="#"><span class="material-icons">alternate_email</span></a>
+    <a href="#"><span class="material-icons">whatsapp</span></a>
+    <a href="#"><span class="material-icons">twitter</span></a>
+    <a href="#"><span class="material-icons">github</span></a>
+  `;
+  
+  document.getElementById('footerContact').innerHTML = `
+    <h4><span class="material-icons">contact_phone</span> CONTACT</h4>
+    <a href="mailto:${p.email}"><span class="material-icons">email</span> ${p.email}</a>
+    <a href="tel:${p.phone}"><span class="material-icons">phone</span> ${p.phone}</a>
+    <a href="#"><span class="material-icons">location_on</span> ${p.location.split(',')[0]}</a>
+    <a href="chimdike.netlify.app"><span class="material-icons">language</span> ${p.website}</a>
+  `;
+  
+  document.getElementById('copyright').innerHTML = `© ${new Date().getFullYear()} Emmanuel Okwuchukwu · ${p.education.degree} Candidate`;
 }
 
-// ========== INIT ==========
-window.addEventListener('DOMContentLoaded', loadContent);
+// ========== INITIALIZE ==========
+document.addEventListener('DOMContentLoaded', loadContent);
 </script>
 
-<!-- ========== NO IFRAMES — ALL PDF links open separately ========== -->
 </body>
 </html>
