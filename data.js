@@ -1,7 +1,6 @@
 // ========== COMPLETE PORTFOLIO DATA ==========
 // Edit this file to update ALL content across the website
 // Domain: https://chimdike.netlify.app
-
 portfolioData = {
   // ===== PERSONAL INFORMATION =====
   personal: {
@@ -17,6 +16,18 @@ portfolioData = {
     facebook: "EmaxChimdike",
     experience: "5+ Years",
     profile: "Creative Graphic Designer and AI Content Specialist with over 5 years of experience in visual design, digital marketing, and emerging AI technologies. Skilled in Adobe Creative Suite, UX design, and AI prompt engineering. Passionate about leveraging AI tools to enhance content creation, streamline workflows, and deliver data-driven creative solutions. Experienced in training junior staff and implementing AI-assisted workflows that reduce production time by 30%.",
+    
+    // ===== PROFILE IMAGES - ARRAY OF YOUR PHOTOS =====
+    profileImages: [
+      "dike1.png",
+      "dike2.png",
+      "dike3.png", 
+      "dike4.png"
+      
+    ],
+    
+    // ===== BRAND LOGO =====
+    logo: "logo.png",
     
     education: {
       degree: "B.Sc Computer Science",
@@ -394,7 +405,6 @@ portfolioData = {
 
 // ===== ADMIN CREDENTIALS =====
 // Default: username: dike, password: 0000
-// These can be changed in the admin panel
 const adminCredentials = {
   username: "dike",
   password: "0000"
@@ -402,17 +412,12 @@ const adminCredentials = {
 
 // ===== INITIALIZE STORAGE IF EMPTY =====
 if (typeof window !== 'undefined') {
-  // Initialize contacts storage if not exists
   if (!localStorage.getItem('portfolio_contacts')) {
     localStorage.setItem('portfolio_contacts', JSON.stringify([]));
   }
-  
-  // Initialize requests storage if not exists
   if (!localStorage.getItem('portfolio_requests')) {
     localStorage.setItem('portfolio_requests', JSON.stringify([]));
   }
-  
-  // Initialize admin credentials if not exists
   if (!localStorage.getItem('admin_credentials')) {
     localStorage.setItem('admin_credentials', JSON.stringify(adminCredentials));
   }
@@ -422,7 +427,7 @@ if (typeof window !== 'undefined') {
 if (typeof window !== 'undefined') {
   window.portfolioData = portfolioData;
   window.adminCredentials = adminCredentials;
-  window.fallbackData = portfolioData; // Backup
+  window.fallbackData = portfolioData;
 }
 
 // For Node.js
