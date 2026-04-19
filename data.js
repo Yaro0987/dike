@@ -6,7 +6,7 @@ portfolioData = {
   personal: {
     fullName: "OKWUCHUKWU, EMMANUEL CHIMDIKE",
     title: "AI & Creative Design Specialist",
-    birthDate: "28 November 2001",
+    birthDate: "28 September 2004",
     nationality: "Nigerian",
     maritalStatus: "Single",
     email: "okwuchukwuemmanuel29@gmail.com",
@@ -31,7 +31,7 @@ portfolioData = {
     
     education: {
       degree: "B.Sc Computer Science",
-      school: "University of Abuja, Nigeria",
+      school: "Ibrahim Badamasi BabanGida University Lapai, Niger State.",
       graduation: "2025",
       cgpa: "3.5/4.0",
       courses: "Artificial Intelligence, Human-Computer Interaction, Database Systems, Web Development"
