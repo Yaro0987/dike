@@ -6,7 +6,7 @@ portfolioData = {
   personal: {
     fullName: "OKWUCHUKWU, EMMANUEL CHIMDIKE",
     title: "AI & Creative Design Specialist",
-    birthDate: "28 September 2004",
+    birthDate: "28 October 2004",
     nationality: "Nigerian",
     maritalStatus: "Single",
     email: "okwuchukwuemmanuel29@gmail.com",
